@@ -1,0 +1,1088 @@
+<title>MAJEX Digital Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Playfair+Display:wght@600;700;800&family=Anton&display=swap">
+
+<style>
+/* ================= TOKENS — DARK-FIRST ================= */
+:root{
+  --bg:#07080D; --bg-2:#0C0D15; --panel:#12131E; --panel-2:#171827;
+  --ink:#EEF1FA; --ink-2:#B4BCD4; --ink-soft:#7C8399;
+  --line:#232741; --line-2:#1A1C2E; --glass:rgba(255,255,255,.045); --glass-bd:rgba(255,255,255,.09);
+  --cyan:#22E7CE; --cyan-deep:#12C7B0; --violet:#8B6BFF; --violet-deep:#6D4BFF;
+  --grid-line:rgba(34,231,206,.16); --wa:#25D366; --wa-deep:#1DB558;
+  --glow-c:rgba(34,231,206,.55); --glow-v:rgba(139,107,255,.5);
+  --shadow:0 2px 6px rgba(0,0,0,.4), 0 24px 60px -22px rgba(0,0,0,.75);
+  --shadow-lg:0 2px 8px rgba(0,0,0,.5), 0 50px 100px -34px rgba(0,0,0,.85);
+  --maxw:1200px;
+  --f-display:"Chakra Petch", system-ui, sans-serif;
+  --f-body:"Manrope", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#F1F4FB; --bg-2:#FFFFFF; --panel:#FFFFFF; --panel-2:#F6F8FD;
+    --ink:#0B0E1A; --ink-2:#3B4256; --ink-soft:#6B7284;
+    --line:#E2E7F2; --line-2:#EDF1F9; --glass:rgba(15,20,40,.03); --glass-bd:rgba(15,20,40,.08);
+    --cyan:#0BAF9A; --cyan-deep:#088777; --violet:#6D4BFF; --violet-deep:#5836E6;
+    --grid-line:rgba(11,175,154,.14);
+    --glow-c:rgba(11,175,154,.28); --glow-v:rgba(109,75,255,.24);
+    --shadow:0 1px 2px rgba(16,24,50,.05), 0 18px 44px -18px rgba(16,24,50,.22);
+    --shadow-lg:0 2px 6px rgba(16,24,50,.07), 0 44px 90px -34px rgba(16,24,50,.3);
+  }
+}
+:root[data-theme="light"]{
+  --bg:#F1F4FB; --bg-2:#FFFFFF; --panel:#FFFFFF; --panel-2:#F6F8FD;
+  --ink:#0B0E1A; --ink-2:#3B4256; --ink-soft:#6B7284;
+  --line:#E2E7F2; --line-2:#EDF1F9; --glass:rgba(15,20,40,.03); --glass-bd:rgba(15,20,40,.08);
+  --cyan:#0BAF9A; --cyan-deep:#088777; --violet:#6D4BFF; --violet-deep:#5836E6;
+  --grid-line:rgba(11,175,154,.14);
+  --glow-c:rgba(11,175,154,.28); --glow-v:rgba(109,75,255,.24);
+  --shadow:0 1px 2px rgba(16,24,50,.05), 0 18px 44px -18px rgba(16,24,50,.22);
+  --shadow-lg:0 2px 6px rgba(16,24,50,.07), 0 44px 90px -34px rgba(16,24,50,.3);
+}
+:root[data-theme="dark"]{
+  --bg:#07080D; --bg-2:#0C0D15; --panel:#12131E; --panel-2:#171827;
+  --ink:#EEF1FA; --ink-2:#B4BCD4; --ink-soft:#7C8399;
+  --line:#232741; --line-2:#1A1C2E; --glass:rgba(255,255,255,.045); --glass-bd:rgba(255,255,255,.09);
+  --cyan:#22E7CE; --cyan-deep:#12C7B0; --violet:#8B6BFF; --violet-deep:#6D4BFF;
+  --grid-line:rgba(34,231,206,.16);
+  --glow-c:rgba(34,231,206,.55); --glow-v:rgba(139,107,255,.5);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--f-display); font-weight:700; line-height:1.05; margin:0; text-wrap:balance; letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit; text-decoration:none}
+.wrap{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 26px}
+.eyebrow{font-family:var(--f-mono); font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan-deep); display:inline-flex; align-items:center; gap:8px}
+.eyebrow::before{content:"//"; color:var(--violet); opacity:.8}
+.muted{color:var(--ink-soft)}
+.grad{background:linear-gradient(100deg,var(--cyan),var(--violet),var(--cyan)); background-size:220% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:shimmer 7s linear infinite}
+@keyframes shimmer{to{background-position:220% center}}
+
+/* ================= LOGO ================= */
+.logo-mark{width:34px; height:34px; flex:0 0 auto; filter:drop-shadow(0 0 10px var(--glow-c))}
+.brand{display:inline-flex; align-items:center; gap:12px}
+.brand-tx{display:flex; flex-direction:column; line-height:1}
+.brand-tx b{font-family:var(--f-display); font-weight:700; font-size:20px; letter-spacing:.14em}
+.brand-tx small{font-family:var(--f-mono); font-size:8.5px; letter-spacing:.34em; color:var(--ink-soft); margin-top:3px}
+
+/* ================= BUTTONS ================= */
+.btn{display:inline-flex; align-items:center; gap:.55em; font-family:var(--f-body); font-weight:700; font-size:15px;
+  padding:.85em 1.4em; border-radius:11px; cursor:pointer; border:1.5px solid transparent; transition:transform .16s ease, box-shadow .22s ease, background .2s, border-color .2s; white-space:nowrap; position:relative}
+.btn:active{transform:translateY(1px)}
+.btn-wa{background:var(--wa); color:#04140A; box-shadow:0 10px 26px -10px var(--wa)}
+.btn-wa:hover{background:var(--wa-deep); transform:translateY(-2px); box-shadow:0 16px 34px -12px var(--wa)}
+.btn-primary{background:var(--cyan); color:#03110F; box-shadow:0 10px 30px -10px var(--glow-c)}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 18px 42px -12px var(--glow-c)}
+.btn-ghost{background:var(--glass); color:var(--ink); border-color:var(--glass-bd); backdrop-filter:blur(6px)}
+.btn-ghost:hover{border-color:var(--cyan); transform:translateY(-2px)}
+.btn svg{width:18px; height:18px}
+.btn{overflow:hidden}
+.btn::after{content:""; position:absolute; top:0; bottom:0; left:-70%; width:45%; background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent); transform:skewX(-18deg); opacity:0; pointer-events:none}
+.btn:hover::after{animation:sheen .75s ease}
+@keyframes sheen{0%{left:-70%; opacity:.9}100%{left:130%; opacity:.9}}
+.tech-badge svg{width:13px; height:13px; color:var(--cyan); flex:0 0 auto}
+
+/* ================= NAV ================= */
+header.nav{position:sticky; top:0; z-index:60; backdrop-filter:saturate(1.4) blur(14px);
+  background:color-mix(in srgb, var(--bg) 78%, transparent); border-bottom:1px solid transparent; transition:border-color .3s}
+header.nav.scrolled{border-color:var(--line)}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:20px; height:74px}
+.nav-links{display:flex; align-items:center; gap:28px}
+.nav-links a{font-size:14.5px; font-weight:600; color:var(--ink-2)}
+.nav-links a{position:relative}
+.nav-links a::after{content:""; position:absolute; left:0; right:100%; bottom:-5px; height:2px; border-radius:2px; background:linear-gradient(90deg,var(--cyan),var(--violet)); transition:right .28s ease}
+.nav-links a:hover{color:var(--cyan)}
+.nav-links a:hover::after{right:0}
+.nav-right{display:flex; align-items:center; gap:12px}
+.icon-btn{width:42px; height:42px; border-radius:11px; border:1.5px solid var(--glass-bd); background:var(--glass); display:grid; place-items:center; cursor:pointer; color:var(--ink); transition:border-color .2s; backdrop-filter:blur(6px)}
+.icon-btn:hover{border-color:var(--cyan)}
+.icon-btn svg{width:18px; height:18px}
+.sun{display:none}
+:root[data-theme="dark"] .sun{display:block} :root[data-theme="dark"] .moon{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sun{display:block} :root:not([data-theme="light"]) .moon{display:none}}
+
+/* ================= HERO ================= */
+.hero{position:relative; padding:80px 0 60px; overflow:hidden}
+.hero-bg{position:absolute; inset:0; z-index:0; overflow:hidden}
+.orb{position:absolute; border-radius:50%; filter:blur(80px); opacity:.55; pointer-events:none}
+.orb.c{width:520px; height:520px; background:var(--glow-c); top:-160px; right:-120px}
+.orb.v{width:460px; height:460px; background:var(--glow-v); bottom:-200px; left:-140px}
+.grid-floor{position:absolute; bottom:-20px; left:50%; width:220%; height:420px;
+  transform:translateX(-50%) perspective(420px) rotateX(62deg);
+  background-image:linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size:48px 48px; -webkit-mask-image:linear-gradient(to top,#000 5%,transparent 72%); mask-image:linear-gradient(to top,#000 5%,transparent 72%);
+  animation:floor 9s linear infinite}
+@keyframes floor{to{background-position:0 48px, 48px 0}}
+.hero .wrap{position:relative; z-index:2}
+.hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
+.status{display:inline-flex; align-items:center; gap:10px; padding:8px 15px; border:1px solid var(--glass-bd); background:var(--glass); border-radius:999px; font-family:var(--f-mono); font-size:12px; font-weight:600; color:var(--ink-2); backdrop-filter:blur(8px); margin-bottom:26px}
+.status .dot{width:8px; height:8px; border-radius:50%; background:var(--cyan); box-shadow:0 0 0 4px color-mix(in srgb,var(--cyan) 22%, transparent); animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.4}}
+h1.hero-h{font-size:clamp(2.5rem, 5.6vw, 4.4rem); letter-spacing:-.02em; line-height:1.02}
+.rot-word{color:var(--cyan); position:relative; display:inline-block; text-shadow:0 0 26px var(--glow-c)}
+.hero-sub{font-size:clamp(1.05rem,1.5vw,1.24rem); color:var(--ink-2); max-width:52ch; margin:24px 0 0; line-height:1.55}
+.hero-sub b{color:var(--ink)}
+.seg-ticker{font-family:var(--f-mono); font-size:13px; font-weight:600; color:var(--ink-soft); margin-top:16px; display:inline-flex; align-items:center; gap:8px; flex-wrap:wrap; border:1px solid var(--glass-bd); background:var(--glass); padding:8px 14px; border-radius:999px; backdrop-filter:blur(6px)}
+.seg-ticker .rot-word{font-size:13px; color:var(--cyan); font-weight:700}
+.seg-ticker .seg-more{color:var(--ink-2)}
+.seg-ticker .seg-more::before{content:"·"; margin-right:8px; color:var(--ink-soft)}
+.hero-cta{display:flex; flex-wrap:wrap; gap:13px; margin-top:32px}
+.hero-tech{display:flex; flex-wrap:wrap; gap:9px 10px; margin-top:30px}
+.tech-badge{font-family:var(--f-mono); font-size:11.5px; font-weight:600; color:var(--ink-2); border:1px solid var(--glass-bd); background:var(--glass); padding:6px 12px; border-radius:8px; display:inline-flex; align-items:center; gap:7px}
+.tech-badge b{color:var(--cyan); font-weight:700}
+
+/* hero orbit visual */
+.hero-visual{position:relative; display:grid; place-items:center; min-height:360px}
+.orbit{position:absolute; border:1px solid var(--glass-bd); border-radius:50%}
+.orbit.o1{width:300px; height:300px; animation:spin 18s linear infinite}
+.orbit.o2{width:210px; height:210px; animation:spin 12s linear infinite reverse}
+.orbit .sat{position:absolute; top:-5px; left:50%; width:10px; height:10px; margin-left:-5px; border-radius:50%; background:var(--cyan); box-shadow:0 0 14px var(--glow-c)}
+.orbit.o2 .sat{background:var(--violet); box-shadow:0 0 14px var(--glow-v)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-logo{width:190px; height:190px; filter:drop-shadow(0 0 40px var(--glow-c)); position:relative; z-index:2}
+.hero-ring{position:absolute; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle, transparent 58%, var(--glow-v) 100%); opacity:.35; filter:blur(20px)}
+
+/* ================= SECTION ================= */
+.sec{padding:90px 0; position:relative}
+.sec-head{max-width:62ch; margin-bottom:46px}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem); letter-spacing:-.02em; margin-top:16px}
+.sec-head p{color:var(--ink-2); font-size:1.12rem; margin-top:16px; line-height:1.55}
+.band{background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+
+/* ================= STATS ================= */
+.stats-grid{display:grid; grid-template-columns:repeat(4,1fr)}
+.stat{padding:36px 26px; border-left:1px solid var(--line); position:relative}
+.stat:first-child{border-left:none}
+.stat b{font-family:var(--f-display); font-weight:700; font-size:2.5rem; letter-spacing:-.02em; display:block; line-height:1; color:var(--ink)}
+.stat b .u{color:var(--cyan); font-size:1.3rem; margin-left:3px}
+.stat span{font-size:14px; color:var(--ink-soft); font-weight:600; display:block; margin-top:10px}
+
+/* ================= PORTFOLIO ================= */
+.filters{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:38px}
+.filter{padding:9px 17px; border-radius:10px; border:1.5px solid var(--glass-bd); background:var(--glass); font-family:var(--f-mono); font-weight:600; font-size:13px; letter-spacing:.02em; color:var(--ink-2); cursor:pointer; transition:all .18s; backdrop-filter:blur(6px)}
+.filter:hover{border-color:var(--cyan); color:var(--ink)}
+.filter[aria-pressed="true"]{background:var(--cyan); color:#03110F; border-color:var(--cyan)}
+.gallery{display:grid; grid-template-columns:repeat(2,1fr); gap:30px}
+.case{transition:opacity .35s, transform .35s}
+.case.hide{display:none}
+.browser{border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg); border:1px solid var(--glass-bd); background:#fff; transition:transform .3s ease}
+.case:hover .browser{transform:translateY(-9px)}
+.browser{position:relative}
+.browser::after{content:""; position:absolute; inset:0; z-index:6; pointer-events:none; opacity:0; background:linear-gradient(115deg,transparent 34%,rgba(255,255,255,.22) 46%,rgba(255,255,255,.05) 55%,transparent 66%); background-size:280% 100%; background-position:135% 0}
+.case:hover .browser::after{opacity:1; animation:glare .9s ease forwards}
+@keyframes glare{from{background-position:135% 0}to{background-position:-60% 0}}
+.bbar{display:flex; align-items:center; gap:8px; padding:11px 14px; background:#e9e9ec; border-bottom:1px solid rgba(0,0,0,.06)}
+.bdot{width:11px; height:11px; border-radius:50%}
+.burl{flex:1; margin-left:8px; background:#fff; border-radius:7px; font-family:var(--f-mono); font-size:11.5px; color:#7a7a82; padding:5px 12px; display:flex; align-items:center; gap:7px; overflow:hidden; white-space:nowrap}
+.burl svg{width:11px; height:11px; flex:0 0 auto; color:#3fae6b}
+
+.mk{background:var(--mk-bg); color:var(--mk-fg); font-family:var(--mk-body,"Manrope",sans-serif); font-size:11px; line-height:1.4; aspect-ratio:16/12.6; display:flex; flex-direction:column; overflow:hidden; position:relative}
+.mk *{box-sizing:border-box; margin:0; padding:0}
+.m-top{display:flex; align-items:center; justify-content:space-between; padding:10px 15px; flex:0 0 auto; border-bottom:1px solid var(--mk-line)}
+.m-brand{font-family:var(--mk-display); font-weight:800; font-size:13px; letter-spacing:var(--mk-brand-sp,-.01em); color:var(--mk-brandc,var(--mk-fg)); text-transform:var(--mk-brand-tt,none); display:flex; align-items:center; gap:6px}
+.m-dot{width:11px; height:11px; border-radius:3px; background:var(--mk-accent); flex:0 0 auto}
+.m-nav{display:flex; gap:10px; align-items:center; color:var(--mk-muted); font-weight:600; font-size:9.5px}
+.m-nav .on{color:var(--mk-fg)}
+.m-btn{background:var(--mk-accent); color:var(--mk-btnfg,#fff); font-weight:700; font-size:9.5px; padding:6px 11px; border-radius:var(--mk-btn-r,8px); white-space:nowrap; display:inline-flex; align-items:center; gap:4px; font-family:var(--mk-body)}
+.m-hero{flex:1 1 auto; min-height:0; display:flex; overflow:hidden}
+.m-copy{padding:15px; display:flex; flex-direction:column; justify-content:center; min-width:0}
+.m-eyebrow{font-family:var(--f-mono); font-size:8px; letter-spacing:.15em; text-transform:uppercase; color:var(--mk-accent); font-weight:700; margin-bottom:7px}
+.m-h{font-family:var(--mk-display); font-weight:var(--mk-title-w,800); font-size:var(--mk-title-s,22px); line-height:1.02; letter-spacing:var(--mk-title-sp,-.02em); color:var(--mk-titlec,var(--mk-fg)); text-transform:var(--mk-title-tt,none)}
+.m-sub{font-size:9.5px; color:var(--mk-muted); margin-top:7px; line-height:1.5}
+.m-cta{align-self:flex-start; margin-top:11px}
+.m-photo{background:var(--mk-photo,linear-gradient(135deg,#c9c9c9,#9a9a9a)); position:relative; overflow:hidden; min-width:0}
+.m-photo::after{content:""; position:absolute; inset:0; background:var(--mk-photo-ov,linear-gradient(180deg,transparent 45%,rgba(8,10,20,.3)))}
+.m-photo > *{position:relative; z-index:1}
+.m-photo.win::before{content:""; position:absolute; inset:0; z-index:0; opacity:.5;
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.12) 0 5px,transparent 5px 13px),repeating-linear-gradient(0deg,rgba(255,255,255,.12) 0 6px,transparent 6px 15px)}
+.m-strip{flex:0 0 auto; padding:11px 15px; background:var(--mk-soft,transparent); border-top:1px solid var(--mk-line); display:flex; gap:9px; align-items:center}
+.m-fill{flex:1 1 auto; min-width:0}
+.m-stars{color:#F5A623; letter-spacing:.5px; font-size:10px; white-space:nowrap}
+.m-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+.m-card{display:flex; flex-direction:column; gap:4px; min-width:0}
+.m-thumb{aspect-ratio:1/1; border-radius:7px; background:var(--_t,#ccc)}
+.m-card b{font-size:9px; font-weight:600; color:var(--mk-fg); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.m-card .p{font-size:10px; font-weight:800; color:var(--mk-accent2,var(--mk-fg)); font-family:var(--mk-display)}
+.m-menu{display:flex; flex-direction:column; gap:7px}
+.m-mitem{display:flex; align-items:baseline; gap:6px; font-size:10px}
+.m-mitem .nm{color:var(--mk-fg); font-weight:600; white-space:nowrap}
+.m-mitem .ln{flex:1; border-bottom:1px dotted var(--mk-line); transform:translateY(-2px); min-width:12px}
+.m-mitem .pr{color:var(--mk-accent2,var(--mk-accent)); font-weight:800; font-family:var(--mk-display); white-space:nowrap}
+.m-plans{display:grid; grid-template-columns:repeat(3,1fr); gap:7px}
+.m-plan{border:1px solid var(--mk-line); border-radius:8px; padding:9px 8px; display:flex; flex-direction:column; gap:3px}
+.m-plan.hot{border-color:var(--mk-accent); background:color-mix(in srgb,var(--mk-accent) 14%, transparent)}
+.m-plan .t{font-size:7.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--mk-muted); font-weight:700}
+.m-plan .v{font-family:var(--mk-display); font-weight:800; font-size:14px; color:var(--mk-fg); line-height:1}
+.m-plan .v small{font-size:7.5px; color:var(--mk-muted); font-weight:600}
+.m-stats{display:flex; gap:16px}
+.m-stat b{font-family:var(--mk-display); font-weight:800; font-size:15px; color:var(--mk-accent); display:block; line-height:1}
+.m-stat span{font-size:8px; color:var(--mk-muted)}
+.m-logos{display:flex; gap:9px; align-items:center; opacity:.55}
+.m-logos i{height:7px; border-radius:2px; background:var(--mk-muted)}
+.m-tabs{display:flex; gap:5px}
+.m-chip{font-size:8px; font-weight:700; padding:3px 9px; border-radius:999px; background:rgba(255,255,255,.18); color:#fff}
+.m-chip.on{background:var(--mk-accent); color:var(--mk-btnfg,#16283c)}
+.m-search{display:flex; gap:5px; background:#fff; border-radius:8px; padding:4px 4px 4px 8px; align-items:center}
+.m-search .f{flex:1; font-size:8.5px; color:#8a94a0; white-space:nowrap; overflow:hidden}
+.m-props{display:grid; grid-template-columns:repeat(2,1fr); gap:8px}
+.m-prop{border:1px solid var(--mk-line); border-radius:8px; overflow:hidden; background:var(--mk-soft,#fff)}
+.m-prop .ph{aspect-ratio:16/8; background:var(--_t,#ccc)}
+.m-prop .in{padding:6px 8px}
+.m-prop .pr{font-family:var(--mk-display); font-weight:800; font-size:11px; color:var(--mk-fg)}
+.m-prop .mt{font-size:7.5px; color:var(--mk-muted); margin-top:2px}
+.mk-cap{padding:20px 4px 0}
+.mk-cap-top{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.mk-cap h3{font-size:1.26rem; letter-spacing:-.01em}
+.mk-tag{font-family:var(--f-mono); font-size:11px; font-weight:700; color:var(--cyan-deep); background:color-mix(in srgb,var(--cyan) 14%, transparent); padding:5px 11px; border-radius:999px; white-space:nowrap; border:1px solid color-mix(in srgb,var(--cyan) 26%, transparent)}
+.mk-cap p{color:var(--ink-soft); font-size:14.5px; margin-top:8px; line-height:1.5}
+
+.mk--salao{--mk-bg:#fffaf8; --mk-fg:#3a2230; --mk-muted:#a98a92; --mk-accent:#c07a5a; --mk-accent2:#b06a86; --mk-line:#f1e3e3; --mk-soft:#fdf4f3; --mk-display:"Playfair Display",serif; --mk-title-w:700; --mk-title-s:21px; --mk-brandc:#a85f7d; --mk-btn-r:999px; --mk-btnfg:#fff; --mk-photo:linear-gradient(150deg,#f1d6cb,#dcaab0 52%,#a96d80)}
+.mk--moda{--mk-bg:#0f0f11; --mk-fg:#f5f5f5; --mk-muted:#8f8f95; --mk-accent:#ece6d8; --mk-accent2:#ece6d8; --mk-line:#2a2a2e; --mk-soft:#161618; --mk-display:"Manrope",sans-serif; --mk-title-w:800; --mk-title-tt:uppercase; --mk-title-sp:-.03em; --mk-title-s:24px; --mk-brand-tt:uppercase; --mk-brand-sp:.24em; --mk-btnfg:#111; --mk-btn-r:2px; --mk-photo:linear-gradient(120deg,#4a3b45,#241c22 65%)}
+.mk--industria{--mk-bg:#0e1620; --mk-fg:#e9f0f6; --mk-muted:#8097a8; --mk-accent:#ff8b32; --mk-accent2:#ff8b32; --mk-line:#243447; --mk-soft:#12202e; --mk-display:"Chakra Petch",sans-serif; --mk-title-w:700; --mk-title-tt:uppercase; --mk-title-s:21px; --mk-brand-tt:uppercase; --mk-brand-sp:.06em; --mk-btnfg:#0c1620; --mk-btn-r:4px; --mk-photo:linear-gradient(135deg,#4a6b82,#22384a 55%,#12202c)}
+.mk--resto{--mk-bg:#f8f1e5; --mk-fg:#33291b; --mk-muted:#9c8a70; --mk-accent:#b5451f; --mk-accent2:#b5451f; --mk-line:#ece1ce; --mk-soft:#fdf8ee; --mk-display:"Playfair Display",serif; --mk-title-w:700; --mk-title-s:23px; --mk-brandc:#b5451f; --mk-btn-r:999px; --mk-btnfg:#fff; --mk-photo:radial-gradient(circle at 50% 42%,#dba869,#8a5730 55%,#3f2a1c); --mk-photo-ov:linear-gradient(180deg,rgba(40,25,15,.12),rgba(40,25,15,.35))}
+.mk--academia{--mk-bg:#0a0a0c; --mk-fg:#f4f4f5; --mk-muted:#84848c; --mk-accent:#d7ff3e; --mk-accent2:#d7ff3e; --mk-line:#26262a; --mk-soft:#141416; --mk-display:"Anton",sans-serif; --mk-title-w:400; --mk-title-tt:uppercase; --mk-title-s:26px; --mk-title-sp:0; --mk-brand-tt:uppercase; --mk-brandc:#d7ff3e; --mk-btnfg:#0b0b0d; --mk-btn-r:4px; --mk-photo:radial-gradient(circle at 72% 22%,rgba(215,255,62,.22),transparent 45%),linear-gradient(120deg,#212126,#0c0c0f)}
+.mk--imob{--mk-bg:#f3f6f9; --mk-fg:#16283c; --mk-muted:#7a8a9c; --mk-accent:#c39a4e; --mk-accent2:#16283c; --mk-line:#e1e8ee; --mk-soft:#ffffff; --mk-display:"Playfair Display",serif; --mk-title-w:700; --mk-title-s:19px; --mk-brandc:#16283c; --mk-btn-r:6px; --mk-btnfg:#16283c; --mk-photo:linear-gradient(160deg,#3a6a94,#16324f 55%,#0f2338)}
+.mk--conta{--mk-bg:#ffffff; --mk-fg:#0f2430; --mk-muted:#5f7385; --mk-accent:#0DAB9A; --mk-accent2:#13c9a2; --mk-line:#e4eef0; --mk-soft:#f1fbf9; --mk-display:"Chakra Petch",sans-serif; --mk-title-w:700; --mk-title-s:18px; --mk-brandc:#0f2430; --mk-btnfg:#fff; --mk-btn-r:8px}
+/* dashboard + pills (contábil / SaaS) */
+.m-dash{background:var(--mk-soft,#fff); border:1px solid var(--mk-line); border-radius:10px; padding:11px; display:flex; flex-direction:column; gap:8px; width:100%; box-shadow:0 12px 26px -16px rgba(20,40,80,.5)}
+.m-dash-top{display:flex; justify-content:space-between; align-items:center; font-size:8.5px; color:var(--mk-muted); font-weight:600}
+.m-dash-top .ok{color:#1fa855; font-weight:700}
+.m-dash-big{font-family:var(--mk-display); font-weight:800; font-size:19px; color:var(--mk-fg); line-height:1; display:flex; flex-direction:column; gap:3px}
+.m-dash-big span{font-family:var(--mk-body); font-size:8px; font-weight:600; color:var(--mk-muted)}
+.m-bars{display:flex; align-items:flex-end; gap:5px; height:32px}
+.m-bars i{flex:1; background:linear-gradient(180deg,var(--mk-accent),var(--mk-accent2,var(--mk-accent))); border-radius:3px 3px 0 0; min-height:5px}
+.m-dash-row{display:flex; justify-content:space-between; align-items:center; font-size:9px; color:var(--mk-muted); font-weight:600; border-top:1px solid var(--mk-line); padding-top:7px}
+.m-dash-row b{color:var(--mk-fg); font-family:var(--mk-display); font-weight:800}
+.m-pills{display:flex; gap:6px; flex-wrap:wrap}
+.m-pill{font-size:8.5px; font-weight:700; color:var(--mk-fg); background:var(--mk-soft); border:1px solid var(--mk-line); border-radius:999px; padding:5px 9px; display:flex; align-items:center; gap:5px}
+.m-pill i{width:5px; height:5px; border-radius:50%; background:var(--mk-accent2,var(--mk-accent)); font-style:normal}
+.m-kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:6px}
+.m-kpi{background:var(--mk-bg); border:1px solid var(--mk-line); border-radius:7px; padding:6px 7px}
+.m-kpi span{font-size:7px; color:var(--mk-muted); font-weight:600; display:block; white-space:nowrap}
+.m-kpi b{font-family:var(--mk-display); font-weight:800; font-size:11px; color:var(--mk-fg); white-space:nowrap}
+.m-feed{display:flex; flex-direction:column; gap:5px}
+.m-fitem{display:flex; gap:6px; align-items:center; font-size:8px; color:var(--mk-muted)}
+.m-fitem .ic{width:12px; height:12px; border-radius:50%; background:color-mix(in srgb,var(--mk-accent) 18%, transparent); color:var(--mk-accent); display:grid; place-items:center; font-size:7px; font-weight:800; flex:0 0 auto}
+.m-fitem b{color:var(--mk-fg); font-weight:700}
+
+/* ================= SEGMENTS ================= */
+.cloud{display:flex; flex-wrap:wrap; gap:11px; max-width:920px}
+.tagbig{padding:11px 18px; border-radius:11px; border:1px solid var(--glass-bd); background:var(--glass); font-weight:600; font-size:15px; color:var(--ink-2); display:inline-flex; align-items:center; gap:9px; transition:transform .15s, border-color .2s, color .2s; backdrop-filter:blur(6px)}
+.tagbig:hover{transform:translateY(-2px); border-color:var(--cyan); color:var(--ink)}
+.tagbig i{font-style:normal; font-size:17px}
+
+/* ================= FEATURES ================= */
+.feat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.feat{background:var(--glass); border:1px solid var(--glass-bd); border-radius:16px; padding:26px; transition:transform .2s, border-color .2s, box-shadow .2s; backdrop-filter:blur(8px); position:relative; overflow:hidden}
+.feat:hover{transform:translateY(-4px); border-color:color-mix(in srgb,var(--cyan) 40%,transparent); box-shadow:var(--shadow)}
+.feat .ic{width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg,color-mix(in srgb,var(--cyan) 22%,transparent),color-mix(in srgb,var(--violet) 22%,transparent)); color:var(--cyan); display:grid; place-items:center; margin-bottom:18px; border:1px solid var(--glass-bd)}
+.feat .ic svg{width:23px; height:23px}
+.feat h3{font-size:1.16rem; letter-spacing:-.01em}
+.feat p{color:var(--ink-soft); font-size:15px; margin-top:9px; line-height:1.55}
+.feat{--mx:50%; --my:0%}
+.feat::before{content:""; position:absolute; inset:0; border-radius:16px; opacity:0; transition:opacity .3s; pointer-events:none;
+  background:radial-gradient(220px circle at var(--mx) var(--my), color-mix(in srgb,var(--cyan) 15%, transparent), transparent 62%)}
+.feat:hover::before{opacity:1}
+.feat > *{position:relative}
+.feat:hover .ic{transform:translateY(-2px) scale(1.05); transition:transform .25s}
+
+/* ================= PROCESS ================= */
+.steps{display:grid; grid-template-columns:repeat(4,1fr); gap:22px}
+.step{position:relative; padding-top:32px}
+.step .num{font-family:var(--f-mono); font-weight:700; font-size:.95rem; color:var(--cyan); position:absolute; top:0; left:0; letter-spacing:.05em}
+.step-line{height:2px; background:var(--line); margin-bottom:22px; position:relative}
+.step-line::after{content:""; position:absolute; left:0; top:-3px; width:8px; height:8px; border-radius:50%; background:var(--cyan); box-shadow:0 0 12px var(--glow-c)}
+.step h3{font-size:1.1rem; letter-spacing:-.01em}
+.step p{color:var(--ink-soft); font-size:14.5px; margin-top:9px; line-height:1.5}
+
+/* ================= PRICING ================= */
+.plans{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:start}
+.plan{background:var(--glass); border:1px solid var(--glass-bd); border-radius:18px; padding:30px 28px; position:relative; backdrop-filter:blur(8px)}
+.plan.feature{border-color:transparent; background:var(--panel)}
+.plan.feature::before{content:""; position:absolute; inset:-1px; border-radius:19px; padding:1px; background:linear-gradient(135deg,var(--cyan),var(--violet));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none}
+.plan.feature{box-shadow:0 30px 70px -28px var(--glow-v); transform:translateY(-6px)}
+.plan-badge{position:absolute; top:-13px; left:28px; background:linear-gradient(100deg,var(--cyan),var(--violet)); color:#03110F; font-family:var(--f-mono); font-size:11px; font-weight:700; letter-spacing:.04em; padding:5px 12px; border-radius:999px}
+.plan h3{font-size:1.28rem}
+.plan .price{font-family:var(--f-display); font-weight:700; font-size:2.5rem; letter-spacing:-.02em; margin:14px 0 2px; line-height:1}
+.plan .price small{font-size:1rem; font-weight:600; color:var(--ink-soft); font-family:var(--f-body)}
+.plan .from{font-size:13px; color:var(--ink-soft); font-weight:600}
+.plan ul{list-style:none; padding:0; margin:22px 0 26px; display:flex; flex-direction:column; gap:12px}
+.plan li{display:flex; gap:11px; align-items:flex-start; font-size:14.5px; color:var(--ink-2)}
+.plan li svg{width:19px; height:19px; color:var(--cyan); flex:0 0 auto; margin-top:1px}
+.plan .btn{width:100%; justify-content:center}
+
+/* ================= OFFER (real pricing) ================= */
+.offer{display:grid; grid-template-columns:1.15fr .85fr; gap:22px; align-items:stretch}
+.offer-card{background:var(--glass); border:1px solid var(--glass-bd); border-radius:20px; padding:34px 32px; backdrop-filter:blur(8px); position:relative}
+.offer-main{background:var(--panel); border-color:transparent; box-shadow:0 34px 80px -30px var(--glow-v); animation:cardpulse 3.4s ease-in-out infinite}
+@keyframes cardpulse{0%,100%{box-shadow:0 34px 80px -30px var(--glow-v)}50%{box-shadow:0 42px 94px -26px var(--glow-c)}}
+.offer-main::before{content:""; position:absolute; inset:-1px; border-radius:21px; padding:1px; background:linear-gradient(135deg,var(--cyan),var(--violet));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none}
+.price-row{margin-top:12px; display:flex; align-items:baseline; gap:4px}
+.price{font-family:var(--f-display); font-weight:700; font-size:3.4rem; letter-spacing:-.02em; line-height:1;
+  background:linear-gradient(100deg,var(--cyan),var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.price-cur{font-family:var(--f-display); font-weight:600; font-size:1.4rem; color:var(--ink-2)}
+.offer .from{font-size:13.5px; color:var(--ink-soft); font-weight:600; margin-top:8px}
+.offer-main ul{list-style:none; padding:0; margin:24px 0 28px; display:flex; flex-direction:column; gap:13px}
+.offer-main li{display:flex; gap:11px; align-items:flex-start; font-size:14.5px; color:var(--ink-2)}
+.offer-main li svg{width:19px; height:19px; color:var(--cyan); flex:0 0 auto; margin-top:1px}
+.offer-main .btn{width:100%; justify-content:center}
+.g-ic{width:50px; height:50px; border-radius:13px; display:grid; place-items:center; color:var(--cyan); margin-bottom:16px; border:1px solid var(--glass-bd);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--cyan) 22%,transparent),color-mix(in srgb,var(--violet) 22%,transparent))}
+.g-ic svg{width:26px; height:26px}
+.offer-guarantee h3{font-size:1.3rem}
+.offer-guarantee > p{color:var(--ink-soft); margin-top:8px; font-size:14.5px}
+.g-list{list-style:none; padding:0; margin:22px 0 0; display:flex; flex-direction:column; gap:17px}
+.g-list li{position:relative; padding-left:24px; font-size:14.5px; color:var(--ink-2); line-height:1.5}
+.g-list li::before{content:""; position:absolute; left:2px; top:6px; width:9px; height:9px; border-radius:50%; background:var(--cyan); box-shadow:0 0 10px var(--glow-c)}
+.g-list li:last-child::before{background:var(--violet); box-shadow:0 0 10px var(--glow-v)}
+.g-list li::after{content:""; position:absolute; left:6px; top:16px; bottom:-17px; width:1px; background:var(--line)}
+.g-list li:last-child::after{display:none}
+.g-list b{color:var(--ink); font-family:var(--f-display); font-weight:600}
+.g-price{color:var(--cyan-deep); font-weight:700}
+
+/* ================= SCROLL PROGRESS ================= */
+.progress{position:fixed; top:0; left:0; height:3px; width:0; z-index:90;
+  background:linear-gradient(90deg,var(--cyan),var(--violet)); box-shadow:0 0 12px var(--glow-c)}
+/* ================= HERO CANVAS ================= */
+.hero-fx{position:absolute; inset:0; width:100%; height:100%; z-index:1; opacity:.7; pointer-events:none}
+/* ================= CURSOR SPOTLIGHT + TILT ================= */
+.cursor-glow{position:fixed; top:0; left:0; width:360px; height:360px; margin:-180px 0 0 -180px; border-radius:50%; pointer-events:none; z-index:4;
+  background:radial-gradient(circle, var(--glow-c), transparent 62%); opacity:0; transition:opacity .35s ease; mix-blend-mode:screen; will-change:transform}
+.gallery{perspective:1500px}
+.case .browser{will-change:transform; transform-style:preserve-3d}
+.stat b .cnt{font-variant-numeric:tabular-nums}
+
+/* ================= FAQ ================= */
+.faq{max-width:820px; margin:0 auto}
+details{border:1px solid var(--glass-bd); border-radius:14px; background:var(--glass); margin-bottom:12px; overflow:hidden; backdrop-filter:blur(6px)}
+summary{list-style:none; cursor:pointer; padding:20px 22px; font-family:var(--f-display); font-weight:600; font-size:1.05rem; display:flex; justify-content:space-between; gap:16px; align-items:center}
+summary::-webkit-details-marker{display:none}
+summary .plus{width:22px; height:22px; flex:0 0 auto; position:relative}
+summary .plus::before,summary .plus::after{content:""; position:absolute; background:var(--cyan); border-radius:2px}
+summary .plus::before{top:10px; left:3px; right:3px; height:2px}
+summary .plus::after{left:10px; top:3px; bottom:3px; width:2px; transition:opacity .2s}
+details[open] summary .plus::after{opacity:0}
+details .a{padding:0 22px 22px; color:var(--ink-soft); font-size:15px; line-height:1.6}
+
+/* ================= CTA ================= */
+.cta-final{position:relative; overflow:hidden; border-radius:26px; border:1px solid var(--glass-bd); background:var(--bg-2); padding:66px 56px; text-align:center}
+.cta-final .orb{opacity:.4}
+.cta-final .grid-floor{opacity:.5}
+.cta-inner{position:relative; z-index:2}
+.cta-final h2{font-size:clamp(2rem,4vw,3.1rem); letter-spacing:-.02em}
+.cta-final p{color:var(--ink-2); font-size:1.15rem; max-width:52ch; margin:20px auto 0}
+.cta-final .hero-cta{justify-content:center; margin-top:32px}
+.cta-contacts{display:flex; flex-wrap:wrap; gap:12px 30px; justify-content:center; margin-top:34px; font-family:var(--f-mono); font-size:13.5px; color:var(--ink-soft)}
+.cta-contacts a{display:inline-flex; align-items:center; gap:9px; color:var(--ink)}
+.cta-contacts svg{width:16px; height:16px; color:var(--cyan)}
+
+/* ================= FOOTER ================= */
+footer.ft{padding:48px 0 40px; border-top:1px solid var(--line)}
+.ft-inner{display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between; align-items:center}
+.ft small{color:var(--ink-soft); font-size:13.5px}
+.ft-note{font-size:12.5px; color:var(--ink-soft); margin-top:22px; max-width:74ch; line-height:1.6}
+
+/* ================= REVEAL ================= */
+.js .reveal{opacity:0; transform:translateY(22px) scale(.985); filter:blur(5px)}
+.js .reveal.in{opacity:1; transform:none; filter:blur(0); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1), filter .7s cubic-bezier(.2,.7,.2,1)}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{min-height:280px; order:-1}
+  .nav-links{display:none}
+  .brand-tx small{display:none}
+  .gallery,.feat-grid,.plans,.offer{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr); gap:30px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(3){border-left:none}
+  .plan.feature{transform:none}
+  .cta-final{padding:48px 24px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .stats-grid{grid-template-columns:1fr}
+  .stat{border-left:none; border-top:1px solid var(--line)}
+  .stat:first-child{border-top:none}
+  .steps{grid-template-columns:1fr}
+  .hero{padding:52px 0 40px}
+  .hero-visual{min-height:230px}
+  .hero-logo{width:140px; height:140px}
+  .orbit.o1{width:230px;height:230px}.orbit.o2{width:160px;height:160px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto}
+  .js .reveal{opacity:1; transform:none}
+}
+</style>
+
+<!-- ============ REUSABLE LOGO (defs) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="mjx" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22E7CE"/><stop offset=".55" stop-color="#3FD6E8"/><stop offset="1" stop-color="#8B6BFF"/>
+    </linearGradient>
+    <symbol id="majex-mark" viewBox="0 0 48 48">
+      <rect x="3" y="3" width="42" height="42" rx="13" fill="#0A0B12" stroke="url(#mjx)" stroke-width="1.6"/>
+      <rect x="3" y="3" width="42" height="42" rx="13" fill="none" stroke="#22E7CE" stroke-width="1.6" opacity=".25"/>
+      <g stroke-linecap="round" stroke-width="4.4" fill="none">
+        <path d="M17 16 L31 32" stroke="#8B6BFF" opacity=".85" transform="translate(2 -1)"/>
+        <path d="M31 16 L17 32" stroke="#8B6BFF" opacity=".85" transform="translate(2 -1)"/>
+        <path d="M17 16 L31 32" stroke="url(#mjx)"/>
+        <path d="M31 16 L17 32" stroke="#22E7CE"/>
+      </g>
+      <circle cx="24" cy="24" r="1.7" fill="#EAFBF8"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="progress" id="prog" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#topo" aria-label="MAJEX Digital Solutions — início">
+      <svg class="logo-mark" aria-hidden="true"><use href="#majex-mark"/></svg>
+      <span class="brand-tx"><b>MAJEX</b><small>DIGITAL SOLUTIONS</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Seções">
+      <a href="#portfolio">Portfólio</a>
+      <a href="#segmentos">Segmentos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#planos">Planos</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="theme" aria-label="Alternar tema" title="Tema claro/escuro">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn btn-wa" href="#contato">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.06L2 22l5.06-1.33A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.1.82.83-3.02-.2-.31A8.2 8.2 0 1 1 12 20.2zm4.5-5.8c-.3-.15-1.7-.84-2-.94-.26-.1-.45-.15-.64.15-.19.28-.73.94-.9 1.13-.16.19-.33.21-.62.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.04-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.76 1.17 2.95c.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.8.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36z"/></svg>
+        Orçamento
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="orb c"></span><span class="orb v"></span>
+    <canvas class="hero-fx" id="fx"></canvas>
+    <div class="grid-floor"></div>
+  </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="status reveal"><span class="dot"></span>SISTEMAS ONLINE · Aceitando projetos em 2026</span>
+        <h1 class="hero-h reveal">Presença digital de outro nível para <span class="grad">o seu negócio</span>.</h1>
+        <p class="hero-sub reveal">A <b>MAJEX</b> transforma qualquer empresa — de cabeleireiro a indústria — em um site rápido, moderno e feito para vender. Tecnologia de ponta e design sob medida.</p>
+        <p class="seg-ticker reveal">Ideal para <span class="rot-word" id="rot">cabeleireiros</span><span class="seg-more">e +30 segmentos</span></p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-wa" href="#contato">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.06L2 22l5.06-1.33A10 10 0 1 0 12 2zm4.5 12.4c-.3-.15-1.7-.84-2-.94-.26-.1-.45-.15-.64.15-.19.28-.73.94-.9 1.13-.16.19-.33.21-.62.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.04-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.76 1.17 2.95c.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.8.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36z"/></svg>
+            Quero meu site
+          </a>
+          <a class="btn btn-ghost" href="#portfolio">Explorar portfólio →</a>
+        </div>
+        <div class="hero-tech reveal">
+          <span class="tech-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg> Alta performance</span>
+          <span class="tech-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg> SEO para o Google</span>
+          <span class="tech-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Certificado SSL</span>
+          <span class="tech-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg> 100% responsivo</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <span class="hero-ring"></span>
+        <span class="orbit o1"><span class="sat"></span></span>
+        <span class="orbit o2"><span class="sat"></span></span>
+        <svg class="hero-logo"><use href="#majex-mark"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="band">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><b>2–<span class="cnt" data-to="7">0</span><span class="u">dias</span></b><span>Prazo de entrega</span></div>
+      <div class="stat reveal"><b><span class="cnt" data-to="100">0</span><span class="u">%</span></b><span>Responsivo no celular</span></div>
+      <div class="stat reveal"><b>+<span class="cnt" data-to="30">0</span></b><span>Segmentos atendidos</span></div>
+      <div class="stat reveal"><b>∞</b><span>Ajustes até você aprovar</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="sec" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Portfólio · projetos</span>
+      <h2>Uma tecnologia, todos os tipos de negócio.</h2>
+      <p>Cada empresa tem a sua cara. Veja como o mesmo padrão de qualidade vira sites completamente diferentes — filtre por segmento.</p>
+    </div>
+
+    <div class="filters reveal" role="group" aria-label="Filtrar por segmento">
+      <button class="filter" data-f="all" aria-pressed="true">Todos</button>
+      <button class="filter" data-f="beleza" aria-pressed="false">Beleza</button>
+      <button class="filter" data-f="moda" aria-pressed="false">Moda</button>
+      <button class="filter" data-f="industria" aria-pressed="false">Indústria</button>
+      <button class="filter" data-f="gastronomia" aria-pressed="false">Gastronomia</button>
+      <button class="filter" data-f="fitness" aria-pressed="false">Fitness</button>
+      <button class="filter" data-f="imoveis" aria-pressed="false">Imóveis</button>
+      <button class="filter" data-f="contabil" aria-pressed="false">Contábil</button>
+    </div>
+
+    <div class="gallery">
+
+      <article class="case reveal" data-cat="beleza">
+        <div class="browser">
+          <div class="bbar"><span class="bdot" style="background:#ff5f57"></span><span class="bdot" style="background:#febc2e"></span><span class="bdot" style="background:#28c840"></span>
+            <span class="burl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>studiolumiere.com.br</span></div>
+          <div class="mk mk--salao">
+            <div class="m-top"><span class="m-brand"><span class="m-dot"></span>Studio Lumière</span><span class="m-nav"><span class="on">Serviços</span><span>Equipe</span><span class="m-btn">Agendar</span></span></div>
+            <div class="m-hero">
+              <div class="m-copy" style="flex:1.2">
+                <span class="m-eyebrow">Salão &amp; Estética</span>
+                <h3 class="m-h">Realce a sua<br>beleza natural</h3>
+                <p class="m-sub">Cortes, coloração e tratamentos com hora marcada.</p>
+                <span class="m-btn m-cta">Agendar horário</span>
+              </div>
+              <div class="m-photo" style="flex:.85"></div>
+            </div>
+            <div class="m-strip">
+              <div class="m-menu m-fill">
+                <div class="m-mitem"><span class="nm">Corte + Escova</span><span class="ln"></span><span class="pr">R$ 90</span></div>
+                <div class="m-mitem"><span class="nm">Coloração completa</span><span class="ln"></span><span class="pr">R$ 180</span></div>
+              </div>
+              <div style="text-align:right"><div class="m-stars">★★★★★</div><div style="font-size:8px; color:var(--mk-muted); margin-top:2px">4,9 · 320 avaliações</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="mk-cap"><div class="mk-cap-top"><h3>Studio Lumière</h3><span class="mk-tag">Salão de beleza</span></div><p>Agendamento online, galeria de trabalhos e clima acolhedor. Elegância que combina com o serviço.</p></div>
+      </article>
+
+      <article class="case reveal" data-cat="moda">
+        <div class="browser">
+          <div class="bbar"><span class="bdot" style="background:#ff5f57"></span><span class="bdot" style="background:#febc2e"></span><span class="bdot" style="background:#28c840"></span>
+            <span class="burl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>atelie21.com.br</span></div>
+          <div class="mk mk--moda">
+            <div class="m-top"><span class="m-brand">Ateliê 21</span><span class="m-nav"><span class="on">Novidades</span><span>Feminino</span><span>Masculino</span><span>🛍</span></span></div>
+            <div class="m-photo" style="flex:0 0 42%; display:flex; align-items:flex-end; padding:14px">
+              <div><span class="m-eyebrow" style="color:#fff">Nova coleção · Verão</span><h3 class="m-h" style="color:#fff; --mk-title-s:22px">30% OFF em tudo</h3></div>
+            </div>
+            <div class="m-strip" style="flex:1; align-items:stretch">
+              <div class="m-cards m-fill">
+                <div class="m-card"><div class="m-thumb" style="--_t:linear-gradient(150deg,#cbb9a4,#8f7a62)"></div><b>Vestido Midi</b><span class="p">R$ 149,90</span></div>
+                <div class="m-card"><div class="m-thumb" style="--_t:linear-gradient(150deg,#413b46,#211d26)"></div><b>Blazer Linho</b><span class="p">R$ 229,90</span></div>
+                <div class="m-card"><div class="m-thumb" style="--_t:linear-gradient(150deg,#b5654f,#7a3f30)"></div><b>Calça Wide</b><span class="p">R$ 129,90</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mk-cap"><div class="mk-cap-top"><h3>Ateliê 21</h3><span class="mk-tag">Loja de roupa</span></div><p>Catálogo com carrinho, lookbook e pagamento integrado. Visual de grife para vender mais.</p></div>
+      </article>
+
+      <article class="case reveal" data-cat="industria">
+        <div class="browser">
+          <div class="bbar"><span class="bdot" style="background:#ff5f57"></span><span class="bdot" style="background:#febc2e"></span><span class="bdot" style="background:#28c840"></span>
+            <span class="burl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>vortexind.com.br</span></div>
+          <div class="mk mk--industria">
+            <div class="m-top"><span class="m-brand"><span class="m-dot"></span>Vortex</span><span class="m-nav"><span class="on">Soluções</span><span>Produtos</span><span class="m-btn">Orçamento</span></span></div>
+            <div class="m-hero">
+              <div class="m-copy" style="flex:1.25">
+                <span class="m-eyebrow">Metalurgia de precisão</span>
+                <h3 class="m-h">Engenharia que move a indústria</h3>
+                <p class="m-sub">Peças sob medida, certificadas e em escala.</p>
+                <span class="m-btn m-cta">Solicitar orçamento</span>
+              </div>
+              <div class="m-photo" style="flex:.8"></div>
+            </div>
+            <div class="m-strip" style="flex-direction:column; align-items:stretch; gap:9px">
+              <div class="m-stats"><div class="m-stat"><b>+25</b><span>anos de mercado</span></div><div class="m-stat"><b>ISO 9001</b><span>certificada</span></div><div class="m-stat"><b>500+</b><span>clientes B2B</span></div></div>
+              <div class="m-logos"><i style="width:32px"></i><i style="width:24px"></i><i style="width:38px"></i><i style="width:28px"></i><i style="width:22px"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="mk-cap"><div class="mk-cap-top"><h3>Vortex Metalúrgica</h3><span class="mk-tag">Indústria</span></div><p>Site institucional robusto: catálogo técnico, certificações e captação de orçamentos B2B.</p></div>
+      </article>
+
+      <article class="case reveal" data-cat="gastronomia">
+        <div class="browser">
+          <div class="bbar"><span class="bdot" style="background:#ff5f57"></span><span class="bdot" style="background:#febc2e"></span><span class="bdot" style="background:#28c840"></span>
+            <span class="burl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>cantinabella.com.br</span></div>
+          <div class="mk mk--resto">
+            <div class="m-top"><span class="m-brand">Cantina Bella</span><span class="m-nav"><span class="on">Cardápio</span><span>Reservas</span><span class="m-btn">Reservar</span></span></div>
+            <div class="m-hero">
+              <div class="m-photo" style="flex:.85"></div>
+              <div class="m-copy" style="flex:1.15">
+                <span class="m-eyebrow">Cozinha italiana</span>
+                <h3 class="m-h">Sabor de<br>família</h3>
+                <p class="m-sub">Massas artesanais desde 1998.</p>
+                <span class="m-btn m-cta">Ver cardápio</span>
+              </div>
+            </div>
+            <div class="m-strip">
+              <div class="m-menu m-fill">
+                <div class="m-mitem"><span class="nm">Spaghetti Carbonara</span><span class="ln"></span><span class="pr">R$ 48</span></div>
+                <div class="m-mitem"><span class="nm">Lasagna Bolonhesa</span><span class="ln"></span><span class="pr">R$ 52</span></div>
+                <div class="m-mitem"><span class="nm">Tiramisù da casa</span><span class="ln"></span><span class="pr">R$ 24</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mk-cap"><div class="mk-cap-top"><h3>Cantina Bella</h3><span class="mk-tag">Restaurante</span></div><p>Cardápio digital, reservas e botão de delivery. Dá água na boca antes do cliente chegar.</p></div>
+      </article>
+
+      <article class="case reveal" data-cat="fitness">
+        <div class="browser">
+          <div class="bbar"><span class="bdot" style="background:#ff5f57"></span><span class="bdot" style="background:#febc2e"></span><span class="bdot" style="background:#28c840"></span>
+            <span class="burl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>forgefit.com.br</span></div>
+          <div class="mk mk--academia">
+            <div class="m-top"><span class="m-brand"><span class="m-dot"></span>Forge Fit</span><span class="m-nav"><span class="on">Planos</span><span>Modalidades</span><span class="m-btn">Matricular</span></span></div>
+            <div class="m-photo" style="flex:0 0 42%; display:flex; align-items:flex-end; padding:14px">
+              <div><span class="m-eyebrow">Musculação · Cross · Funcional</span><h3 class="m-h" style="color:#fff">Sua melhor versão</h3></div>
+            </div>
+            <div class="m-strip" style="flex:1; align-items:stretch">
+              <div class="m-plans m-fill">
+                <div class="m-plan"><span class="t">Mensal</span><span class="v">R$89<small>/mês</small></span></div>
+                <div class="m-plan hot"><span class="t">Trimestral</span><span class="v">R$79<small>/mês</small></span></div>
+                <div class="m-plan"><span class="t">Anual</span><span class="v">R$69<small>/mês</small></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mk-cap"><div class="mk-cap-top"><h3>Forge Fit</h3><span class="mk-tag">Academia</span></div><p>Energia na veia: planos, modalidades e matrícula online. Feito para converter no impulso.</p></div>
+      </article>
+
+      <article class="case reveal" data-cat="imoveis">
+        <div class="browser">
+          <div class="bbar"><span class="bdot" style="background:#ff5f57"></span><span class="bdot" style="background:#febc2e"></span><span class="bdot" style="background:#28c840"></span>
+            <span class="burl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>horizonteimoveis.com.br</span></div>
+          <div class="mk mk--imob">
+            <div class="m-top"><span class="m-brand"><span class="m-dot"></span>Horizonte</span><span class="m-nav"><span class="on">Comprar</span><span>Alugar</span><span class="m-btn">Anunciar</span></span></div>
+            <div class="m-photo win" style="flex:0 0 44%; display:flex; flex-direction:column; justify-content:center; padding:14px; gap:7px">
+              <h3 class="m-h" style="color:#fff; --mk-title-s:17px">O seu novo endereço começa aqui</h3>
+              <div class="m-tabs"><span class="m-chip on">Comprar</span><span class="m-chip">Alugar</span></div>
+              <div class="m-search"><span class="f">Bairro, cidade ou código…</span><span class="m-btn">Buscar</span></div>
+            </div>
+            <div class="m-strip" style="flex:1; align-items:stretch">
+              <div class="m-props m-fill">
+                <div class="m-prop"><div class="ph" style="--_t:linear-gradient(160deg,#a9c2d6,#6f93ad)"></div><div class="in"><div class="pr">R$ 450.000</div><div class="mt">3 quartos · 2 vagas · 90m²</div></div></div>
+                <div class="m-prop"><div class="ph" style="--_t:linear-gradient(160deg,#cdb9a0,#9c8468)"></div><div class="in"><div class="pr">R$ 2.200<span style="font-size:8px; font-weight:600">/mês</span></div><div class="mt">2 quartos · 1 vaga · 65m²</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mk-cap"><div class="mk-cap-top"><h3>Horizonte Imóveis</h3><span class="mk-tag">Imobiliária</span></div><p>Portal com filtros de busca, ficha de cada imóvel e captação de leads. Confiança que fecha negócio.</p></div>
+      </article>
+
+      <article class="case reveal" data-cat="contabil">
+        <div class="browser">
+          <div class="bbar"><span class="bdot" style="background:#ff5f57"></span><span class="bdot" style="background:#febc2e"></span><span class="bdot" style="background:#28c840"></span>
+            <span class="burl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>contabilidadedigital.com.br</span></div>
+          <div class="mk mk--conta">
+            <div class="m-top"><span class="m-brand"><span class="m-dot"></span>Contta</span><span class="m-nav"><span class="on">Plataforma</span><span>Planos</span><span>Calculadoras</span><span class="m-btn">Começar agora</span></span></div>
+            <div class="m-hero" style="align-items:stretch">
+              <div class="m-copy" style="flex:.92">
+                <span class="m-eyebrow">Contabilidade digital</span>
+                <h3 class="m-h">Da contabilidade,<br>cuidamos nós.</h3>
+                <p class="m-sub">Impostos sozinhos, notas em segundos e contadores que te atendem pelo nome.</p>
+                <span class="m-btn m-cta">Abrir CNPJ grátis →</span>
+              </div>
+              <div style="flex:1.08; padding:12px 14px 12px 0; display:flex; align-items:center; min-width:0">
+                <div class="m-dash">
+                  <div class="m-dash-top"><span>Minha Empresa LTDA</span><span class="ok">● Em dia</span></div>
+                  <div class="m-kpis">
+                    <div class="m-kpi"><span>Faturamento</span><b>R$ 15.000</b></div>
+                    <div class="m-kpi"><span>Impostos</span><b>R$ 1.770</b></div>
+                    <div class="m-kpi"><span>Líquido</span><b>R$ 2.420</b></div>
+                  </div>
+                  <div class="m-bars"><i style="height:38%"></i><i style="height:56%"></i><i style="height:46%"></i><i style="height:72%"></i><i style="height:60%"></i><i style="height:86%"></i></div>
+                  <div class="m-feed">
+                    <div class="m-fitem"><span class="ic">✓</span><span><b>NFS-e nº 45</b> emitida em 12s · R$ 8.500</span></div>
+                    <div class="m-fitem"><span class="ic">✓</span><span><b>DAS de agosto</b> calculado · guia pronta</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-strip">
+              <div class="m-pills m-fill"><span class="m-pill"><i></i>MEI · R$89</span><span class="m-pill"><i></i>Essencial · R$189</span><span class="m-pill"><i></i>Gestão · R$289</span><span class="m-pill"><i></i>Premium · R$489</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mk-cap"><div class="mk-cap-top"><h3>Contabilidade Digital</h3><span class="mk-tag">Escritório contábil</span></div><p>Plataforma completa: painel financeiro, emissão de notas, impostos automáticos e planos online. Um SaaS de verdade.</p></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEGMENTS ============ -->
+<section class="sec band" id="segmentos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Cobertura</span>
+      <h2>Se o seu negócio existe, ele merece um site.</h2>
+      <p>Não importa o segmento — a estrutura muda, o padrão de qualidade é o mesmo. Alguns dos negócios que a MAJEX atende:</p>
+    </div>
+    <div class="cloud reveal">
+      <span class="tagbig"><i>✂️</i>Cabeleireiro & Barbearia</span>
+      <span class="tagbig"><i>👗</i>Loja de roupa</span>
+      <span class="tagbig"><i>🏭</i>Indústria</span>
+      <span class="tagbig"><i>🍝</i>Restaurante & Bar</span>
+      <span class="tagbig"><i>💪</i>Academia</span>
+      <span class="tagbig"><i>🏠</i>Imobiliária</span>
+      <span class="tagbig"><i>🥐</i>Padaria & Confeitaria</span>
+      <span class="tagbig"><i>🐾</i>Pet shop</span>
+      <span class="tagbig"><i>🔧</i>Oficina mecânica</span>
+      <span class="tagbig"><i>🦷</i>Clínica & Consultório</span>
+      <span class="tagbig"><i>⚖️</i>Advocacia</span>
+      <span class="tagbig"><i>🛒</i>Mercado & Comércio</span>
+      <span class="tagbig"><i>💅</i>Estética & Manicure</span>
+      <span class="tagbig"><i>📸</i>Fotografia</span>
+      <span class="tagbig"><i>🏗️</i>Construtora</span>
+      <span class="tagbig"><i>🚗</i>Concessionária</span>
+      <span class="tagbig"><i>🎓</i>Escola & Curso</span>
+      <span class="tagbig"><i>💐</i>Floricultura</span>
+      <span class="tagbig"><i>🏨</i>Pousada & Hotel</span>
+      <span class="tagbig"><i>🧮</i>Escritório de contabilidade</span>
+      <span class="tagbig"><i>➕</i>e o seu também</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="sec" id="servicos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">O que está incluso</span>
+      <h2>Não é só bonito. É feito para funcionar.</h2>
+      <p>Cada site sai completo, pronto para trabalhar por você 24 horas por dia.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><h3>Design sob medida</h3><p>Nada de template genérico. Uma identidade pensada para a sua marca e o seu público.</p></div>
+      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>Perfeito no celular</h3><p>7 em cada 10 clientes acessam pelo telefone. Seu site fica impecável em qualquer tela.</p></div>
+      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Encontrado no Google</h3><p>Otimização de SEO para o seu negócio aparecer quando procurarem pelo que você faz.</p></div>
+      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div><h3>Rápido de verdade</h3><p>Carregamento veloz com tecnologia moderna. Site lento espanta cliente — o seu voa.</p></div>
+      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Integração com WhatsApp</h3><p>Formulários e botão direto pro WhatsApp: o cliente fala com você em um toque.</p></div>
+      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4a2 2 0 0 1 2-2h9l5 5v15z"/><path d="M14 2v6h6"/></svg></div><h3>Domínio, e-mail & hospedagem</h3><p>Cuido de tudo: seu endereço .com.br, e-mail profissional e o site no ar. Você só divulga.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec band" id="processo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Do briefing ao ar em 4 passos.</h2>
+      <p>Simples, sem enrolação e sem termos técnicos. Você acompanha cada etapa.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="num">01</span><div class="step-line"></div><h3>Conversa</h3><p>A gente bate um papo pelo WhatsApp sobre o seu negócio, seus objetivos e referências.</p></div>
+      <div class="step reveal"><span class="num">02</span><div class="step-line"></div><h3>Design</h3><p>Crio o visual do site e te mostro. Ajustamos juntos até ficar com a sua cara.</p></div>
+      <div class="step reveal"><span class="num">03</span><div class="step-line"></div><h3>Desenvolvimento</h3><p>Coloco tudo de pé: páginas, textos, fotos, WhatsApp e otimização para o Google.</p></div>
+      <div class="step reveal"><span class="num">04</span><div class="step-line"></div><h3>No ar & suporte</h3><p>Publico com domínio e e-mail, e sigo à disposição para o que você precisar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="sec" id="planos">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center; margin-left:auto; margin-right:auto">
+      <span class="eyebrow" style="justify-content:center">Investimento</span>
+      <h2>Landing page profissional, preço justo.</h2>
+      <p>Um site de alto impacto que apresenta o seu negócio e transforma visitante em cliente — sem mensalidade, sem surpresa.</p>
+    </div>
+    <div class="offer">
+      <div class="offer-card offer-main reveal">
+        <span class="plan-badge">LANDING PAGE</span>
+        <div class="price-row"><span class="price-cur">R$</span><span class="price">500–800</span></div>
+        <div class="from">Valor único, definido conforme o tamanho e o conteúdo do projeto</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Design sob medida, moderno e futurista</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>100% responsivo — celular, tablet e computador</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Otimizado para aparecer no Google (SEO)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Botão e integração direta com o WhatsApp</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Inserção das suas informações na entrega, <b>sem custo extra</b></li>
+        </ul>
+        <a class="btn btn-wa" href="#contato">Pedir meu orçamento</a>
+      </div>
+      <div class="offer-card offer-guarantee reveal">
+        <div class="g-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Garantia MAJEX</h3>
+        <p>Tranquilidade total depois que o site fica pronto:</p>
+        <ul class="g-list">
+          <li><b>Na entrega.</b> Coloco todas as suas informações no site sem cobrar nada a mais.</li>
+          <li><b>7 dias de garantia.</b> Precisou incluir mais alguma coisa nessa primeira semana? Também é grátis.</li>
+          <li><b>Depois da garantia.</b> Novas inclusões e melhorias por apenas <span class="g-price">R$ 150</span> cada.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="muted reveal" style="font-size:13.5px; margin-top:24px; text-align:center">Pix, cartão ou parcelado · orçamento sem compromisso · o valor final é combinado antes de começar.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec band" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center; margin-left:auto; margin-right:auto">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>O que todo cliente pergunta.</h2>
+    </div>
+    <div class="faq">
+      <details class="reveal"><summary>Quanto tempo leva para ficar pronto?<span class="plus" aria-hidden="true"></span></summary><div class="a">Na maioria dos casos, entre 2 e 7 dias. Depende do tamanho do site e da rapidez com que você me envia textos e fotos — mas eu te ajudo com isso também.</div></details>
+      <details class="reveal"><summary>Eu preciso entender de tecnologia?<span class="plus" aria-hidden="true"></span></summary><div class="a">Não. A MAJEX cuida de tudo: domínio, e-mail, hospedagem e publicação. Você só me conta sobre o seu negócio e aprova o que eu criar.</div></details>
+      <details class="reveal"><summary>Funciona bem no celular?<span class="plus" aria-hidden="true"></span></summary><div class="a">Sempre. Todo site é feito primeiro pensando no celular, porque é de lá que vem a maioria dos seus clientes. Fica perfeito em telefone, tablet e computador.</div></details>
+      <details class="reveal"><summary>Depois de pronto, dá para mudar coisas?<span class="plus" aria-hidden="true"></span></summary><div class="a">Claro. Fazemos ajustes até você aprovar, e depois ofereço suporte e pacotes de manutenção para atualizações, novas fotos, promoções e o que surgir.</div></details>
+      <details class="reveal"><summary>Como faço para começar?<span class="plus" aria-hidden="true"></span></summary><div class="a">É só chamar a MAJEX no WhatsApp. A gente conversa sobre o seu negócio, eu te passo um orçamento sem compromisso e, se fizer sentido, começamos.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="sec" id="contato">
+  <div class="wrap">
+    <div class="cta-final reveal">
+      <div class="hero-bg" aria-hidden="true"><span class="orb c"></span><span class="orb v"></span><div class="grid-floor"></div></div>
+      <div class="cta-inner">
+        <span class="eyebrow" style="justify-content:center">Vamos começar</span>
+        <h2 style="margin-top:16px">O seu site pode estar no ar<br>ainda este mês.</h2>
+        <p>Me manda uma mensagem contando qual é o seu negócio. O orçamento é gratuito e sem compromisso.</p>
+        <div class="hero-cta">
+          <a class="btn btn-wa" href="https://wa.me/5555996241177?text=Ol%C3%A1%20MAJEX!%20Vi%20o%20portf%C3%B3lio%20e%20quero%20um%20site." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.06L2 22l5.06-1.33A10 10 0 1 0 12 2zm4.5 12.4c-.3-.15-1.7-.84-2-.94-.26-.1-.45-.15-.64.15-.19.28-.73.94-.9 1.13-.16.19-.33.21-.62.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.04-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.76 1.17 2.95c.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.8.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36z"/></svg>
+            Chamar no WhatsApp
+          </a>
+        </div>
+        <div class="cta-contacts">
+          <a href="https://wa.me/5555996241177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (55) 99624-1177</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-inner">
+      <a class="brand" href="#topo"><svg class="logo-mark" aria-hidden="true"><use href="#majex-mark"/></svg><span class="brand-tx"><b>MAJEX</b><small>DIGITAL SOLUTIONS</small></span></a>
+      <small>Criação de sites profissionais · Feito no capricho · 2026</small>
+    </div>
+    <p class="ft-note">MAJEX Digital Solutions — Criação de sites e soluções digitais para todo tipo de empresa. Os projetos exibidos nesta página são demonstrações de estilo criadas para ilustrar a variedade de trabalhos possíveis por segmento.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+  var mqReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  try{ var saved = localStorage.getItem('majex-theme'); if(saved){ root.setAttribute('data-theme', saved); } }catch(e){}
+  function effectiveDark(){
+    var t = root.getAttribute('data-theme');
+    if(t) return t === 'dark';
+    return !(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches);
+  }
+  var themeBtn = document.getElementById('theme');
+  if(themeBtn){
+    themeBtn.addEventListener('click', function(){
+      var next = effectiveDark() ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try{ localStorage.setItem('majex-theme', next); }catch(e){}
+    });
+  }
+
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ if(nav){ nav.classList.toggle('scrolled', window.scrollY > 8); } };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  var words = ['cabeleireiros','lojas de roupa','indústrias','restaurantes','academias','imobiliárias','contadores','padarias','pet shops','clínicas','oficinas','mercados','advogados'];
+  var el = document.getElementById('rot');
+  if(el && !mqReduce){
+    var wi = 0, sc = 'abcdefghijklmnopqrstuvwxyz#%&0';
+    function scrambleTo(target){
+      var len = target.length, frame = 0;
+      clearInterval(el._t);
+      el._t = setInterval(function(){
+        var reveal = Math.floor(frame/2), out = '';
+        for(var k=0;k<len;k++){
+          var c = target.charAt(k);
+          if(c === ' '){ out += ' '; continue; }
+          out += k < reveal ? c : sc.charAt(Math.floor(Math.random()*sc.length));
+        }
+        el.textContent = out; frame++;
+        if(reveal >= len){ clearInterval(el._t); el.textContent = target; }
+      }, 34);
+    }
+    setInterval(function(){ wi = (wi+1) % words.length; scrambleTo(words[wi]); }, 2700);
+  }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(n){ io.observe(n); });
+  } else { document.querySelectorAll('.reveal').forEach(function(n){ n.classList.add('in'); }); }
+
+  var filters = document.querySelectorAll('.filter');
+  var cases = document.querySelectorAll('.case');
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.getAttribute('data-f');
+      filters.forEach(function(b){ b.setAttribute('aria-pressed', b===btn ? 'true':'false'); });
+      cases.forEach(function(c){ c.classList.toggle('hide', !(f==='all' || c.getAttribute('data-cat')===f)); });
+    });
+  });
+
+  /* scroll progress bar */
+  var prog = document.getElementById('prog');
+  if(prog){
+    var updProg = function(){
+      var h = document.documentElement;
+      var max = (h.scrollHeight - h.clientHeight) || 1;
+      prog.style.width = (Math.min(1, window.scrollY / max) * 100) + '%';
+    };
+    updProg(); window.addEventListener('scroll', updProg, {passive:true}); window.addEventListener('resize', updProg);
+  }
+
+  /* hero particle constellation */
+  var canvas = document.getElementById('fx');
+  if(canvas && canvas.getContext){
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W=0, H=0, parts=[], raf=null, running=false;
+    function size(){
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      if(!W || !H) return;
+      canvas.width = Math.floor(W*dpr); canvas.height = Math.floor(H*dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      var target = Math.round(Math.min(72, W/16));
+      parts = [];
+      for(var i=0;i<target;i++){
+        parts.push({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.32, vy:(Math.random()-.5)*.32, v:Math.random()<.5});
+      }
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      var cyan = effectiveDark() ? '34,231,206' : '11,175,154';
+      var viol = effectiveDark() ? '139,107,255' : '109,75,255';
+      var i,j;
+      for(i=0;i<parts.length;i++){
+        var p=parts[i]; p.x+=p.vx; p.y+=p.vy;
+        if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
+        for(j=i+1;j<parts.length;j++){
+          var q=parts[j], dx=p.x-q.x, dy=p.y-q.y, d=dx*dx+dy*dy;
+          if(d<12500){
+            ctx.strokeStyle='rgba('+cyan+','+((1-d/12500)*.45)+')'; ctx.lineWidth=1;
+            ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke();
+          }
+        }
+      }
+      for(i=0;i<parts.length;i++){
+        var pp=parts[i];
+        ctx.fillStyle='rgba('+(pp.v?viol:cyan)+',.9)';
+        ctx.beginPath(); ctx.arc(pp.x,pp.y,pp.v?2:1.5,0,6.283); ctx.fill();
+      }
+    }
+    function loop(){ draw(); raf=requestAnimationFrame(loop); }
+    function start(){ if(!running && W && H){ running=true; loop(); } }
+    function stop(){ if(running){ running=false; cancelAnimationFrame(raf); } }
+    size();
+    if(mqReduce){ draw(); }
+    else {
+      start();
+      window.addEventListener('scroll', function(){
+        var hero = canvas.closest('.hero');
+        if(hero && window.scrollY > hero.offsetHeight){ stop(); } else { start(); }
+      }, {passive:true});
+      window.addEventListener('resize', function(){ size(); if(!running) draw(); });
+    }
+  }
+
+  var fine = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
+
+  /* cursor spotlight */
+  if(fine && !mqReduce){
+    var glow = document.createElement('div'); glow.className = 'cursor-glow'; document.body.appendChild(glow);
+    var gx=0, gy=0, cx=0, cy=0, graf=null;
+    function gloop(){ cx+=(gx-cx)*.16; cy+=(gy-cy)*.16; glow.style.transform='translate('+cx+'px,'+cy+'px)';
+      if(Math.abs(gx-cx)>.5 || Math.abs(gy-cy)>.5){ graf=requestAnimationFrame(gloop); } else { graf=null; } }
+    window.addEventListener('pointermove', function(e){ if(e.pointerType==='touch') return; gx=e.clientX; gy=e.clientY; glow.style.opacity='.4'; if(!graf) gloop(); }, {passive:true});
+    document.addEventListener('mouseleave', function(){ glow.style.opacity='0'; });
+  }
+
+  /* 3D tilt on portfolio cards */
+  if(fine && !mqReduce){
+    document.querySelectorAll('.case').forEach(function(card){
+      var br = card.querySelector('.browser');
+      if(!br) return;
+      card.addEventListener('pointermove', function(e){
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left)/r.width - .5, py = (e.clientY - r.top)/r.height - .5;
+        br.style.transform = 'translateY(-9px) rotateX('+(-py*6).toFixed(2)+'deg) rotateY('+(px*7).toFixed(2)+'deg)';
+      }, {passive:true});
+      card.addEventListener('pointerleave', function(){ br.style.transform=''; });
+    });
+  }
+
+  /* animated stat counters */
+  var counters = document.querySelectorAll('.cnt');
+  if(counters.length && 'IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var node = en.target, to = parseInt(node.getAttribute('data-to'),10)||0;
+        cio.unobserve(node);
+        if(mqReduce){ node.textContent = to; return; }
+        var dur = 1150, t0 = null;
+        function step(ts){ if(!t0) t0 = ts; var p = Math.min(1,(ts-t0)/dur);
+          node.textContent = Math.round(to * (0.5 - Math.cos(Math.PI*p)/2));
+          if(p<1) requestAnimationFrame(step); }
+        requestAnimationFrame(step);
+      });
+    }, {threshold:.6});
+    counters.forEach(function(c){ cio.observe(c); });
+  }
+
+  /* hero parallax */
+  if(!mqReduce){
+    var orbC = document.querySelector('.hero .orb.c'), orbV = document.querySelector('.hero .orb.v');
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      if(y < 950){
+        if(orbC) orbC.style.transform = 'translateY('+(y*.18).toFixed(1)+'px)';
+        if(orbV) orbV.style.transform = 'translateY('+(y*-.12).toFixed(1)+'px)';
+      }
+    }, {passive:true});
+  }
+
+  /* feature card spotlight follows the mouse */
+  if(fine){
+    document.querySelectorAll('.feat').forEach(function(card){
+      card.addEventListener('pointermove', function(e){
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left)+'px');
+        card.style.setProperty('--my', (e.clientY - r.top)+'px');
+      }, {passive:true});
+    });
+  }
+})();
+</script>
