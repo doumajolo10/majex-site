@@ -168,12 +168,14 @@ h1.hero-h{font-size:clamp(2.5rem, 5.6vw, 4.4rem); letter-spacing:-.02em; line-he
 .band{background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
 
 /* ================= STATS ================= */
-.stats-grid{display:grid; grid-template-columns:repeat(4,1fr)}
-.stat{padding:36px 26px; border-left:1px solid var(--line); position:relative}
-.stat:first-child{border-left:none}
-.stat b{font-family:var(--f-display); font-weight:700; font-size:2.5rem; letter-spacing:-.02em; display:block; line-height:1; color:var(--ink)}
-.stat b .u{color:var(--cyan); font-size:1.3rem; margin-left:3px}
-.stat span{font-size:14px; color:var(--ink-soft); font-weight:600; display:block; margin-top:10px}
+.stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; padding:38px 0}
+.stat{padding:24px 22px 22px; background:var(--glass); border:1px solid var(--glass-bd); border-radius:16px; position:relative; overflow:hidden; backdrop-filter:blur(8px); transition:transform .2s, border-color .2s}
+.stat::before{content:""; position:absolute; left:0; right:0; top:0; height:2px; background:linear-gradient(90deg,var(--cyan),var(--violet)); opacity:.75}
+.stat:hover{transform:translateY(-3px); border-color:color-mix(in srgb,var(--cyan) 35%,transparent)}
+.stat b{font-family:var(--f-display); font-weight:700; font-size:2.5rem; letter-spacing:-.02em; display:block; line-height:1; color:var(--ink); white-space:nowrap}
+.stat b .cnt{font-variant-numeric:tabular-nums}
+.stat b .u{color:var(--cyan); font-size:1.15rem; font-weight:700; margin-left:3px}
+.stat > span{font-size:13.5px; color:var(--ink-soft); font-weight:600; display:block; margin-top:10px}
 
 /* ================= PORTFOLIO ================= */
 .filters{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:38px}
@@ -415,15 +417,12 @@ footer.ft{padding:48px 0 40px; border-top:1px solid var(--line)}
   .gallery,.feat-grid,.plans,.offer{grid-template-columns:1fr}
   .steps{grid-template-columns:repeat(2,1fr); gap:30px}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(3){border-left:none}
   .plan.feature{transform:none}
   .cta-final{padding:48px 24px}
 }
 @media (max-width:520px){
   body{font-size:16px}
-  .stats-grid{grid-template-columns:1fr}
-  .stat{border-left:none; border-top:1px solid var(--line)}
-  .stat:first-child{border-top:none}
+  .stats-grid{grid-template-columns:repeat(2,1fr); gap:10px}
   .steps{grid-template-columns:1fr}
   .hero{padding:52px 0 40px}
   .hero-visual{min-height:230px}
@@ -477,10 +476,7 @@ footer.ft{padding:48px 0 40px; border-top:1px solid var(--line)}
   h1.hero-h{font-size:2.05rem}
   .m-nav .on ~ span:not(.m-btn){display:none}
 }
-@media (prefers-reduced-motion:reduce){
-  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto}
-  .js .reveal{opacity:1; transform:none}
-}
+/* Animações sempre ativas (decisão de marketing): não respeita "reduzir movimento" do sistema. */
 </style>
 </head>
 <body>
@@ -956,7 +952,7 @@ footer.ft{padding:48px 0 40px; border-top:1px solid var(--line)}
 (function(){
   var root = document.documentElement;
   root.classList.add('js');
-  var mqReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mqReduce = false; /* animações sempre ligadas, independente da configuração do sistema */
 
   try{ var saved = localStorage.getItem('majex-theme'); if(saved){ root.setAttribute('data-theme', saved); } }catch(e){}
   function effectiveDark(){
