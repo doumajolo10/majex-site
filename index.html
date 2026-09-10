@@ -613,7 +613,8 @@ html.pre-on{overflow:hidden}
 /* cursor */
 .cur{position:fixed; left:0; top:0; width:12px; height:12px; border-radius:50%; background:#fff; mix-blend-mode:difference; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .25s,height .25s}
 .cur.big{width:56px; height:56px}
-@media (hover:none){ .cur{display:none} }
+@media (hover:none){ .cur{display:none} .grain{animation:none; opacity:.04} }
+@media (max-width:760px){ .orb{filter:blur(40px); opacity:.35} .marq-track{animation-duration:26s} }
 /* preloader */
 .pre{position:fixed; inset:0; z-index:10000; background:var(--bg); color:var(--ink); display:grid; place-items:center}
 .pre-in{width:min(420px,84vw); display:grid; gap:22px}
@@ -1200,7 +1201,7 @@ html,body{overflow-x:clip}
   /* X da MAJEX em partículas (hero e CTA final) */
   function particleX(canvas, cfg){
     if(!(canvas && canvas.getContext)) return;
-    var ctx = canvas.getContext('2d'), dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var ctx = canvas.getContext('2d'), dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 760 ? 1.5 : 2), frame = 0;
     var W=0, H=0, P=[], raf=null, running=false, fxT=0, mx=-9999, my=-9999;
     var isMob = function(){ return W < 760; };
     function size(){
@@ -1231,7 +1232,7 @@ html,body{overflow-x:clip}
         ctx.fillRect(p.x, p.y, p.s, p.s);
       }
     }
-    function loop(){ draw(); raf = requestAnimationFrame(loop); }
+    function loop(){ frame++; if(!isMob() || frame % 2 === 0) draw(); raf = requestAnimationFrame(loop); }
     function start(){ if(!running && W && H){ running = true; loop(); } }
     function stop(){ if(running){ running = false; cancelAnimationFrame(raf); } }
     size();
@@ -1242,8 +1243,8 @@ html,body{overflow-x:clip}
     io.observe(canvas.parentNode);
     window.addEventListener('resize', function(){ size(); if(!running) draw(); });
   }
-  particleX(document.getElementById('fx'),  {cx:.77, cy:.5, mobCy:.4, hS:.9, wS:.36, mobS:.86, n:1500, nMob:650});
-  particleX(document.getElementById('fx2'), {cx:.5,  cy:.5, mobCy:.5, hS:.95, wS:.32, mobS:.9, n:1100, nMob:500});
+  particleX(document.getElementById('fx'),  {cx:.77, cy:.5, mobCy:.4, hS:.9, wS:.36, mobS:.86, n:1500, nMob:220});
+  particleX(document.getElementById('fx2'), {cx:.5,  cy:.5, mobCy:.5, hS:.95, wS:.32, mobS:.9, n:1100, nMob:160});
 
   var fine = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
 
