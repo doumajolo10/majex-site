@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://majex-site.vercel.app/sitemap.xml
+Sitemap: https://www.majexsites.com.br/sitemap.xml
