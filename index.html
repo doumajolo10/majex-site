@@ -1675,14 +1675,13 @@ html.lite .hero-gl{display:none}
   if(html.classList.contains("lite")){ try{ if(window.lenis){ window.lenis.destroy(); window.lenis=null; } }catch(e){} }
   /* mede os quadros enquanto a pessoa rola: é aí que trava */
   if(!html.classList.contains("lite")){
-    var lendo=false,quadros=0,lentos=0,ult=0,rodadas=0;
+    var lendo=false,quadros=0,lentos=0,ult=0,rodadas=0,ruins=0;
     function passo(agora){ var dt=agora-ult; ult=agora;
       if(quadros++>2&&dt>34) lentos++;
       if(quadros<80){ requestAnimationFrame(passo); }
-      else { if(lentos>=22) leve(); lendo=false; rodadas++; } }
-    function aoRolar(){ if(lendo||rodadas>=4||html.classList.contains("lite")) return; lendo=true; quadros=0; lentos=0; ult=performance.now(); requestAnimationFrame(passo); }
+      else { if(lentos>=26){ ruins++; if(ruins>=2) leve(); } else ruins=0; lendo=false; rodadas++; } }
+    function aoRolar(){ if(lendo||rodadas>=6||html.classList.contains("lite")) return; lendo=true; quadros=0; lentos=0; ult=performance.now(); requestAnimationFrame(passo); }
     ["scroll","wheel","touchmove"].forEach(function(ev){ window.addEventListener(ev,aoRolar,{passive:true}); });
-    try{ var soma=0,po=new PerformanceObserver(function(l){ l.getEntries().forEach(function(e){ soma+=e.duration; if(e.duration>320||soma>900) leve(); }); }); po.observe({entryTypes:["longtask"]}); setTimeout(function(){ try{ po.disconnect(); }catch(e){} },12000); }catch(e){}
   }
 })();
 </script>
