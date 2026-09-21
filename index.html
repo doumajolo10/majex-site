@@ -22,7 +22,6 @@
 <meta name="twitter:image" content="https://www.majexsites.com.br/og.jpg">
 <meta name="theme-color" content="#05070C">
 <link rel="preload" as="image" href="img/shot-1-1280.webp" imagesrcset="img/shot-1-640.webp 640w, img/shot-1-1280.webp 1280w" imagesizes="(max-width:760px) 92vw, 900px" fetchpriority="high">
-<script>(function(){try{var n=navigator,lo=(n.hardwareConcurrency||8)<=4||(n.deviceMemory||8)<=4||(n.connection&&n.connection.saveData);var rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;if(lo||rm)document.documentElement.classList.add("lite");if(rm)document.documentElement.classList.add("calmo");}catch(e){}})();</script>
 <link rel="canonical" href="https://www.majexsites.com.br/">
 <title>MAJEX Digital Solutions</title>
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -764,7 +763,8 @@ html,body{overflow-x:clip}
 .cta-final .hero-fx{opacity:.9}
 
 /* ===== LEVE ===== */
-html.lite .orb,html.lite .grain,html.lite .hero-fx,html.lite .grid-floor,html.lite .cur,html.lite .orbit,html.lite .scan{display:none!important}
+html.lite .hero-fx,html.lite .cur{display:none!important}
+html.lite .orb{filter:blur(48px)}
 html.lite [class*="blur"],html.lite .glass{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 html.lite .nav,html.lite .nav-inner,html.lite .card,html.lite .feat,html.lite .plan,html.lite .tagbig{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 html.lite .reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
@@ -773,7 +773,6 @@ html.lite .pf4-case,html.lite .feat,html.lite .case{transition:none!important}
 html.lite .pf4-case:hover,html.lite .feat:hover,html.lite .case:hover{transform:none!important}
 html.lite section{content-visibility:auto;contain-intrinsic-size:auto 900px}
 html.lite .hero,html.lite .hero2{content-visibility:visible}
-html.calmo *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.06s!important;scroll-behavior:auto!important}
 
 /* ===== FX26 ===== */
 /* 1. prints revelados por máscara */
