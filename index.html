@@ -717,7 +717,8 @@ html,body{overflow-x:clip}
 .hgal-hint i::after{content:""; position:absolute; left:0; top:0; height:100%; width:var(--p,0%); background:linear-gradient(90deg,var(--cyan),var(--violet))}
 
 /* v4 */
-.pf4-list{display:grid; gap:0}
+.pf4-list{display:grid; gap:0; grid-template-columns:minmax(0,1fr)}
+.pf4-case>*{min-width:0}
 .pf4-case{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); gap:48px; align-items:center; padding:54px 0; border-top:1px solid var(--line)}
 .pf4-case:nth-child(even) .pf4-media{order:2}
 .pf4-media{position:relative}
@@ -746,7 +747,7 @@ html,body{overflow-x:clip}
 .pf4-q{font-family:var(--f-display); font-weight:700; font-size:clamp(5rem,12vw,11rem); line-height:1; background:linear-gradient(90deg,var(--cyan),var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:.7}
 .pf4-ghost:hover{transform:none}
 @media (max-width:900px){
-  .pf4-case{grid-template-columns:1fr; gap:26px; padding:38px 0}
+  .pf4-case{grid-template-columns:minmax(0,1fr); gap:26px; padding:38px 0}
   .pf4-case:nth-child(even) .pf4-media{order:0}
   .pf4-phone{right:6px; bottom:-18px; width:26%}
   .pf4-case:nth-child(even) .pf4-phone{left:auto; right:6px; transform:rotate(-5deg)}
@@ -989,6 +990,22 @@ html.lite .hero-gl{display:none}
       <p>Nada de template nem print inventado. Cada peça abaixo está publicada, e você pode navegar nela agora.</p>
     </div>
     <div class="pf4-list">
+      <article class="pf4-case" style="--acc:#1F6FB8">
+        <div class="pf4-media">
+          <a class="pf4-shell" href="https://www.imobiliariakiesel.com.br/" target="_blank" rel="noopener" aria-label="Abrir o site da Imobiliária Kiesel">
+            <span class="pf4-bar"><i></i><i></i><i></i><b>imobiliariakiesel.com.br</b><em>live</em></span>
+            <span class="pf4-screen"><img src="img/kiesel-desk-1280.webp" srcset="img/kiesel-desk-640.webp 640w, img/kiesel-desk-1280.webp 1280w" sizes="(max-width:760px) 92vw, 760px" width="1280" height="800" alt="Site da Imobiliária Kiesel, versão computador" loading="lazy" decoding="async"></span>
+          </a>
+          <span class="pf4-phone"><img src="img/kiesel-cel-320.webp" srcset="img/kiesel-cel-320.webp 320w, img/kiesel-cel-600.webp 600w" sizes="180px" alt="" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="pf4-info">
+          <span class="hud">01 — Imobiliárias · domínio próprio</span>
+          <h3>Imobiliária Kiesel</h3>
+          <p>A primeira imobiliária de São Martinho/RS ganhou site próprio: filme de drone da cidade na capa, catálogo completo com filtros, uma página para cada imóvel, simulador de financiamento e WhatsApp já com o código do imóvel. E um painel só dela: a equipe cadastra, edita e marca como vendido sozinha.</p>
+          <ul class="pf4-feats"><li>Filme de drone na capa</li><li>Catálogo com filtros</li><li>Simulador de financiamento</li><li>Painel próprio</li><li>Domínio próprio</li></ul>
+          <a class="btn btn-primary mag" href="https://www.imobiliariakiesel.com.br/" target="_blank" rel="noopener">Abrir o site ↗</a>
+        </div>
+      </article>
       <article class="pf4-case" style="--acc:#e0342c">
         <div class="pf4-media">
           <a class="pf4-shell" href="https://veiculomodel2.vercel.app/" target="_blank" rel="noopener" aria-label="Abrir Sua Revenda">
@@ -998,7 +1015,7 @@ html.lite .hero-gl{display:none}
           <span class="pf4-phone"><img data-shot="dark:phone" alt="" loading="lazy" decoding="async"></span>
         </div>
         <div class="pf4-info">
-          <span class="hud">01 — Revenda de veículos · tema escuro</span>
+          <span class="hud">02 — Revenda de veículos · tema escuro</span>
           <h3>Sua Revenda</h3>
           <p>Vitrine de destaques, estoque com fotos e filtros, busca pela parcela que cabe no bolso, comparador, simulador e WhatsApp em cada carro. O dono não mexe em nada: a MAJEX atualiza o estoque.</p>
           <ul class="pf4-feats"><li>Estoque com fotos</li><li>Busca pela parcela</li><li>Comparador</li><li>Simulador</li><li>WhatsApp por carro</li></ul>
@@ -1014,7 +1031,7 @@ html.lite .hero-gl{display:none}
           <span class="pf4-phone"><img data-shot="light:phone" alt="" loading="lazy" decoding="async"></span>
         </div>
         <div class="pf4-info">
-          <span class="hud">02 — Revenda de veículos · tema claro</span>
+          <span class="hud">03 — Revenda de veículos · tema claro</span>
           <h3>Sua Loja</h3>
           <p>O mesmo sistema com outra personalidade: clara, arredondada, próxima. Prova de que a MAJEX não vende template, vende identidade.</p>
           <ul class="pf4-feats"><li>Mesmas funções</li><li>Design próprio</li><li>Vitrine à esquerda</li><li>Tipografia diferente</li><li>Cores da marca</li></ul>
@@ -1030,7 +1047,7 @@ html.lite .hero-gl{display:none}
           <span class="pf4-phone"><img data-shot="food:phone" alt="" loading="lazy" decoding="async"></span>
         </div>
         <div class="pf4-info">
-          <span class="hud">03 — Restaurantes e lancherias</span>
+          <span class="hud">04 — Restaurantes e lancherias</span>
           <h3>Lancheria do Bairro</h3>
           <p>Cardápio pra celular com personalização por item, sugestão de bebida e batata na hora, combos, cupom, taxa por bairro e pagamento. O pedido chega pronto e formatado no WhatsApp.</p>
           <ul class="pf4-feats"><li>Monta o pedido</li><li>Sugestão na hora</li><li>Cupom e combos</li><li>Entrega ou retirada</li><li>Pedido no WhatsApp</li></ul>
@@ -1046,7 +1063,7 @@ html.lite .hero-gl{display:none}
           <span class="pf4-phone"><img data-shot="imob:phone" alt="" loading="lazy" decoding="async"></span>
         </div>
         <div class="pf4-info">
-          <span class="hud">04 — Imobiliárias</span>
+          <span class="hud">05 — Imobiliárias</span>
           <h3>Terrena Imóveis</h3>
           <p>Imóveis reais de Porto Alegre, Serra e Litoral com busca por bairro e preço, vitrine que troca a foto no scroll, "cabe no bolso" que mostra o que encaixa na renda, ficha com galeria, simulador de financiamento e visita agendada direto no WhatsApp.</p>
           <ul class="pf4-feats"><li>Busca por bairro e preço</li><li>Cabe no bolso</li><li>Simulador de financiamento</li><li>Favoritos</li><li>Visita no WhatsApp</li></ul>
@@ -1058,7 +1075,7 @@ html.lite .hero-gl{display:none}
           <span class="pf4-shell pf4-ghost"><span class="pf4-bar"><i></i><i></i><i></i><b>seunegocio.com.br</b><em>em breve</em></span><span class="pf4-screen"><span class="pf4-q">?</span></span></span>
         </div>
         <div class="pf4-info">
-          <span class="hud">05 — O próximo</span>
+          <span class="hud">06 — O próximo</span>
           <h3>O seu site aqui.</h3>
           <p>Salão, loja, clínica, indústria, imobiliária, escritório. Se o seu negócio existe, ele merece uma peça nessa lista. Em 2 a 7 dias ela está no ar.</p>
           <a class="btn btn-wa mag" href="#contato">Quero o meu</a>
