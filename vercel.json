@@ -1,5 +1,26 @@
 {
   "redirects": [
-    { "source": "/:caminho*", "has": [{ "type": "host", "value": "majex-site.vercel.app" }], "destination": "https://www.majexsites.com.br/:caminho*", "permanent": true }
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "majex-site.vercel.app"
+        }
+      ],
+      "destination": "https://www.majexsites.com.br/",
+      "permanent": true
+    },
+    {
+      "source": "/:caminho*",
+      "has": [
+        {
+          "type": "host",
+          "value": "majex-site.vercel.app"
+        }
+      ],
+      "destination": "https://www.majexsites.com.br/:caminho*",
+      "permanent": true
+    }
   ]
 }
