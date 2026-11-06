@@ -897,6 +897,63 @@ html.lite .hero-gl{display:none}
   .sis-vs-a::before{content:"Hoje · "; font-family:var(--f-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; opacity:.7}
 }
 @media (prefers-reduced-motion:reduce){.sis-vs *, .sis-vs *::after, .sis-vs-a>span{transition-duration:.01s !important; transition-delay:0s !important}}
+
+.sis-tabs{display:flex; gap:4px; padding:7px 10px; background:#10121b; border-bottom:1px solid rgba(255,255,255,.06)}
+.sis-tabs button{position:relative; overflow:hidden; font-family:var(--f-mono); font-size:11px; font-weight:700; letter-spacing:.06em; color:#8f98b2; background:transparent; border:0; border-radius:7px; padding:6px 12px; cursor:pointer; transition:color .2s, background .2s}
+.sis-tabs button:hover{color:#d8deec}
+.sis-tabs button.on{color:#5eead4; background:rgba(20,184,166,.14)}
+.sis-tabs button.on::after{content:""; position:absolute; left:8px; right:8px; bottom:2px; height:2px; border-radius:2px; background:#14b8a6; transform-origin:left; animation:sisTab var(--sis-t,4.2s) linear both}
+.sis-erp.pausa .sis-tabs button.on::after{animation-play-state:paused}
+@keyframes sisTab{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.sis-erp-tela{aspect-ratio:16/10 !important; background:#f4f5f2}
+.sis-erp-tela img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top left; opacity:0; transition:opacity .55s ease}
+.sis-erp-tela img.on{opacity:1}
+.sis-erp .sis-float{width:40%}
+@media (max-width:560px){.sis-tabs button{padding:6px 9px; font-size:10.5px}}
+
+.sis-bento{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+.sb{position:relative; border:1px solid var(--glass-bd); background:var(--glass); border-radius:18px; padding:24px; overflow:hidden; transition:transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s}
+.sb::before{content:""; position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .3s; background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%), color-mix(in srgb,var(--cyan) 9%,transparent), transparent 60%)}
+.sb:hover{transform:translateY(-4px); border-color:color-mix(in srgb,var(--cyan) 40%,transparent)}
+.sb:hover::before{opacity:1}
+.sb>*{position:relative}
+.sb.big{min-height:360px; display:flex; flex-direction:column}
+.sb-n{font-family:var(--f-mono); font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan-deep)}
+.sb h3{font-size:1.3rem; letter-spacing:-.015em; margin:10px 0 6px}
+.sb p{color:var(--ink-soft); font-size:14.5px; line-height:1.55; margin:0}
+.sb-chips{list-style:none; padding:0; margin:14px 0 18px; display:flex; flex-wrap:wrap; gap:6px}
+.sb-chips li{font-family:var(--f-mono); font-size:10.5px; font-weight:700; letter-spacing:.04em; padding:5px 9px; border-radius:999px; border:1px solid var(--glass-bd); color:var(--ink)}
+.sb-viz{margin-top:auto; width:100%}
+svg.sb-viz{height:118px}
+.sb-bars rect{fill:color-mix(in srgb,var(--cyan) 70%,var(--bg)); transform-box:fill-box; transform-origin:bottom; transform:scaleY(.08); transition:transform .9s cubic-bezier(.2,.8,.2,1) var(--d)}
+.sb-line{fill:none; stroke:var(--ink); stroke-width:2.2; stroke-linecap:round; stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.4s ease .5s; opacity:.75}
+.sb-niveis{display:grid; gap:12px}
+.sb-niveis div{display:grid; grid-template-columns:100px minmax(0,1fr); align-items:center; gap:12px; font-size:13px; color:var(--ink-soft)}
+.sb-niveis i{display:block; height:8px; border-radius:8px; background:color-mix(in srgb,var(--ink) 9%,transparent); overflow:hidden}
+.sb-niveis b{display:block; height:100%; width:var(--w); border-radius:8px; transform:scaleX(0); transform-origin:left; transition:transform 1s cubic-bezier(.2,.8,.2,1) var(--d)}
+.sb-niveis b.r{background:#e5534b} .sb-niveis b.a{background:#e9a23b} .sb-niveis b.o{background:var(--cyan)}
+.sb-pessoas{display:grid; gap:10px}
+.sb-avs{display:flex; margin-bottom:4px}
+.sb-avs span{width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:800; color:var(--bg); background:var(--cyan); border:2px solid var(--bg); margin-left:-8px; transform:translateY(8px); opacity:0; transition:transform .5s cubic-bezier(.2,.8,.2,1) var(--d), opacity .5s var(--d)}
+.sb-avs span:first-child{margin-left:0}
+.sb-avs span:nth-child(2){background:#5b8def} .sb-avs span:nth-child(3){background:#e9a23b} .sb-avs span:nth-child(4){background:#a8b3c4} .sb-avs span:nth-child(5){background:#2dd4bf}
+.sb-avs .mais{background:transparent; color:var(--ink-soft); border-color:var(--glass-bd); font-size:10.5px; opacity:1; transform:none}
+.sb-al{display:flex; justify-content:space-between; align-items:center; gap:10px; font-size:13px; padding:8px 10px; border-radius:10px; border:1px solid var(--glass-bd)}
+.sb-al b{font-weight:600; color:var(--ink)}
+.sb-al em{font-style:normal; font-family:var(--f-mono); font-size:10.5px; font-weight:700; color:#e9a23b}
+.sb-al em.ok{color:var(--cyan-deep)}
+.sis-bento.on .sb-bars rect{transform:none}
+.sis-bento.on .sb-line{stroke-dashoffset:0}
+.sis-bento.on .sb-niveis b{transform:none}
+.sis-bento.on .sb-avs span{transform:none; opacity:1}
+.sb.sm{display:grid; grid-template-columns:44px minmax(0,1fr); gap:14px; align-items:start; padding:20px 22px}
+.sb.sm h3{font-size:1.05rem; margin:2px 0 4px}
+.sb.sm p{font-size:14px}
+.sb-ic{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; color:var(--cyan-deep); background:color-mix(in srgb,var(--cyan) 12%,transparent)}
+.sb-ic svg{width:21px; height:21px}
+@media (max-width:1000px){.sis-bento{grid-template-columns:repeat(2,minmax(0,1fr))}.sb.big:nth-child(3){grid-column:1/-1}}
+@media (max-width:620px){.sis-bento{grid-template-columns:minmax(0,1fr)}.sb.big{min-height:0}.sb.big:nth-child(3){grid-column:auto}}
+@media (prefers-reduced-motion:reduce){.sis-bento *{transition-duration:.01s !important; transition-delay:0s !important}}
 </style>
 </head>
 <body>
@@ -1183,6 +1240,23 @@ html.lite .hero-gl{display:none}
       <div class="sis-ops-kpi"><div><b data-sis-n="1284">0</b><span>mensagens hoje</span></div><div><b data-sis-n="37">0</b><span>orçamentos gerados</span></div><div><b data-sis-n="96" data-sis-suf="%">0</b><span>tarefas sem ninguém tocar</span></div></div>
     </div>
     <div class="pf4-list sis-list">
+      <article class="pf4-case sis-erp" style="--acc:#14b8a6">
+        <div class="pf4-media">
+          <span class="pf4-shell">
+            <span class="pf4-bar"><i></i><i></i><i></i><b>sistema de gestão</b><em class="sis-em">sistema</em></span>
+            <span class="sis-tabs" role="tablist" aria-label="Módulos do sistema"><button type="button" class="on" data-erp="0" role="tab" aria-selected="true">Financeiro</button><button type="button" data-erp="1" role="tab" aria-selected="false">Estoque</button><button type="button" data-erp="2" role="tab" aria-selected="false">Pessoal</button></span>
+            <span class="pf4-screen sis-erp-tela"><img class="sis-erp-img on" src="img/sis-erp-fin-1280.webp" srcset="img/sis-erp-fin-1280.webp 1280w, img/sis-erp-fin-2560.webp 2560w" sizes="(max-width:760px) 92vw, 760px" width="1280" height="800" alt="Módulo financeiro: saldo em contas, contas a pagar e a receber, fluxo de caixa e próximos vencimentos" loading="lazy" decoding="async"><img class="sis-erp-img" src="img/sis-erp-est-1280.webp" srcset="img/sis-erp-est-1280.webp 1280w, img/sis-erp-est-2560.webp 2560w" sizes="(max-width:760px) 92vw, 760px" width="1280" height="800" alt="Módulo de estoque: itens ativos, produtos abaixo do mínimo e movimentações do dia" loading="lazy" decoding="async"><img class="sis-erp-img" src="img/sis-erp-dp-1280.webp" srcset="img/sis-erp-dp-1280.webp 1280w, img/sis-erp-dp-2560.webp 2560w" sizes="(max-width:760px) 92vw, 760px" width="1280" height="800" alt="Módulo de pessoal: colaboradores por setor e alertas de férias, exames e EPIs" loading="lazy" decoding="async"></span>
+          </span>
+          <span class="sis-float"><span class="pf4-bar"><i></i><i></i><i></i><b>início · módulos</b></span><img src="img/sis-erp-hub-960.webp" srcset="img/sis-erp-hub-960.webp 960w, img/sis-erp-hub-1920.webp 1920w" sizes="(max-width:760px) 52vw, 340px" width="480" height="300" alt="" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="pf4-info">
+          <span class="hud">S1 — Gestão por módulos · ERP sob medida</span>
+          <h3>Financeiro, estoque e pessoal, cada um no seu módulo</h3>
+          <p>Um sistema de gestão montado do jeito da sua empresa. Cada módulo funciona sozinho e conversa com os outros: a venda baixa o estoque, a folha entra no financeiro, e o sistema avisa antes de vencer conta, férias ou exame. Começa pelo que você precisa e liga os outros quando quiser, com uma ou várias unidades.</p>
+          <ul class="pf4-feats"><li>Contas e fluxo de caixa</li><li>Conciliação bancária</li><li>Estoque mínimo com aviso</li><li>Transferências entre unidades</li><li>Férias, exames e EPIs</li><li>Folha no financeiro</li><li>Várias unidades</li></ul>
+          <a class="btn btn-wa mag" href="#contato"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Z"/></svg>Quero um assim</a>
+        </div>
+      </article>
       <article class="pf4-case" style="--acc:#25D366">
         <div class="pf4-media">
           <span class="pf4-shell">
@@ -1192,7 +1266,7 @@ html.lite .hero-gl{display:none}
           <span class="pf4-phone"><img src="img/sis-wa-cel-320.webp" srcset="img/sis-wa-cel-320.webp 320w, img/sis-wa-cel-600.webp 600w" sizes="180px" alt="" loading="lazy" decoding="async"></span>
         </div>
         <div class="pf4-info">
-          <span class="hud">S1 — Comunicação · WhatsApp</span>
+          <span class="hud">S2 — Comunicação · WhatsApp</span>
           <h3>Central de mensagens no WhatsApp</h3>
           <p>Feito para uma instituição que precisava avisar centenas de associados sem passar o dia no celular. Escreve uma vez, cada pessoa recebe com o próprio nome, e os lembretes saem sozinhos no dia e na hora marcados.</p>
           <ul class="pf4-feats"><li>Conecta pelo QR code</li><li>Lembretes programados</li><li>Respostas num só lugar</li><li>SAIR automático</li><li>Entregue e lida</li></ul>
@@ -1208,7 +1282,7 @@ html.lite .hero-gl{display:none}
           <span class="sis-float"><span class="pf4-bar"><i></i><i></i><i></i><b>desenho técnico</b></span><img src="img/sis-3d-frontal-480.webp" srcset="img/sis-3d-frontal-480.webp 480w, img/sis-3d-frontal-960.webp 960w" sizes="300px" width="480" height="300" alt="" loading="lazy" decoding="async"></span>
         </div>
         <div class="pf4-info">
-          <span class="hud">S2 — Indústria · estruturas metálicas</span>
+          <span class="hud">S3 — Indústria · estruturas metálicas</span>
           <h3>Projetos em 3D e orçamento na hora</h3>
           <p>Para uma serralheria que fazia todo orçamento no papel. Entram as medidas, saem o 3D da obra, o desenho técnico cotado, os perfis calculados, a lista de corte com os quilos de aço e o orçamento em PDF para o cliente.</p>
           <ul class="pf4-feats"><li>3D para o cliente</li><li>Desenho cotado</li><li>Lista de corte</li><li>Orçamento em PDF</li><li>Modelos prontos</li></ul>
@@ -1229,18 +1303,19 @@ html.lite .hero-gl{display:none}
       </ol>
     </div>
     <div class="sis-head2 reveal">
-      <span class="hud">Áreas que viram sistema</span>
-      <h3>Onde a MAJEX entra na sua empresa.</h3>
+      <span class="hud">Módulos e automações</span>
+      <h3>Escolha por onde começar. O resto se encaixa.</h3>
     </div>
-    <div class="feat-grid sis-grid">
-      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div><h3>Financeiro</h3><p>Contas a pagar e a receber, fluxo de caixa e cobrança sem planilha solta.</p><div class="feat-more"><span>Vencimentos com aviso, conciliação e o saldo do mês numa tela só.</span></div></div>
-      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div><h3>Controle de estoque</h3><p>Entrada, saída e saldo de cada produto, do depósito ao balcão.</p><div class="feat-more"><span>Estoque mínimo com alerta, inventário pelo celular e histórico de movimentação.</span></div></div>
-      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3 3 0 0 1 0 6M18 14c2 .6 3 2.6 3 6"/></svg></div><h3>Departamento pessoal</h3><p>Funcionários, férias, documentos e prazos organizados em um lugar.</p><div class="feat-more"><span>Avisos de vencimento de férias, exames e contratos antes de virar problema.</span></div></div>
-      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h8"/></svg></div><h3>Contabilidade e fiscal</h3><p>Rotinas do escritório contábil, obrigações e prazos sob controle.</p><div class="feat-more"><span>Feito por quem trabalha com contabilidade: fala a língua do contador.</span></div></div>
-      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 12.5h5"/></svg></div><h3>WhatsApp automático</h3><p>Avisos, lembretes e confirmações saindo sozinhos no dia certo.</p><div class="feat-more"><span>Envio para centenas de contatos com o nome de cada um, no número que você já usa.</span></div></div>
-      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M12 12 3 7M12 12l9-5M12 12v10"/></svg></div><h3>Orçamentos e projetos</h3><p>Cálculo automático, PDF com a sua marca e projeto em 3D quando faz sentido.</p><div class="feat-more"><span>Mudou a medida, o preço e a lista de materiais acompanham na hora.</span></div></div>
-      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></div><h3>Vendas, CRM e relatórios</h3><p>Funil de clientes, follow-up que não esquece ninguém e os números da empresa atualizados sozinhos.</p><div class="feat-more"><span>Vendas, estoque e financeiro lado a lado num painel, no computador e no celular.</span></div></div>
-      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H6a4 4 0 0 0 0 8h3M15 7h3a4 4 0 0 1 0 8h-3M8 11h8"/></svg></div><h3>Integrações</h3><p>Liga fornecedor, planilha, loja e sistema antigo para conversarem entre si.</p><div class="feat-more"><span>Integração por API: preço e estoque do fornecedor chegando sem digitar nada.</span></div></div>
+    <div class="sis-bento" id="sisBento">
+      <article class="sb big reveal"><span class="sb-n">01 · Módulo</span><h3>Financeiro</h3><p>Contas a pagar e a receber, fluxo de caixa, bancos e conciliação, sem planilha solta.</p><ul class="sb-chips"><li>Vencimentos com aviso</li><li>Fluxo de caixa</li><li>Conciliação</li></ul><svg class="sb-viz" viewBox="0 0 280 110" aria-hidden="true"><g class="sb-bars"><rect x="8" y="58" width="22" height="46" rx="5" style="--d:0s"/><rect x="47" y="46" width="22" height="58" rx="5" style="--d:0.07s"/><rect x="86" y="52" width="22" height="52" rx="5" style="--d:0.14s"/><rect x="125" y="34" width="22" height="70" rx="5" style="--d:0.21000000000000002s"/><rect x="164" y="40" width="22" height="64" rx="5" style="--d:0.28s"/><rect x="203" y="20" width="22" height="84" rx="5" style="--d:0.35000000000000003s"/><rect x="242" y="8" width="22" height="96" rx="5" style="--d:0.42000000000000004s"/></g><path class="sb-line" d="M19 60 L58 50 L97 55 L136 38 L175 44 L214 24 L253 12" pathLength="1"/></svg></article>
+      <article class="sb big reveal"><span class="sb-n">02 · Módulo</span><h3>Controle de estoque</h3><p>Entradas, saídas, transferências e inventário pelo celular, unidade por unidade.</p><ul class="sb-chips"><li>Estoque mínimo</li><li>Pedido sugerido</li><li>Inventário</li></ul><div class="sb-viz sb-niveis" aria-hidden="true"><div><span>Caixa térmica</span><i><b class="r" style="--w:14%;--d:0s"></b></i></div><div><span>Fita adesiva</span><i><b class="a" style="--w:32%;--d:0.12s"></b></i></div><div><span>Copo 473 ml</span><i><b class="o" style="--w:82%;--d:0.24s"></b></i></div></div></article>
+      <article class="sb big reveal"><span class="sb-n">03 · Módulo</span><h3>Departamento pessoal</h3><p>Colaboradores, férias, exames, EPIs, ponto e folha organizados num lugar só.</p><ul class="sb-chips"><li>Alertas de prazo</li><li>Ponto</li><li>Folha</li></ul><div class="sb-viz sb-pessoas" aria-hidden="true"><div class="sb-avs"><span style="--d:0s">AS</span><span style="--d:0.08s">BL</span><span style="--d:0.16s">CM</span><span style="--d:0.24s">DR</span><span style="--d:0.32s">EP</span><span class="mais">+57</span></div><div class="sb-al"><b>Férias vencem em 21 dias</b><em>programar</em></div><div class="sb-al"><b>Exame periódico em 9 dias</b><em class="ok">agendado</em></div></div></article>
+      <article class="sb sm reveal"><span class="sb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg></span><div><h3>Vendas e CRM</h3><p>Funil de clientes, propostas e follow-up que não esquece ninguém.</p></div></article>
+      <article class="sb sm reveal"><span class="sb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 12.5h5"/></svg></span><div><h3>WhatsApp automático</h3><p>Avisos, cobranças e lembretes saindo sozinhos no dia certo.</p></div></article>
+      <article class="sb sm reveal"><span class="sb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M12 12 3 7M12 12l9-5M12 12v10"/></svg></span><div><h3>Orçamentos e projetos</h3><p>Cálculo automático, PDF com a sua marca e projeto em 3D.</p></div></article>
+      <article class="sb sm reveal"><span class="sb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7H6a4 4 0 0 0 0 8h3M15 7h3a4 4 0 0 1 0 8h-3M8 11h8"/></svg></span><div><h3>Integrações</h3><p>Fornecedor, loja, planilha e sistema antigo conversando por API.</p></div></article>
+      <article class="sb sm reveal"><span class="sb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span><div><h3>Painéis e relatórios</h3><p>Os números de todos os módulos atualizados sozinhos.</p></div></article>
+      <article class="sb sm reveal"><span class="sb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M8 15h2M12 15h2M8 18h8"/></svg></span><div><h3>Contabilidade e fiscal</h3><p>Rotinas do escritório contábil, obrigações e prazos sob controle.</p></div></article>
     </div>
     <ol class="sis-steps reveal">
       <li><b>01</b><strong>Conversa</strong><span>Você mostra como faz hoje. A gente encontra onde o tempo está indo embora.</span></li>
@@ -2018,6 +2093,28 @@ html.lite .hero-gl{display:none}
 (function(){ var vs=document.getElementById("sisVs"); if(!vs) return;
   if(!("IntersectionObserver" in window)){ vs.classList.add("on"); return; }
   var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ vs.classList.add("on"); io.disconnect(); } }); },{threshold:.3}); io.observe(vs);
+})();
+</script>
+
+<script>
+/* case "Gestão integrada": abas Financeiro/Estoque/Pessoal trocam sozinhas quando o case está na tela */
+(function(){ var c=document.querySelector(".sis-erp"); if(!c) return;
+  var bts=[].slice.call(c.querySelectorAll(".sis-tabs button")), ims=[].slice.call(c.querySelectorAll(".sis-erp-img")), i=0, t=null, visivel=false, DUR=4200;
+  function vai(n){ i=(n+bts.length)%bts.length; bts.forEach(function(b,k){ var on=k===i; b.classList.toggle("on",on); b.setAttribute("aria-selected",on?"true":"false"); if(on){ b.style.animation="none"; void b.offsetWidth; b.style.animation=""; } }); ims.forEach(function(im,k){ im.classList.toggle("on",k===i); }); }
+  function liga(){ clearInterval(t); t=setInterval(function(){ if(visivel && !c.classList.contains("pausa")) vai(i+1); },DUR); }
+  bts.forEach(function(b,k){ b.addEventListener("click",function(){ vai(k); liga(); }); });
+  var tela=c.querySelector(".pf4-shell"); tela.addEventListener("mouseenter",function(){ c.classList.add("pausa"); }); tela.addEventListener("mouseleave",function(){ c.classList.remove("pausa"); });
+  ims.slice(1).forEach(function(im){ im.loading="eager"; });
+  if("IntersectionObserver" in window){ new IntersectionObserver(function(es){ visivel=es[0].isIntersecting; },{threshold:.35}).observe(c); } else visivel=true;
+  liga();
+})();
+</script>
+
+<script>
+/* mosaico de módulos: anima os mini gráficos ao entrar na tela e acende o cartão sob o mouse */
+(function(){ var g=document.getElementById("sisBento"); if(!g) return;
+  if("IntersectionObserver" in window){ var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ g.classList.add("on"); io.disconnect(); } },{threshold:.2}); io.observe(g); } else g.classList.add("on");
+  [].forEach.call(g.querySelectorAll(".sb"),function(c){ c.addEventListener("pointermove",function(e){ var r=c.getBoundingClientRect(); c.style.setProperty("--mx",(e.clientX-r.left)+"px"); c.style.setProperty("--my",(e.clientY-r.top)+"px"); }); });
 })();
 </script>
 </body>
