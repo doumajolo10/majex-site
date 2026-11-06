@@ -651,7 +651,7 @@ html.pre-on{overflow:hidden}
 .pre-bar i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--cyan),var(--violet))}
 /* showroom v2 */
 html,body{overflow-x:clip}
-.sr2{position:relative; height:250vh; --sr-accent:#e0342c}
+.sr2{position:relative; height:370vh; --sr-accent:#1F6FB8}
 .sr2-pin{position:sticky; top:0; height:100vh; display:flex; align-items:center; overflow:hidden}
 .sr2-more{position:absolute; left:50%; bottom:22px; transform:translateX(-50%); z-index:3; display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius:999px; border:1px solid var(--glass-bd); background:color-mix(in srgb,var(--bg) 70%,transparent); backdrop-filter:blur(8px); font-family:var(--f-mono); font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); cursor:pointer; transition:opacity .3s, transform .3s}
 .sr2-more i{width:14px; height:14px; border-right:2px solid var(--cyan); border-bottom:2px solid var(--cyan); transform:rotate(45deg) translate(-2px,-2px); animation:srMore 1.4s ease-in-out infinite}
@@ -954,6 +954,8 @@ svg.sb-viz{height:118px}
 @media (max-width:1000px){.sis-bento{grid-template-columns:repeat(2,minmax(0,1fr))}.sb.big:nth-child(3){grid-column:1/-1}}
 @media (max-width:620px){.sis-bento{grid-template-columns:minmax(0,1fr)}.sb.big{min-height:0}.sb.big:nth-child(3){grid-column:auto}}
 @media (prefers-reduced-motion:reduce){.sis-bento *{transition-duration:.01s !important; transition-delay:0s !important}}
+
+#planos .price{font-size:clamp(2.4rem,5vw,3.6rem); letter-spacing:-.02em}
 </style>
 </head>
 <body>
@@ -1071,35 +1073,44 @@ svg.sb-viz{height:118px}
   <div class="sr2-pin">
     <div class="wrap sr2-grid">
       <div class="sr2-left">
-        <span class="hud">[ 02 ]&nbsp;&nbsp;Modelos ao vivo</span>
+        <span class="hud">[ 02 ]&nbsp;&nbsp;Sites ao vivo</span>
         <h2 class="sr2-h">Não é print.<br>É o site de verdade, rodando aqui.</h2>
         <ol class="sr2-steps" id="srSteps">
-          <li class="on" data-i="0"><span class="sr2-n">01</span><div><b>Sua Revenda</b><small>Revenda de veículos · tema escuro</small><p>Tipografia condensada, vitrine de destaques e senso de urgência. Estoque com fotos, busca pela parcela, comparador, simulador e WhatsApp em cada carro.</p></div></li>
-          <li class="" data-i="1"><span class="sr2-n">02</span><div><b>Sua Loja</b><small>Revenda de veículos · tema claro</small><p>As mesmas funções com outra personalidade: clara, arredondada, próxima. Prova de que o mesmo sistema vira dois sites completamente diferentes.</p></div></li>
-          <li class="" data-i="2"><span class="sr2-n">03</span><div><b>Lancheria do Bairro</b><small>Restaurantes · pedido no WhatsApp</small><p>Cardápio pra celular com personalização por item, sugestão de bebida e batata, cupom, taxa por bairro e pagamento. O pedido chega pronto e formatado no WhatsApp do dono.</p></div></li>
+          <li class="on" data-i="0"><span class="sr2-n">01</span><div><b>Imobiliária Kiesel</b><small>Imobiliária · domínio próprio</small><p>Filme de drone da cidade na capa, catálogo com filtros, página para cada imóvel, simulador de financiamento e painel para a equipe cadastrar sozinha.</p></div></li>
+          <li class="" data-i="1"><span class="sr2-n">02</span><div><b>Grupo Larssen</b><small>Indústria madeireira · 5 empresas</small><p>Cinco empresas num site só, catálogo de produtos com painel, romaneio de pedido no WhatsApp e o endereço antigo migrado sem perder o Google.</p></div></li>
+          <li class="" data-i="2"><span class="sr2-n">03</span><div><b>Khaus Brindes</b><small>Brindes · integração com fornecedor</small><p>Mais de 3.000 produtos com estoque do fornecedor por integração, simulador da logo no produto, preço por quantidade e orçamento pronto no WhatsApp.</p></div></li>
+          <li class="" data-i="3"><span class="sr2-n">04</span><div><b>Sua Revenda</b><small>Modelo · revenda de veículos</small><p>Tipografia condensada, vitrine de destaques e senso de urgência. Estoque com fotos, busca pela parcela, comparador, simulador e WhatsApp em cada carro.</p></div></li>
+          <li class="" data-i="4"><span class="sr2-n">05</span><div><b>Sua Loja</b><small>Modelo · revenda, tema claro</small><p>As mesmas funções com outra personalidade: clara, arredondada, próxima. Prova de que o mesmo sistema vira dois sites completamente diferentes.</p></div></li>
+          <li class="" data-i="5"><span class="sr2-n">06</span><div><b>Lancheria do Bairro</b><small>Modelo · pedido no WhatsApp</small><p>Cardápio pra celular com personalização por item, sugestão de bebida e batata, cupom, taxa por bairro e pagamento. O pedido chega pronto no WhatsApp do dono.</p></div></li>
         </ol>
         <div class="sr2-actions">
-          <a class="btn btn-primary mag" id="srOpen" href="https://veiculomodel2.vercel.app/" target="_blank" rel="noopener">Abrir em tela cheia ↗</a>
-          <button class="btn btn-ghost mag" id="srLive" type="button">Testar aqui dentro</button>
+          <a class="btn btn-primary mag" id="srOpen" href="https://www.imobiliariakiesel.com.br/" target="_blank" rel="noopener">Abrir em tela cheia ↗</a>
+          <button class="btn btn-ghost mag" id="srLive" type="button">Ver o site ao vivo ↗</button>
         </div>
         <div class="sr2-prog" aria-hidden="true"><i id="srProg"></i></div>
       </div>
       <div class="sr2-right">
         <div class="sr-shell sr2-shell">
           <div class="sr-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-            <span class="sr-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span id="srUrl">veiculomodel2.vercel.app</span></span>
+            <span class="sr-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span id="srUrl">imobiliariakiesel.com.br</span></span>
             <span class="sr-live">LIVE</span></div>
           <div class="sr-screen sr2-screen" id="srScreen">
-            <img class="sr2-img on" data-i="0" alt="" src="img/shot-1-1280.webp" srcset="img/shot-1-640.webp 640w, img/shot-1-1280.webp 1280w" sizes="(max-width:760px) 92vw, 900px" width="1400" height="875" loading="eager" decoding="async" fetchpriority="high">
-            <img class="sr2-img " data-i="1" alt="" src="img/shot-2-1280.webp" srcset="img/shot-2-640.webp 640w, img/shot-2-1280.webp 1280w" sizes="(max-width:760px) 92vw, 900px" width="1400" height="875" loading="lazy" decoding="async">
-            <img class="sr2-img " data-i="2" alt="" src="img/shot-3-1280.webp" srcset="img/shot-3-640.webp 640w, img/shot-3-1280.webp 1280w" sizes="(max-width:760px) 92vw, 900px" width="1400" height="875" loading="lazy" decoding="async">
+            <img class="sr2-img on" data-i="0" alt="Imobiliária Kiesel, versão computador" src="img/vivo-kiesel-desk-1280.webp" srcset="img/vivo-kiesel-desk-1280.webp 1280w, img/vivo-kiesel-desk-2560.webp 2560w" width="1280" height="800" sizes="(max-width:760px) 92vw, 900px" loading="eager" decoding="async" fetchpriority="high">
+            <img class="sr2-img" data-i="1" alt="Grupo Larssen, versão computador" src="img/vivo-larssen-desk-1280.webp" srcset="img/vivo-larssen-desk-1280.webp 1280w, img/vivo-larssen-desk-2560.webp 2560w" width="1280" height="800" sizes="(max-width:760px) 92vw, 900px" loading="lazy" decoding="async">
+            <img class="sr2-img" data-i="2" alt="Khaus Brindes, versão computador" src="img/vivo-khaus-desk-1280.webp" srcset="img/vivo-khaus-desk-1280.webp 1280w, img/vivo-khaus-desk-2560.webp 2560w" width="1280" height="800" sizes="(max-width:760px) 92vw, 900px" loading="lazy" decoding="async">
+            <img class="sr2-img" data-i="3" alt="Sua Revenda, versão computador" src="img/shot-1-1280.webp" srcset="img/shot-1-640.webp 640w, img/shot-1-1280.webp 1280w" width="1400" height="875" sizes="(max-width:760px) 92vw, 900px" loading="lazy" decoding="async">
+            <img class="sr2-img" data-i="4" alt="Sua Loja, versão computador" src="img/shot-2-1280.webp" srcset="img/shot-2-640.webp 640w, img/shot-2-1280.webp 1280w" width="1400" height="875" sizes="(max-width:760px) 92vw, 900px" loading="lazy" decoding="async">
+            <img class="sr2-img" data-i="5" alt="Lancheria do Bairro, versão computador" src="img/shot-3-1280.webp" srcset="img/shot-3-640.webp 640w, img/shot-3-1280.webp 1280w" width="1400" height="875" sizes="(max-width:760px) 92vw, 900px" loading="lazy" decoding="async">
             <div class="sr-hud"><i></i><i></i><i></i><i></i></div>
           </div>
         </div>
         <div class="sr2-phone"><div class="sr-pshell"><div class="sr-pscreen" id="srPscreen"><div class="sr-notch"></div>
-          <img class="sr2-img on" data-i="0" alt="" src="img/shot-5-320.webp" srcset="img/shot-5-320.webp 320w" sizes="(max-width:760px) 40vw, 240px" width="600" height="1298" loading="eager" decoding="async" fetchpriority="high">
-          <img class="sr2-img " data-i="1" alt="" src="img/shot-6-600.webp" srcset="img/shot-6-600.webp 600w" sizes="(max-width:760px) 92vw, 900px" width="600" height="1298" loading="lazy" decoding="async">
-          <img class="sr2-img " data-i="2" alt="" src="img/shot-7-600.webp" srcset="img/shot-7-600.webp 600w" sizes="(max-width:760px) 92vw, 900px" width="600" height="1298" loading="lazy" decoding="async">
+          <img class="sr2-img on" data-i="0" alt="" src="img/vivo-kiesel-cel-600.webp" srcset="img/vivo-kiesel-cel-600.webp 600w, img/vivo-kiesel-cel-780.webp 780w" sizes="(max-width:760px) 40vw, 240px" width="600" height="1298" loading="eager" decoding="async">
+          <img class="sr2-img" data-i="1" alt="" src="img/vivo-larssen-cel-600.webp" srcset="img/vivo-larssen-cel-600.webp 600w, img/vivo-larssen-cel-780.webp 780w" sizes="(max-width:760px) 40vw, 240px" width="600" height="1298" loading="lazy" decoding="async">
+          <img class="sr2-img" data-i="2" alt="" src="img/vivo-khaus-cel-600.webp" srcset="img/vivo-khaus-cel-600.webp 600w, img/vivo-khaus-cel-780.webp 780w" sizes="(max-width:760px) 40vw, 240px" width="600" height="1298" loading="lazy" decoding="async">
+          <img class="sr2-img" data-i="3" alt="" src="img/shot-5-320.webp" srcset="img/shot-5-320.webp 320w" sizes="(max-width:760px) 40vw, 240px" width="600" height="1298" loading="lazy" decoding="async">
+          <img class="sr2-img" data-i="4" alt="" src="img/shot-6-600.webp" srcset="img/shot-6-600.webp 600w" sizes="(max-width:760px) 40vw, 240px" width="600" height="1298" loading="lazy" decoding="async">
+          <img class="sr2-img" data-i="5" alt="" src="img/shot-7-600.webp" srcset="img/shot-7-600.webp 600w" sizes="(max-width:760px) 40vw, 240px" width="600" height="1298" loading="lazy" decoding="async">
         </div></div></div>
       </div>
     </div>
@@ -1404,37 +1415,37 @@ svg.sb-viz{height:118px}
 <section class="sec theme-flip" id="planos">
   <div class="wrap">
     <div class="sec-head reveal" style="text-align:center; margin-left:auto; margin-right:auto">
-      <span class="eyebrow" style="justify-content:center">Investimento</span>
-      <h2>Landing page profissional, preço justo.</h2>
-      <p>Um site de alto impacto que apresenta o seu negócio e transforma visitante em cliente — sem mensalidade, sem surpresa.</p>
+      <span class="eyebrow" style="justify-content:center">Investimento · sob consulta</span>
+      <h2>Cada projeto tem o seu preço. Justo e combinado antes.</h2>
+      <p>Um site, um sistema e uma automação têm tamanhos muito diferentes. A gente entende o que você precisa e manda a proposta com escopo, prazo e valor fechados, sem surpresa no meio do caminho.</p>
     </div>
     <div class="offer">
       <div class="offer-card offer-main reveal">
-        <span class="plan-badge">LANDING PAGE</span>
-        <div class="price-row"><span class="price-cur">R$</span><span class="price">500–800</span></div>
-        <div class="from">Valor único, definido conforme o tamanho e o conteúdo do projeto</div>
+        <span class="plan-badge">SITES · SISTEMAS · AUTOMAÇÕES</span>
+        <div class="price-row"><span class="price">Sob consulta</span></div>
+        <div class="from">Valor definido pelo tamanho e pela complexidade do projeto, com proposta antes de começar</div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Design sob medida, moderno e futurista</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>100% responsivo — celular, tablet e computador</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Otimizado para aparecer no Google (SEO)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Botão e integração direta com o WhatsApp</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Inserção das suas informações na entrega, <b>sem custo extra</b></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Proposta com escopo, prazo e valor fechados</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Design e telas sob medida, no computador e no celular</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Site otimizado para o Google e sistema testado antes de entregar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Integração com WhatsApp, planilhas e outros sistemas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Pix, cartão ou parcelado, <b>sem taxa escondida</b></li>
         </ul>
         <a class="btn btn-wa" href="#contato">Pedir meu orçamento</a>
       </div>
       <div class="offer-card offer-guarantee reveal">
         <div class="g-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h3>Garantia MAJEX</h3>
-        <p>Tranquilidade total depois que o site fica pronto:</p>
+        <p>Tranquilidade total depois que o projeto fica pronto:</p>
         <ul class="g-list">
-          <li><b>Na entrega.</b> Coloco todas as suas informações no site sem cobrar nada a mais.</li>
+          <li><b>Na entrega.</b> Todas as suas informações já entram no site ou no sistema, sem cobrar a mais.</li>
           <li><b>7 dias de garantia.</b> Precisou incluir mais alguma coisa nessa primeira semana? Também é grátis.</li>
-          <li><b>Depois da garantia.</b> Novas inclusões e melhorias por apenas <span class="g-price">R$ 150</span> cada.</li>
+          <li><b>Depois da garantia.</b> Novas funções e melhorias com valor combinado antes de fazer.</li>
         </ul>
       </div>
     </div>
-    <div class="sis-cta reveal" style="margin-top:28px"><p><strong>Precisa de um sistema ou automação?</strong> WhatsApp automático, estoque, financeiro, orçamentos em 3D e integrações têm proposta própria, com prazo e valor fechados antes de começar.</p><a class="btn btn-primary mag" href="#sistemas">Ver sistemas sob medida</a></div>
-    <p class="muted reveal" style="font-size:13.5px; margin-top:24px; text-align:center">Pix, cartão ou parcelado · orçamento sem compromisso · o valor final é combinado antes de começar.</p>
+    
+    <p class="muted reveal" style="font-size:13.5px; margin-top:24px; text-align:center">Orçamento gratuito e sem compromisso · o valor final é combinado antes de começar.</p>
   </div>
 </section>
 
@@ -1761,7 +1772,7 @@ svg.sb-viz{height:118px}
   } else if(cur) cur.style.display='none';
 
   /* ---- showroom v2 ---- */
-  var M=[{"name":"Sua Revenda","url":"https://veiculomodel2.vercel.app/","host":"veiculomodel2.vercel.app","accent":"#e0342c"},{"name":"Sua Loja","url":"https://veiculomodel1.vercel.app/","host":"veiculomodel1.vercel.app","accent":"#f59e0b"},{"name":"Lancheria do Bairro","url":"https://restaurante-model-wheat.vercel.app/","host":"restaurante-model-wheat.vercel.app","accent":"#FF5A1F"}];
+  var M=[{"name":"Imobiliária Kiesel","url":"https://www.imobiliariakiesel.com.br/","host":"imobiliariakiesel.com.br","accent":"#1F6FB8","embed":false},{"name":"Grupo Larssen","url":"https://grupolarssen.com.br/","host":"grupolarssen.com.br","accent":"#54763A","embed":false},{"name":"Khaus Brindes","url":"https://khaus-site.vercel.app/","host":"khausbrindes.com.br","accent":"#0F8F66","embed":false},{"name":"Sua Revenda","url":"https://veiculomodel2.vercel.app/","host":"veiculomodel2.vercel.app","accent":"#e0342c","embed":true},{"name":"Sua Loja","url":"https://veiculomodel1.vercel.app/","host":"veiculomodel1.vercel.app","accent":"#f59e0b","embed":true},{"name":"Lancheria do Bairro","url":"https://restaurante-model-wheat.vercel.app/","host":"restaurante-model-wheat.vercel.app","accent":"#FF5A1F","embed":true}];
   var sec=$('#modelos'), steps=$$('#srSteps li'), imgs=$$('.sr2-img'), curI=0, frame=null, live=false;
   function setModel(i){
     if(i===curI && imgs[0].classList.contains('on')===(i===0)) {}
@@ -1770,15 +1781,16 @@ svg.sb-viz{height:118px}
     imgs.forEach(function(im){ im.classList.toggle('on', +im.dataset.i===i); });
     $('#srUrl').textContent=x.host; $('#srOpen').href=x.url; sec.style.setProperty('--sr-accent',x.accent);
     if(frame && frame.src!==x.url) frame.src=x.url;
+    var lv=$('#srLive'); if(lv && !live) lv.textContent = x.embed ? 'Testar aqui dentro' : 'Ver o site ao vivo ↗';
   }
   var isDesk=function(){ return window.matchMedia('(min-width:981px)').matches; };
   if(hasGsap && isDesk()){
     ScrollTrigger.create({trigger:sec, start:'top top', end:'bottom bottom', onUpdate:function(self){ var p=self.progress; $('#srProg').style.width=(p*100).toFixed(1)+'%'; var i=Math.min(M.length-1, Math.floor(p*M.length)); if(i!==curI) setModel(i); sec.classList.toggle('sr2-end', p>.92); }});
   }
-  steps.forEach(function(s){ s.addEventListener('click',function(){ var i=+s.dataset.i; if(hasGsap && isDesk()){ var top=sec.getBoundingClientRect().top+window.scrollY; var span=sec.offsetHeight-window.innerHeight; var y=top+span*((i+.5)/3); if(lenis) lenis.scrollTo(y,{duration:.9}); else window.scrollTo({top:y,behavior:'smooth'}); } setModel(i); }); });
+  steps.forEach(function(s){ s.addEventListener('click',function(){ var i=+s.dataset.i; if(hasGsap && isDesk()){ var top=sec.getBoundingClientRect().top+window.scrollY; var span=sec.offsetHeight-window.innerHeight; var y=top+span*((i+.5)/M.length); if(lenis) lenis.scrollTo(y,{duration:.9}); else window.scrollTo({top:y,behavior:'smooth'}); } setModel(i); }); });
   var more=$('#srMore'); if(more) more.addEventListener('click',function(){ var y=sec.getBoundingClientRect().top+window.scrollY+sec.offsetHeight-window.innerHeight+80; if(lenis) lenis.scrollTo(y,{duration:1}); else window.scrollTo({top:y,behavior:'smooth'}); });
   $('#srLive').addEventListener('click',function(){
-    if(!isDesk()){ window.open(M[curI].url,'_blank','noopener'); return; }
+    if(!isDesk() || !M[curI].embed){ window.open(M[curI].url,'_blank','noopener'); return; }
     var sc=$('#srScreen'); if(!frame){ frame=document.createElement('iframe'); frame.src=M[curI].url; frame.title='Modelo ao vivo'; sc.appendChild(frame); }
     live=!live; sc.classList.toggle('live',live); this.textContent= live? 'Voltar pro print' : 'Testar aqui dentro'; if(!live){ sc.removeChild(frame); frame=null; }
   });
@@ -1831,7 +1843,7 @@ svg.sb-viz{height:118px}
 /* v4 */
 (function(){
   var $=function(s,r){return (r||document).querySelector(s);}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s));};
-  var order={dark:0,light:1,food:2};
+  var order={dark:3,light:4,food:5};
   $$('img[data-shot]').forEach(function(im){ var p=im.dataset.shot.split(':'); var src=$$('.sr2-'+(p[1]==='desk'?'screen':'phone')+' .sr2-img')[order[p[0]]]; if(src) im.src=src.src; });
   var nav=$('#nav'), flips=$$('.theme-flip');
   function navFlip(){ var h=nav?nav.offsetHeight:70; var on=flips.some(function(s){ var r=s.getBoundingClientRect(); return r.top<=h && r.bottom>h; }); if(nav) nav.classList.toggle('on-flip',on); }
