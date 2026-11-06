@@ -872,6 +872,31 @@ html.lite .hero-gl{display:none}
 @media (max-width:860px){.sis-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.sis-steps li:nth-child(3){border-left:0; padding-left:0}.sis-steps li:nth-child(n+3){border-top:1px solid var(--line)}}
 @media (max-width:760px){.sis-float{width:52%; min-width:0; right:-6px; bottom:-22px}.pf4-case:nth-child(even) .sis-float{left:-6px}}
 @media (max-width:560px){.sis-grid{grid-template-columns:minmax(0,1fr)}.sis-steps{grid-template-columns:minmax(0,1fr)}.sis-steps li{border-left:0; padding-left:0}.sis-steps li+li{border-top:1px solid var(--line)}.sis-cta{padding:22px}.sis-cta .btn{width:100%; justify-content:center}}
+
+.sis-vs{margin:64px 0 0; border-top:1px solid var(--line)}
+.sis-vs-top{display:grid; grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr); padding:18px 0 10px}
+.sis-vs-top .hud{opacity:.7}
+.sis-vs-r{grid-column:3; color:var(--cyan-deep); opacity:1 !important}
+.sis-vs ol{list-style:none; margin:0; padding:0}
+.sis-vs li{display:grid; grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr); align-items:center; padding:18px 0; border-bottom:1px solid var(--line)}
+.sis-vs-a{color:var(--ink-soft); font-size:clamp(15px,1.4vw,17px); position:relative; justify-self:start; transition:color .6s ease calc(var(--i)*.12s)}
+.sis-vs-a>span{background:linear-gradient(currentColor,currentColor) 0 58%/0% 1.5px no-repeat; -webkit-box-decoration-break:clone; box-decoration-break:clone; transition:background-size .7s cubic-bezier(.6,0,.2,1) calc(var(--i)*.12s)}
+.sis-vs-seta{position:relative; height:2px; margin:0 12px; background:var(--line); overflow:visible}
+.sis-vs-seta i{position:absolute; inset:0; background:linear-gradient(90deg,var(--cyan),var(--cyan-deep)); transform:scaleX(0); transform-origin:left; transition:transform .5s cubic-bezier(.6,0,.2,1) calc(var(--i)*.12s + .35s)}
+.sis-vs-seta::after{content:""; position:absolute; right:-1px; top:50%; width:8px; height:8px; border-top:2px solid var(--cyan-deep); border-right:2px solid var(--cyan-deep); transform:translateY(-50%) rotate(45deg); opacity:0; transition:opacity .3s ease calc(var(--i)*.12s + .75s)}
+.sis-vs-b{font-family:var(--f-display); font-weight:600; font-size:clamp(15.5px,1.5vw,18.5px); color:var(--ink); letter-spacing:-.01em; opacity:.18; transform:translateX(-10px); transition:opacity .6s ease calc(var(--i)*.12s + .6s), transform .6s cubic-bezier(.2,.8,.2,1) calc(var(--i)*.12s + .6s)}
+.sis-vs.on .sis-vs-a{color:color-mix(in srgb,var(--ink-soft) 70%,transparent)}
+.sis-vs.on .sis-vs-a>span{background-size:100% 1.5px}
+.sis-vs.on .sis-vs-seta i{transform:scaleX(1)}
+.sis-vs.on .sis-vs-seta::after{opacity:1}
+.sis-vs.on .sis-vs-b{opacity:1; transform:none}
+@media (max-width:700px){
+  .sis-vs-top{display:none}
+  .sis-vs li{grid-template-columns:minmax(0,1fr); gap:8px; padding:16px 0}
+  .sis-vs-seta{width:44px; margin:2px 0}
+  .sis-vs-a::before{content:"Hoje · "; font-family:var(--f-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; opacity:.7}
+}
+@media (prefers-reduced-motion:reduce){.sis-vs *, .sis-vs *::after, .sis-vs-a>span{transition-duration:.01s !important; transition-delay:0s !important}}
 </style>
 </head>
 <body>
@@ -1153,7 +1178,7 @@ html.lite .hero-gl{display:none}
       <p>A gente entende como a sua equipe trabalha hoje e transforma o que é repetitivo em sistema. Menos planilha, menos retrabalho e a informação certa na hora certa, do jeito da sua empresa, no computador e no celular.</p>
     </div>
     <div class="sis-ops reveal" aria-hidden="true">
-      <div class="sis-ops-top"><span><i class="hud-dot"></i>automações rodando agora</span><span class="sis-clock" id="sisClock">--:--:--</span></div>
+      <div class="sis-ops-top"><span><i class="hud-dot"></i>exemplo · um dia de automações</span><span class="sis-clock" id="sisClock">--:--:--</span></div>
       <ol class="sis-log" id="sisLog"></ol>
       <div class="sis-ops-kpi"><div><b data-sis-n="1284">0</b><span>mensagens hoje</span></div><div><b data-sis-n="37">0</b><span>orçamentos gerados</span></div><div><b data-sis-n="96" data-sis-suf="%">0</b><span>tarefas sem ninguém tocar</span></div></div>
     </div>
@@ -1191,9 +1216,21 @@ html.lite .hero-gl{display:none}
         </div>
       </article>
     </div>
+
+    <div class="sis-vs" id="sisVs">
+      <div class="sis-vs-top"><span class="hud">Hoje</span><span class="hud sis-vs-r">Com sistema</span></div>
+      <ol>
+        <li style="--i:0"><span class="sis-vs-a"><span>Mandar aviso um por um no WhatsApp</span></span><span class="sis-vs-seta" aria-hidden="true"><i></i></span><span class="sis-vs-b">Envio para todos com o nome de cada um, no horário marcado</span></li>
+        <li style="--i:1"><span class="sis-vs-a"><span>Planilha de estoque que ninguém atualiza</span></span><span class="sis-vs-seta" aria-hidden="true"><i></i></span><span class="sis-vs-b">Estoque baixa sozinho e avisa quando o produto está acabando</span></li>
+        <li style="--i:2"><span class="sis-vs-a"><span>Orçamento na calculadora, uma hora por cliente</span></span><span class="sis-vs-seta" aria-hidden="true"><i></i></span><span class="sis-vs-b">Orçamento em PDF em minutos, com projeto em 3D</span></li>
+        <li style="--i:3"><span class="sis-vs-a"><span>Contas a pagar anotadas no caderno</span></span><span class="sis-vs-seta" aria-hidden="true"><i></i></span><span class="sis-vs-b">Vencimentos com aviso e o fluxo de caixa numa tela só</span></li>
+        <li style="--i:4"><span class="sis-vs-a"><span>Férias e documentos lembrados em cima da hora</span></span><span class="sis-vs-seta" aria-hidden="true"><i></i></span><span class="sis-vs-b">Prazos do pessoal com alerta antes de vencer</span></li>
+        <li style="--i:5"><span class="sis-vs-a"><span>Digitar preço e estoque do fornecedor</span></span><span class="sis-vs-seta" aria-hidden="true"><i></i></span><span class="sis-vs-b">Integração atualiza preço e estoque sem ninguém digitar</span></li>
+      </ol>
+    </div>
     <div class="sis-head2 reveal">
-      <span class="hud">O que dá para transformar em sistema</span>
-      <h3>Se a sua equipe repete, dá para automatizar.</h3>
+      <span class="hud">Áreas que viram sistema</span>
+      <h3>Onde a MAJEX entra na sua empresa.</h3>
     </div>
     <div class="feat-grid sis-grid">
       <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div><h3>Financeiro</h3><p>Contas a pagar e a receber, fluxo de caixa e cobrança sem planilha solta.</p><div class="feat-more"><span>Vencimentos com aviso, conciliação e o saldo do mês numa tela só.</span></div></div>
@@ -1973,6 +2010,14 @@ html.lite .hero-gl{display:none}
   function liga(){ if(timer) return; for(var n=0;n<4;n++) linha(); conta(); timer=setInterval(function(){ linha(); clk.textContent=hora(new Date()); },1700); clk.textContent=hora(new Date()); }
   function desliga(){ clearInterval(timer); timer=null; }
   if("IntersectionObserver" in window){ new IntersectionObserver(function(es){ es.forEach(function(en){ en.isIntersecting?liga():desliga(); }); },{threshold:.15}).observe(log); } else liga();
+})();
+</script>
+
+<script>
+/* comparativo "Hoje × Com sistema": risca o jeito antigo e acende o novo quando entra na tela */
+(function(){ var vs=document.getElementById("sisVs"); if(!vs) return;
+  if(!("IntersectionObserver" in window)){ vs.classList.add("on"); return; }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ vs.classList.add("on"); io.disconnect(); } }); },{threshold:.3}); io.observe(vs);
 })();
 </script>
 </body>
