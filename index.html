@@ -31,6 +31,9 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/js/cliques.js"></script>
 <link rel="preload" href="/fonts/chakra-petch-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/manrope-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>/* fontes locais: parte 13 */
@@ -489,6 +492,13 @@ footer.ft{padding:48px 0 40px; border-top:1px solid var(--line)}
 .ft-inner{display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between; align-items:center}
 .ft small{color:var(--ink-soft); font-size:13.5px}
 .ft-note{font-size:12.5px; color:var(--ink-soft); margin-top:22px; max-width:74ch; line-height:1.6}
+.ft-seg{display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:18px; font-size:13.5px}
+.ft-seg span{color:var(--ink-soft); font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; align-self:center}
+.ft-seg a{color:var(--ink-2); text-decoration:none; font-weight:600}
+.ft-seg a:hover{color:var(--cyan-txt,var(--cyan))}
+a.tag-link{text-decoration:none; color:inherit}
+a.tag-link:hover{border-color:var(--cyan)}
+a.tag-link::after{content:"↗"; margin-left:6px; font-size:.8em; color:var(--cyan-txt,var(--cyan))}
 
 /* ================= REVEAL ================= */
 .js .reveal{opacity:0; transform:translateY(22px) scale(.985); filter:blur(5px)}
@@ -928,7 +938,7 @@ html.lite .hero-gl{display:none}
 .sis-vs-seta{position:relative; height:2px; margin:0 12px; background:var(--line); overflow:visible}
 .sis-vs-seta i{position:absolute; inset:0; background:linear-gradient(90deg,var(--cyan),var(--cyan-deep)); transform:scaleX(0); transform-origin:left; transition:transform .5s cubic-bezier(.6,0,.2,1) calc(var(--i)*.12s + .35s)}
 .sis-vs-seta::after{content:""; position:absolute; right:-1px; top:50%; width:8px; height:8px; border-top:2px solid var(--cyan-deep); border-right:2px solid var(--cyan-deep); transform:translateY(-50%) rotate(45deg); opacity:0; transition:opacity .3s ease calc(var(--i)*.12s + .75s)}
-.sis-vs-b{font-family:var(--f-display); font-weight:600; font-size:clamp(15.5px,1.5vw,18.5px); color:var(--ink); letter-spacing:-.01em; opacity:.18; transform:translateX(-10px); transition:opacity .6s ease calc(var(--i)*.12s + .6s), transform .6s cubic-bezier(.2,.8,.2,1) calc(var(--i)*.12s + .6s)}
+.sis-vs-b{font-family:var(--f-display); font-weight:600; font-size:clamp(15.5px,1.5vw,18.5px); color:var(--ink); letter-spacing:-.01em; opacity:0; transform:translateX(-10px); transition:opacity .6s ease calc(var(--i)*.12s + .6s), transform .6s cubic-bezier(.2,.8,.2,1) calc(var(--i)*.12s + .6s)}
 .sis-vs.on .sis-vs-a{color:color-mix(in srgb,var(--ink-soft) 70%,transparent)}
 .sis-vs.on .sis-vs-a>span{background-size:100% 1.5px}
 .sis-vs.on .sis-vs-seta i{transform:scaleX(1)}
@@ -1395,11 +1405,11 @@ svg.sb-viz{height:118px}
     </div>
     <div class="cloud reveal">
       <span class="tagbig"><i>✂️</i>Cabeleireiro & Barbearia</span>
-      <span class="tagbig"><i>👗</i>Loja de roupa</span>
-      <span class="tagbig"><i>🏭</i>Indústria</span>
-      <span class="tagbig"><i>🍝</i>Restaurante & Bar</span>
+      <a class="tagbig tag-link" href="/site-com-catalogo-e-orcamento-no-whatsapp/"><i>👗</i>Loja de roupa</a>
+      <a class="tagbig tag-link" href="/site-com-catalogo-e-orcamento-no-whatsapp/"><i>🏭</i>Indústria</a>
+      <a class="tagbig tag-link" href="/cardapio-digital-com-pedido-no-whatsapp/"><i>🍝</i>Restaurante & Bar</a>
       <span class="tagbig"><i>💪</i>Academia</span>
-      <span class="tagbig"><i>🏠</i>Imobiliária</span>
+      <a class="tagbig tag-link" href="/sites-para-imobiliaria/"><i>🏠</i>Imobiliária</a>
       <span class="tagbig"><i>🥐</i>Padaria & Confeitaria</span>
       <span class="tagbig"><i>🐾</i>Pet shop</span>
       <span class="tagbig"><i>🔧</i>Oficina mecânica</span>
@@ -1409,7 +1419,7 @@ svg.sb-viz{height:118px}
       <span class="tagbig"><i>💅</i>Estética & Manicure</span>
       <span class="tagbig"><i>📸</i>Fotografia</span>
       <span class="tagbig"><i>🏗️</i>Construtora</span>
-      <span class="tagbig"><i>🚗</i>Concessionária</span>
+      <a class="tagbig tag-link" href="/sites-para-revenda-de-veiculos/"><i>🚗</i>Concessionária</a>
       <span class="tagbig"><i>🎓</i>Escola & Curso</span>
       <span class="tagbig"><i>💐</i>Floricultura</span>
       <span class="tagbig"><i>🏨</i>Pousada & Hotel</span>
@@ -1547,6 +1557,7 @@ svg.sb-viz{height:118px}
     </div>
     <p class="ft-note">MAJEX Digital Solutions — Criação de sites, sistemas sob medida e automações para todo tipo de empresa. As revendas e a lancheria do portfólio são modelos de demonstração por segmento; os sistemas aparecem com nomes genéricos para preservar os clientes.</p>
     <p class="atende" style="margin-top:14px;font-size:13px;line-height:1.7;opacity:.62">Atendemos empresas de <strong>Santa Rosa</strong>, <strong>São Martinho</strong>, <strong>Horizontina</strong>, <strong>Três de Maio</strong>, <strong>Santo Cristo</strong>, <strong>Giruá</strong>, <strong>Tuparendi</strong>, <strong>Ijuí</strong>, <strong>Panambi</strong>, <strong>Cruz Alta</strong> e todo o noroeste do Rio Grande do Sul — e, por ser tudo online, qualquer cidade do Brasil. Criação de sites para loja, revenda de veículos, lancheria, imobiliária, salão, clínica e prestador de serviço.</p>
+    <nav class="ft-seg" aria-label="Soluções por segmento"><span>Soluções:</span><a href="/sites-para-revenda-de-veiculos/">Revenda de veículos</a><a href="/sites-para-imobiliaria/">Imobiliária</a><a href="/cardapio-digital-com-pedido-no-whatsapp/">Cardápio digital</a><a href="/site-com-catalogo-e-orcamento-no-whatsapp/">Catálogo e orçamento</a><a href="/sistemas-sob-medida/">Sistemas sob medida</a><a href="/criacao-de-sites-santa-rosa-rs/">Santa Rosa e região</a></nav>
   </div>
 </footer>
 
@@ -1689,8 +1700,11 @@ svg.sb-viz{height:118px}
     io.observe(canvas.parentNode);
     window.addEventListener('resize', function(){ size(); if(!running) draw(); });
   }
-  particleX(document.getElementById('fx'),  {cx:.77, cy:.5, mobCy:.4, hS:.9, wS:.36, mobS:.86, n:1500, nMob:220});
-  particleX(document.getElementById('fx2'), {cx:.5,  cy:.5, mobCy:.5, hS:.95, wS:.32, mobS:.9, n:1100, nMob:160});
+  var depois=window.requestIdleCallback? function(f){ requestIdleCallback(f,{timeout:700}); } : function(f){ setTimeout(f,120); };
+  requestAnimationFrame(function(){ depois(function(){ particleX(document.getElementById('fx'),  {cx:.77, cy:.5, mobCy:.4, hS:.9, wS:.36, mobS:.86, n:1500, nMob:220}); }); });
+  (function(){ var c2=document.getElementById('fx2'); if(!c2) return; var cfg2={cx:.5,  cy:.5, mobCy:.5, hS:.95, wS:.32, mobS:.9, n:1100, nMob:160};
+    if(!('IntersectionObserver' in window)){ particleX(c2,cfg2); return; }
+    var o2=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ o2.disconnect(); particleX(c2,cfg2); } },{rootMargin:'600px 0px'}); o2.observe(c2); })();
 
   var fine = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
 
@@ -1862,6 +1876,15 @@ svg.sb-viz{height:118px}
 </script>
 
 <script>
+/* desempenho: parte 14 — animações de entrada disparadas por um observador único */
+window.aoEntrar=(function(){ var io=("IntersectionObserver" in window)? new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting||e.boundingClientRect.top<0){ (e.target.__mjA||[]).forEach(function(t){ t.play(); }); e.target.__mjA=null; io.unobserve(e.target); } }); },{rootMargin:"0px 0px -3% 0px"}) : null;
+  return function(el,t){ if(!io||!el){ t.play(); return; } (el.__mjA=el.__mjA||[]).push(t); io.observe(el); }; })();
+window.mjFatia=(function(){ var fila=[], rodando=false;
+  function roda(dl){ var ate=performance.now()+12; while(fila.length && (dl&&dl.timeRemaining? dl.timeRemaining()>4 : performance.now()<ate)) { try{ fila.shift()(); }catch(e){} } if(fila.length) agenda(); else rodando=false; }
+  function agenda(){ if(window.requestIdleCallback) requestIdleCallback(roda,{timeout:400}); else setTimeout(roda,16); }
+  return function(f){ fila.push(f); if(!rodando){ rodando=true; agenda(); } }; })();
+</script>
+<script>
 /* v3 */
 (function(){
   var hasGsap=typeof gsap!=='undefined' && typeof ScrollTrigger!=='undefined'; if(!hasGsap) return;
@@ -1872,19 +1895,19 @@ svg.sb-viz{height:118px}
       if(c.nodeType===3){ var parts=c.textContent.split(/(\s+)/), frag=document.createDocumentFragment(); parts.forEach(function(t){ if(!t) return; if(/^\s+$/.test(t)){ frag.appendChild(document.createTextNode(' ')); } else { var w=document.createElement('span'); w.className='w'; var i=document.createElement('span'); i.className='wi'; i.textContent=t; w.appendChild(i); frag.appendChild(w); } }); c.replaceWith(frag); }
       else if(c.nodeType===1 && c.tagName!=='BR') walk(c); }); };
     walk(el);
-    gsap.from($$('.wi',el),{yPercent:112, duration:.95, ease:'expo.out', stagger:.035, scrollTrigger:{trigger:el, start:'top 96%', once:true}});
+    aoEntrar(el, gsap.from($$('.wi',el),{yPercent:112, duration:.95, ease:'expo.out', stagger:.035, paused:true}));
   }
   /* numeração + títulos das seções */
   var n=3;
-  $$('.sec-head').forEach(function(h){
+  $$('.sec-head').forEach(function(h){ mjFatia(function(){
     if(h.closest('#modelos')) return;
     var eb=h.querySelector('.eyebrow'), txt=eb? eb.textContent.replace(/^\/\/\s*/,'').trim() : '';
     var hud=document.createElement('span'); hud.className='hud'; hud.innerHTML='[ 0'+n+' ]&nbsp;&nbsp;'+(txt||'Planos e valores'); n++;
     if(eb) eb.replaceWith(hud); else h.insertBefore(hud,h.firstChild);
     h.classList.remove('reveal'); h.classList.add('in');
     var h2=h.querySelector('h2'); if(h2) splitWords(h2);
-    var p=h.querySelector('p'); if(p) gsap.from(p,{opacity:0, y:14, duration:.8, ease:'power2.out', delay:.15, scrollTrigger:{trigger:h, start:'top 96%', once:true}});
-  });
+    var p=h.querySelector('p'); if(p) aoEntrar(h, gsap.from(p,{opacity:0, y:14, duration:.8, ease:'power2.out', delay:.15, paused:true}));
+  }); });
   var srh=$('.sr2-h'); if(srh) splitWords(srh);
   var ctaH=$('.cta-inner h2'); if(ctaH){ ctaH.closest('.reveal') && ctaH.closest('.reveal').classList.add('in'); splitWords(ctaH); }
   /* nav esconde ao descer, volta ao subir */
@@ -1913,14 +1936,14 @@ svg.sb-viz{height:118px}
   function navFlip(){ var h=nav?nav.offsetHeight:70; var on=flips.some(function(s){ var r=s.getBoundingClientRect(); return r.top<=h && r.bottom>h; }); if(nav) nav.classList.toggle('on-flip',on); }
   window.addEventListener('scroll',navFlip,{passive:true}); window.addEventListener('resize',navFlip); navFlip();
   if(typeof gsap!=='undefined' && typeof ScrollTrigger!=='undefined'){
-    $$('.pf4-case').forEach(function(c){
+    $$('.pf4-case').forEach(function(c){ mjFatia(function(){
       var shell=$('.pf4-shell',c), img=$('.pf4-screen img',c), info=$('.pf4-info',c), ph=$('.pf4-phone',c);
-      var tl=gsap.timeline({scrollTrigger:{trigger:c, start:'top 94%', once:true}});
+      var tl=gsap.timeline({paused:true}); aoEntrar(c, tl);
       if(shell) tl.from(shell,{clipPath:'inset(0 0 100% 0 round 18px)', duration:1.1, ease:'expo.out'},0);
       if(img) tl.fromTo(img,{scale:1.18},{scale:1.02, duration:1.4, ease:'expo.out', clearProps:'transform', onStart:function(){ img.style.transition='none'; }, onComplete:function(){ img.style.transition=''; }},0);
       if(ph) tl.from(ph,{y:40, opacity:0, duration:.9, ease:'power3.out'},.35);
       tl.from(info.children,{y:22, opacity:0, duration:.8, ease:'power3.out', stagger:.08},.25);
-    });
+    }); });
   }
 })();
 </script>
@@ -1966,7 +1989,7 @@ svg.sb-viz{height:118px}
     <li><b>Dados técnicos de acesso:</b> a hospedagem registra automaticamente endereço IP, tipo de navegador e páginas acessadas, para segurança e estatísticas agregadas. Não identificamos você por esses dados.</li>
   </ul>
   <h3>3. Cookies e ferramentas de terceiros</h3>
-  <p>Este site não usa cookies de publicidade nem de rastreamento entre sites. Se algum dia passarmos a usar ferramentas de estatística, elas só serão ativadas com o seu consentimento, por meio de um aviso na tela. Serviços de terceiros que podem receber dados técnicos ao carregar a página: Vercel (hospedagem do site); Google Fonts (fontes tipográficas); WhatsApp/Meta (atendimento); Sites modelo da própria MAJEX exibidos dentro da página (iframe).</p>
+  <p>Este site não usa cookies de publicidade nem de rastreamento entre sites. Para saber quantas pessoas visitam o site e quantas clicam nos botões de contato, usamos o Vercel Web Analytics, da própria hospedagem: ele conta visitas e cliques de forma anônima e agregada (página, país, tipo de aparelho e site de origem), não usa cookies, não guarda nenhum identificador no seu aparelho e não acompanha você em outros sites. Serviços de terceiros que podem receber dados técnicos ao carregar a página: Vercel (hospedagem e estatística anônima); WhatsApp/Meta (atendimento); Sites modelo da própria MAJEX exibidos dentro da página (iframe). As fontes tipográficas são servidas pelo próprio site.</p>
   <h3>4. Base legal e finalidade</h3>
   <p>Tratamos seus dados para executar o atendimento ou o pedido que você solicitou (art. 7º, V), pelo nosso legítimo interesse em manter o site seguro e funcionando (art. 7º, IX) e, quando aplicável, com o seu consentimento (art. 7º, I).</p>
   <h3>5. Compartilhamento e retenção</h3>
@@ -1975,7 +1998,7 @@ svg.sb-viz{height:118px}
   <p>Você pode, a qualquer momento, pedir confirmação de tratamento, acesso, correção, anonimização, portabilidade ou exclusão dos seus dados, e revogar consentimentos (art. 18). Basta falar pelo canal indicado no item 1. Respondemos em até 15 dias.</p>
   <h3>7. Segurança e alterações</h3>
   <p>O site é servido por conexão criptografada (HTTPS) e não armazena senhas ou dados de pagamento. Esta política pode ser atualizada; a data da última versão fica registrada abaixo.</p>
-  <small>Última atualização: 13 de setembro de 2026.</small>
+  <small>Última atualização: 7 de novembro de 2026.</small>
 </div></div>
 <script>
 (function(){
@@ -1983,9 +2006,10 @@ svg.sb-viz{height:118px}
   var KEY='lgpd-consent', $=function(s){return document.querySelector(s);};
   var ft=document.querySelector('footer')||document.body;
   var foot=document.createElement('div'); foot.className='lg-foot';
-  foot.innerHTML=(CFG.analytics?'Usamos armazenamento essencial e, com a sua permissão, estatísticas de acesso. ':'Este site usa apenas armazenamento essencial do navegador, sem rastreadores. ')+'<a href="#" data-lg-open>Política de privacidade</a>'+(CFG.analytics?'<a href="#" data-lg-prefs>Preferências de cookies</a>':'');
+  foot.innerHTML=(CFG.analytics?'Usamos armazenamento essencial e, com a sua permissão, estatísticas de acesso. ':'Este site usa só armazenamento essencial do navegador e conta visitas de forma anônima, sem cookies. ')+'<a href="#" data-lg-open>Política de privacidade</a>'+(CFG.analytics?'<a href="#" data-lg-prefs>Preferências de cookies</a>':'');
   ft.appendChild(foot);
   function openModal(){ $('#lgModal').classList.add('on'); document.documentElement.style.overflow='hidden'; }
+  if(location.hash==='#privacidade') setTimeout(openModal,400);
   function closeModal(){ $('#lgModal').classList.remove('on'); document.documentElement.style.overflow=''; }
   function readChoice(){ try{ return JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){ return null; } }
   function setChoice(v){ try{ localStorage.setItem(KEY,JSON.stringify({v:v,t:Date.now()})); }catch(e){} $('#lgBanner').classList.remove('on'); if(v==='accept') activate(); }
