@@ -206,9 +206,69 @@ const PAGINAS = [
   },
 ];
 
+// texto curto da imagem de compartilhamento (og/<slug>.jpg, feita por gerar-og.js)
+const OG = {
+  "sites-para-revenda-de-veiculos": { titulo: "Site para revenda de veículos", frase: "Estoque com fotos, busca pela parcela e WhatsApp em cada carro.", kicker: "Revenda · garagem", desk: "img/shot-1-1280.webp", cel: "img/shot-5-320.webp" },
+  "sites-para-imobiliaria": { titulo: "Site para imobiliária", frase: "Catálogo com filtros, página para cada imóvel e painel da equipe.", kicker: "Imobiliária · corretor", desk: "img/kiesel-desk-1280.webp", cel: "img/kiesel-cel-320.webp" },
+  "cardapio-digital-com-pedido-no-whatsapp": { titulo: "Cardápio digital com pedido no WhatsApp", frase: "Sem app e sem comissão por pedido.", kicker: "Lancheria · restaurante", desk: "img/shot-3-1280.webp", cel: "img/shot-7-360.webp" },
+  "site-com-catalogo-e-orcamento-no-whatsapp": { titulo: "Catálogo e orçamento no WhatsApp", frase: "Preço por quantidade, painel e integração com fornecedor.", kicker: "Loja · indústria · brindes", desk: "img/khaus-desk-1280.webp", cel: "img/khaus-cel-320.webp" },
+  "sistemas-sob-medida": { titulo: "Sistemas sob medida", frase: "Financeiro, estoque, pessoal, WhatsApp e orçamentos em 3D.", kicker: "Sistemas · automação", desk: "img/sis-erp-fin-1280.webp", cel: null },
+  "criacao-de-sites-santa-rosa-rs": { titulo: "Sites em Santa Rosa e região", frase: "Sites e sistemas para empresas do noroeste do RS.", kicker: "Noroeste do RS", desk: "img/larssen-desk-1280.webp", cel: "img/kiesel-cel-320.webp" },
+};
+
 const ICONE = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><path d="M8.5 12.2l2.4 2.4 4.8-5"/></svg>';
 const LOGO = '<svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="mjxg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22E7CE"/><stop offset=".55" stop-color="#3FD6E8"/><stop offset="1" stop-color="#8B6BFF"/></linearGradient></defs><rect x="3" y="3" width="42" height="42" rx="13" fill="#0A0B12" stroke="url(#mjxg)" stroke-width="1.6"/><g stroke-linecap="round" stroke-width="4.4" fill="none"><path d="M17 16 L31 32" stroke="#8B6BFF" opacity=".85" transform="translate(2 -1)"/><path d="M31 16 L17 32" stroke="#8B6BFF" opacity=".85" transform="translate(2 -1)"/><path d="M17 16 L31 32" stroke="url(#mjxg)"/><path d="M31 16 L17 32" stroke="#22E7CE"/></g><circle cx="24" cy="24" r="1.7" fill="#EAFBF8"/></svg>';
 const ZAPI = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg>';
+
+// botão de WhatsApp que acompanha a rolagem; some quando o botão do fim da página aparece
+function flutuante(msg) {
+  return `<a class="zap-flutua" href="${zap(msg)}" target="_blank" rel="noopener" aria-label="Falar com a MAJEX no WhatsApp">${ZAPI}<span>Orçamento</span></a>
+<script>(function(){ var f=document.querySelector('.zap-flutua'), alvos=document.querySelectorAll('.cta .btn-zap, .hero .btn-zap'); if(!f||!('IntersectionObserver' in window)) return; var vis=new Set();
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting? vis.add(e.target) : vis.delete(e.target); }); f.classList.toggle('some', vis.size>0); }); alvos.forEach(function(a){ io.observe(a); }); })();</script>`;
+}
+
+// página de erro (404.html): a Vercel serve sozinha para endereços que não existem
+function pagina404() {
+  const msg = "Olá MAJEX! Vim pelo site e quero um orçamento.";
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página não encontrada | MAJEX Digital Solutions</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#07080D">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/paginas.css">
+<script>try{var t=localStorage.getItem('majex-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/js/cliques.js"></script>
+</head>
+<body>
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="marca" href="/" aria-label="MAJEX Digital Solutions, página inicial">${LOGO}<span><b>MAJEX</b><small>DIGITAL SOLUTIONS</small></span></a>
+    <nav class="topo-nav" aria-label="Principal"><a href="/#portfolio">Portfólio</a><a href="/#sistemas">Sistemas</a><a href="/#faq">Dúvidas</a></nav>
+    <a class="btn btn-zap btn-p" href="${zap(msg)}" target="_blank" rel="noopener">${ZAPI}<span>Orçamento</span></a>
+  </div>
+</header>
+<main class="erro">
+  <div class="wrap estreito">
+    <p class="kicker">Erro 404 · página não encontrada</p>
+    <h1>Esse endereço não existe, mas o seu site pode existir.</h1>
+    <p class="lead">O link pode estar errado ou a página mudou de lugar. Escolha por onde continuar:</p>
+    <div class="acoes"><a class="btn btn-sec" href="/">Ir para a página inicial</a><a class="btn btn-sec" href="/#portfolio">Ver o portfólio</a><a class="btn btn-zap" href="${zap(msg)}" target="_blank" rel="noopener">${ZAPI}<span>Falar no WhatsApp</span></a></div>
+    <p class="rotulo erro-rot">Soluções por segmento</p>
+    <ul class="erro-links">${PAGINAS.map((x) => `<li><a href="/${x.slug}/">${esc(x.menu)}<span aria-hidden="true">→</span></a></li>`).join("")}</ul>
+  </div>
+</main>
+<footer class="rodape"><div class="wrap"><p>MAJEX Digital Solutions · São Martinho, RS · <a href="https://wa.me/${ZAP}" target="_blank" rel="noopener">(55) 99624-1177</a></p></div></footer>
+</body>
+</html>
+`;
+}
 
 function pagina(P) {
   const url = `${SITE}/${P.slug}/`;
@@ -233,7 +293,11 @@ function pagina(P) {
 <meta property="og:title" content="${esc(P.title)}">
 <meta property="og:description" content="${esc(P.desc)}">
 <meta property="og:url" content="${url}">
-<meta property="og:image" content="${SITE}/og.jpg">
+<meta property="og:image" content="${SITE}/og/${P.slug}.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(OG[P.slug].titulo)} · MAJEX">
+<meta name="twitter:image" content="${SITE}/og/${P.slug}.jpg">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="MAJEX Digital Solutions">
 <meta name="twitter:card" content="summary_large_image">
@@ -349,6 +413,7 @@ ${P.cidades ? `
     <p class="miudo">Atendemos Santa Rosa, São Martinho, Horizontina, Três de Maio, Santo Cristo, Giruá, Tuparendi, Ijuí, Panambi, Cruz Alta e todo o noroeste do RS. Este site conta visitas de forma anônima, sem cookies. <a href="/#privacidade">Política de privacidade</a></p>
   </div>
 </footer>
+${flutuante(P.msg)}
 </body>
 </html>
 `;
@@ -366,6 +431,7 @@ fs.writeFileSync(path.join(RAIZ, "css", "paginas.css"), FONTES.join("\n") + "\n"
 // sitemap: página inicial + as páginas geradas
 const urls = [`${SITE}/`].concat(PAGINAS.map((P) => `${SITE}/${P.slug}/`));
 fs.writeFileSync(path.join(RAIZ, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` + urls.map((u, i) => `  <url><loc>${u}</loc><lastmod>${HOJE}</lastmod><priority>${i ? "0.8" : "1.0"}</priority></url>`).join("\n") + "\n</urlset>\n");
-// lista para o rodapé da página inicial
-fs.writeFileSync(path.join(__dirname, "paginas.json"), JSON.stringify(PAGINAS.map((P) => ({ slug: P.slug, menu: P.menu })), null, 1));
+fs.writeFileSync(path.join(RAIZ, "404.html"), pagina404());
+// lista para o rodapé da página inicial e para as imagens de compartilhamento
+fs.writeFileSync(path.join(__dirname, "paginas.json"), JSON.stringify(PAGINAS.map((P) => ({ slug: P.slug, menu: P.menu, og: OG[P.slug] })), null, 1));
 console.log("geradas:", PAGINAS.map((P) => "/" + P.slug + "/").join(" "));

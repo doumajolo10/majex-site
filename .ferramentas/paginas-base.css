@@ -147,3 +147,22 @@ p{margin:0}
   .marca small{display:none}
 }
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .btn{transition:none} }
+
+/* botão de WhatsApp que acompanha a rolagem */
+.zap-flutua{position:fixed; right:18px; bottom:18px; z-index:30; display:inline-flex; align-items:center; gap:9px; padding:12px 18px; border-radius:999px; background:var(--wa); color:#04140A; font:700 15px/1 var(--f-body); text-decoration:none; box-shadow:0 14px 34px -12px rgba(0,0,0,.6), 0 8px 22px -10px var(--wa); transition:opacity .25s ease, transform .25s ease}
+.zap-flutua svg{width:22px; height:22px}
+.zap-flutua:hover{transform:translateY(-2px)}
+.zap-flutua.some{opacity:0; transform:translateY(12px); pointer-events:none}
+.rodape{padding-bottom:96px}
+@media (max-width:480px){ .zap-flutua{right:14px; bottom:14px; padding:13px} .zap-flutua span{display:none} }
+
+/* página de erro */
+.erro{padding:72px 0 88px; min-height:60vh}
+.erro h1{font-size:clamp(32px, 4.4vw, 52px); font-weight:700; margin:14px 0 18px}
+.erro-rot{margin-top:52px}
+.erro-links{list-style:none; padding:0; margin:16px 0 0; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px}
+.erro-links a{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:16px 18px; border-radius:14px; border:1px solid var(--line); background:var(--panel); text-decoration:none; font-weight:700}
+.erro-links a:hover{border-color:var(--cyan)}
+.erro-links span{color:var(--cyan-txt)}
+@media (max-width:600px){ .erro-links{grid-template-columns:minmax(0,1fr)} }
+@media (prefers-reduced-motion: reduce){ .zap-flutua{transition:none} }

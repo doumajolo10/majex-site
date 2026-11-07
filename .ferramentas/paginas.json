@@ -1,26 +1,68 @@
 [
  {
   "slug": "sites-para-revenda-de-veiculos",
-  "menu": "Revenda de veículos"
+  "menu": "Revenda de veículos",
+  "og": {
+   "titulo": "Site para revenda de veículos",
+   "frase": "Estoque com fotos, busca pela parcela e WhatsApp em cada carro.",
+   "kicker": "Revenda · garagem",
+   "desk": "img/shot-1-1280.webp",
+   "cel": "img/shot-5-320.webp"
+  }
  },
  {
   "slug": "sites-para-imobiliaria",
-  "menu": "Imobiliária"
+  "menu": "Imobiliária",
+  "og": {
+   "titulo": "Site para imobiliária",
+   "frase": "Catálogo com filtros, página para cada imóvel e painel da equipe.",
+   "kicker": "Imobiliária · corretor",
+   "desk": "img/kiesel-desk-1280.webp",
+   "cel": "img/kiesel-cel-320.webp"
+  }
  },
  {
   "slug": "cardapio-digital-com-pedido-no-whatsapp",
-  "menu": "Cardápio digital"
+  "menu": "Cardápio digital",
+  "og": {
+   "titulo": "Cardápio digital com pedido no WhatsApp",
+   "frase": "Sem app e sem comissão por pedido.",
+   "kicker": "Lancheria · restaurante",
+   "desk": "img/shot-3-1280.webp",
+   "cel": "img/shot-7-360.webp"
+  }
  },
  {
   "slug": "site-com-catalogo-e-orcamento-no-whatsapp",
-  "menu": "Catálogo e orçamento"
+  "menu": "Catálogo e orçamento",
+  "og": {
+   "titulo": "Catálogo e orçamento no WhatsApp",
+   "frase": "Preço por quantidade, painel e integração com fornecedor.",
+   "kicker": "Loja · indústria · brindes",
+   "desk": "img/khaus-desk-1280.webp",
+   "cel": "img/khaus-cel-320.webp"
+  }
  },
  {
   "slug": "sistemas-sob-medida",
-  "menu": "Sistemas sob medida"
+  "menu": "Sistemas sob medida",
+  "og": {
+   "titulo": "Sistemas sob medida",
+   "frase": "Financeiro, estoque, pessoal, WhatsApp e orçamentos em 3D.",
+   "kicker": "Sistemas · automação",
+   "desk": "img/sis-erp-fin-1280.webp",
+   "cel": null
+  }
  },
  {
   "slug": "criacao-de-sites-santa-rosa-rs",
-  "menu": "Santa Rosa e região"
+  "menu": "Santa Rosa e região",
+  "og": {
+   "titulo": "Sites em Santa Rosa e região",
+   "frase": "Sites e sistemas para empresas do noroeste do RS.",
+   "kicker": "Noroeste do RS",
+   "desk": "img/larssen-desk-1280.webp",
+   "cel": "img/kiesel-cel-320.webp"
+  }
  }
 ]
