@@ -483,6 +483,29 @@ details .a{padding:0 22px 22px; color:var(--ink-soft); font-size:15px; line-heig
 .cta-final h2{font-size:clamp(2rem,4vw,3.1rem); letter-spacing:-.02em}
 .cta-final p{color:var(--ink-2); font-size:1.15rem; max-width:52ch; margin:20px auto 0}
 .cta-final .hero-cta{justify-content:center; margin-top:32px}
+.orc{max-width:720px; margin:34px auto 0; text-align:left; display:grid; gap:24px}
+.orc-q{border:0; margin:0; padding:0; min-width:0}
+.orc-q legend,.orc-leg{display:flex; align-items:center; gap:10px; font-family:var(--f-display); font-weight:600; font-size:17px; color:var(--ink); margin:0 0 12px; padding:0}
+.orc-q legend>span,.orc-leg>span{flex:0 0 auto; width:26px; height:26px; border-radius:8px; display:grid; place-items:center; font:700 12px/1 var(--f-mono); color:var(--cyan-txt,var(--cyan)); border:1px solid var(--glass-bd); background:var(--glass)}
+.orc-leg em{font-style:normal; font-family:var(--f-body); color:var(--ink-soft); font-weight:500; font-size:14px}
+.orc-op{display:flex; flex-wrap:wrap; gap:8px}
+.orc-op label{position:relative; display:inline-flex}
+.orc-op input{position:absolute; inset:0; width:100%; height:100%; opacity:0; margin:0; cursor:pointer}
+.orc-op span{display:inline-flex; align-items:center; min-height:44px; padding:10px 16px; border-radius:12px; border:1.5px solid var(--glass-bd); background:var(--panel); color:var(--ink-2); font-weight:600; font-size:15px; transition:border-color .2s, background .2s, color .2s}
+.orc-op input:hover+span{border-color:var(--cyan)}
+.orc-op input:checked+span{border-color:var(--cyan); background:color-mix(in srgb, var(--cyan) 14%, var(--panel)); color:var(--ink)}
+.orc-op input:focus-visible+span{outline:2px solid var(--cyan); outline-offset:2px}
+.orc-campo{display:block}
+.orc-campo input{width:100%; min-height:48px; padding:12px 16px; border-radius:12px; border:1.5px solid var(--glass-bd); background:var(--panel); color:var(--ink); font:500 16px/1.4 var(--f-body)}
+.orc-campo input::placeholder{color:var(--ink-soft)}
+.orc-campo input:focus{outline:none; border-color:var(--cyan)}
+.orc-fim{display:flex; flex-wrap:wrap; align-items:center; gap:14px 22px; margin-top:2px}
+.orc-direto{color:var(--ink-2); font-size:14.5px; text-decoration:underline; text-underline-offset:3px}
+.orc-direto:hover{color:var(--ink)}
+.cta-final .orc-msg{min-height:1.4em; margin:0; max-width:none; font-size:14.5px; font-weight:600; color:var(--cyan-txt,var(--cyan))}
+.cta-final .orc-msg.erro{color:var(--ink)}
+.cta-final .orc-msg.erro::before{content:"! "; color:var(--cyan-txt,var(--cyan))}
+@media (max-width:560px){ .orc-op span{font-size:14.5px; padding:9px 13px} .orc-fim{flex-direction:column; align-items:stretch; text-align:center} }
 .cta-contacts{display:flex; flex-wrap:wrap; gap:12px 30px; justify-content:center; margin-top:34px; font-family:var(--f-mono); font-size:13.5px; color:var(--ink-soft)}
 .cta-contacts a{display:inline-flex; align-items:center; gap:9px; color:var(--ink)}
 .cta-contacts svg{width:16px; height:16px; color:var(--cyan)}
@@ -1531,13 +1554,21 @@ svg.sb-viz{height:118px}
       <div class="cta-inner">
         <span class="eyebrow" style="justify-content:center">Vamos começar</span>
         <h2 style="margin-top:16px">O seu site ou sistema pode<br>estar no ar ainda este mês.</h2>
-        <p>Me manda uma mensagem contando qual é o seu negócio e o que você precisa: site, sistema ou automação. O orçamento é gratuito e sem compromisso.</p>
-        <div class="hero-cta">
-          <a class="btn btn-wa" href="https://wa.me/5555996241177?text=Ol%C3%A1%20MAJEX!%20Vi%20o%20portf%C3%B3lio%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            Chamar no WhatsApp
-          </a>
-        </div>
+        <p>Responda 3 perguntas rápidas e o pedido chega organizado no meu WhatsApp. O orçamento é gratuito e sem compromisso.</p>
+        <form class="orc" id="orc" novalidate>
+          <fieldset class="orc-q"><legend><span>1</span>O que você precisa?</legend>
+            <div class="orc-op"><label><input type="radio" name="orc-o" value="Site para a empresa"><span>Site para a empresa</span></label><label><input type="radio" name="orc-o" value="Loja ou catálogo"><span>Loja ou catálogo</span></label><label><input type="radio" name="orc-o" value="Cardápio com pedido"><span>Cardápio com pedido</span></label><label><input type="radio" name="orc-o" value="Sistema sob medida"><span>Sistema sob medida</span></label><label><input type="radio" name="orc-o" value="Automação de WhatsApp"><span>Automação de WhatsApp</span></label><label><input type="radio" name="orc-o" value="Ainda não sei"><span>Ainda não sei</span></label></div>
+          </fieldset>
+          <fieldset class="orc-q"><legend><span>2</span>Para quando?</legend>
+            <div class="orc-op"><label><input type="radio" name="orc-p" value="Este mês"><span>Este mês</span></label><label><input type="radio" name="orc-p" value="Nos próximos 2 meses"><span>Nos próximos 2 meses</span></label><label><input type="radio" name="orc-p" value="Só estou pesquisando"><span>Só estou pesquisando</span></label></div>
+          </fieldset>
+          <label class="orc-q orc-campo"><span class="orc-leg"><span>3</span>Conte do seu negócio <em>(opcional)</em></span><input type="text" id="orcNeg" maxlength="90" autocomplete="organization" placeholder="Ex.: revenda de carros em Santa Rosa"></label>
+          <div class="orc-fim">
+            <button class="btn btn-wa" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Enviar pedido no WhatsApp</button>
+            <a class="orc-direto" href="https://wa.me/5555996241177?text=Ol%C3%A1%20MAJEX!%20Vi%20o%20portf%C3%B3lio%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">ou chame direto, sem responder nada</a>
+          </div>
+          <p class="orc-msg" role="status" aria-live="polite"></p>
+        </form>
         <div class="cta-contacts">
           <a href="https://wa.me/5555996241177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (55) 99624-1177</a>
           <a href="https://instagram.com/majexds" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg> @majexds</a>
@@ -2077,6 +2108,20 @@ window.mjFatia=(function(){ var fila=[], rodando=false;
   <div class="ilha-ok-msg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Abrindo o WhatsApp…</span></div>
 </div>
 
+<script>
+/* orçamento guiado */
+(function(){ var f=document.getElementById('orc'); if(!f) return; var msg=f.querySelector('.orc-msg'), enviando=false;
+  f.addEventListener('submit',function(e){ e.preventDefault(); if(enviando) return;
+    var o=f.querySelector('input[name="orc-o"]:checked'), p=f.querySelector('input[name="orc-p"]:checked'), n=(document.getElementById('orcNeg').value||'').replace(/\s+/g,' ').trim();
+    if(!o){ msg.textContent='Escolha o que você precisa no item 1.'; msg.classList.add('erro'); f.querySelector('input[name="orc-o"]').focus(); return; }
+    msg.classList.remove('erro');
+    var t='Olá MAJEX! Quero um orçamento.\n\n• Preciso de: '+o.value+(n?'\n• Meu negócio: '+n:'')+(p?'\n• Para quando: '+p.value:'');
+    var a=document.createElement('a'); a.href='https://wa.me/5555996241177?text='+encodeURIComponent(t); a.target='_blank'; a.rel='noopener'; a.setAttribute('data-onde','orcamento-guiado'); a.hidden=true;
+    f.appendChild(a); a.click(); a.remove();
+    msg.textContent='Abrindo o WhatsApp com o seu pedido…'; enviando=true; setTimeout(function(){ enviando=false; },2500); });
+  f.addEventListener('change',function(){ if(msg.classList.contains('erro')){ msg.textContent=''; msg.classList.remove('erro'); } });
+})();
+</script>
 <script>
 /* ===== FX26 ===== */
 (function(){

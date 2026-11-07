@@ -18,7 +18,7 @@
     else if(a.target === "_blank" && h.indexOf(location.host) === -1 && /^https?:/.test(h)) tipo = "site-portfolio";
     if(!tipo) return;
     var pagina = location.pathname.replace(/^\/|\/$/g, "") || "inicio";
-    var lugar = pagina + "-" + onde(a);
+    var lugar = pagina + "-" + (a.getAttribute("data-onde") || onde(a));
     try{ window.va("event", { name: "clique_" + tipo, data: { onde: lugar } }); }catch(_){}
     try{ window.va("pageview", { route: "/clique/" + tipo, path: "/clique/" + tipo + "/" + lugar }); }catch(_){}
   }, true);
