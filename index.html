@@ -1034,6 +1034,17 @@ svg.sb-viz{height:118px}
 
 #planos .price{font-size:clamp(2.4rem,5vw,3.6rem); letter-spacing:-.02em}
 </style>
+<style>
+/* S4 — app de caixa: celular com as telas trocando sozinhas */
+.sis-caixa-media{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:26px 0}
+.sis-fone{position:relative;display:block;width:min(260px,62vw);aspect-ratio:390/844;border-radius:40px;padding:9px;background:#121419;border:1.5px solid rgba(255,255,255,.13);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.sis-fone img{position:absolute;left:9px;top:9px;width:calc(100% - 18px);height:calc(100% - 18px);object-fit:cover;object-position:top;border-radius:32px;opacity:0;transform:translateY(10px) scale(1.015);transition:opacity .6s ease,transform .8s cubic-bezier(.16,1,.3,1)}
+.sis-fone img.on{opacity:1;transform:none}
+.sis-caixa-chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.sis-caixa-chips button{font:500 12px/1 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.06em;padding:8px 12px;border-radius:999px;border:1px solid rgba(127,127,127,.35);background:transparent;color:inherit;opacity:.7;cursor:pointer;transition:opacity .2s,border-color .2s,color .2s}
+.sis-caixa-chips button:hover{opacity:1}
+.sis-caixa-chips button.on{opacity:1;border-color:var(--acc);color:var(--acc)}
+</style>
 </head>
 <body>
 
@@ -1374,6 +1385,19 @@ svg.sb-viz{height:118px}
           <h3>Projetos em 3D e orçamento na hora</h3>
           <p>Para uma serralheria que fazia todo orçamento no papel. Entram as medidas, saem o 3D da obra, o desenho técnico cotado, os perfis calculados, a lista de corte com os quilos de aço e o orçamento em PDF para o cliente.</p>
           <ul class="pf4-feats"><li>3D para o cliente</li><li>Desenho cotado</li><li>Lista de corte</li><li>Orçamento em PDF</li><li>Modelos prontos</li></ul>
+          <a class="btn btn-wa mag" href="#contato"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.04c-.24.69-1.42 1.32-1.96 1.4-.5.08-1.14.11-1.83-.11-.42-.13-.97-.31-1.67-.61-2.93-1.27-4.85-4.22-5-4.42-.15-.2-1.2-1.59-1.2-3.04s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37h.57c.18 0 .43-.07.67.51.25.59.84 2.04.91 2.19.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.31.39-.45.52-.15.15-.3.31-.13.61.17.3.77 1.27 1.65 2.06 1.13 1.01 2.09 1.32 2.38 1.47.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.72.81 2.01.96.3.15.49.22.57.34.07.13.07.71-.17 1.4Z"/></svg>Quero um assim</a>
+        </div>
+      </article>
+      <article class="pf4-case sis-caixa" style="--acc:#46D69C">
+        <div class="pf4-media sis-caixa-media">
+          <span class="sis-fone" id="sisFone"><img class="on" src="img/sis-caixa-inicio-390.webp" srcset="img/sis-caixa-inicio-390.webp 390w, img/sis-caixa-inicio-780.webp 780w" sizes="260px" width="390" height="844" alt="Início do app: quanto sobrou no mês, quanto entrou e quanto saiu" loading="lazy" decoding="async"><img src="img/sis-caixa-lancar-390.webp" srcset="img/sis-caixa-lancar-390.webp 390w, img/sis-caixa-lancar-780.webp 780w" sizes="260px" width="390" height="844" alt="Lançar uma lavagem: escolhe o serviço, o valor já entra" loading="lazy" decoding="async"><img src="img/sis-caixa-patio-390.webp" srcset="img/sis-caixa-patio-390.webp 390w, img/sis-caixa-patio-780.webp 780w" sizes="260px" width="390" height="844" alt="Pátio de hoje: cada carro atendido com hora, placa e valor" loading="lazy" decoding="async"><img src="img/sis-caixa-relatorio-390.webp" srcset="img/sis-caixa-relatorio-390.webp 390w, img/sis-caixa-relatorio-780.webp 780w" sizes="260px" width="390" height="844" alt="Relatório do mês com o resumo e quanto entrou por dia" loading="lazy" decoding="async"></span>
+          <span class="sis-caixa-chips" role="group" aria-label="Telas do app"><button type="button" data-tela="0" class="on">Início</button><button type="button" data-tela="1">Lançar</button><button type="button" data-tela="2">Pátio</button><button type="button" data-tela="3">Relatório</button></span>
+        </div>
+        <div class="pf4-info">
+          <span class="hud">S4 — Serviços · lava-car</span>
+          <h3>O caixa da empresa no celular</h3>
+          <p>Para um lava-car que controlava tudo no caderno. Cada lavagem entra em três toques, o pátio mostra os carros do dia com a placa e o relatório fecha o mês sozinho. Funciona sem internet e vira ícone na tela do celular.</p>
+          <ul class="pf4-feats"><li>Lança em 3 toques</li><li>Pátio do dia</li><li>Relatório do mês</li><li>Funciona sem internet</li><li>Vira app no celular</li></ul>
           <a class="btn btn-wa mag" href="#contato"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.04c-.24.69-1.42 1.32-1.96 1.4-.5.08-1.14.11-1.83-.11-.42-.13-.97-.31-1.67-.61-2.93-1.27-4.85-4.22-5-4.42-.15-.2-1.2-1.59-1.2-3.04s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37h.57c.18 0 .43-.07.67.51.25.59.84 2.04.91 2.19.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.31.39-.45.52-.15.15-.3.31-.13.61.17.3.77 1.27 1.65 2.06 1.13 1.01 2.09 1.32 2.38 1.47.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.72.81 2.01.96.3.15.49.22.57.34.07.13.07.71-.17 1.4Z"/></svg>Quero um assim</a>
         </div>
       </article>
@@ -2276,6 +2300,14 @@ window.mjFatia=(function(){ var fila=[], rodando=false;
   var io=new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle("fora-tela",!e.isIntersecting); }); },{rootMargin:"250px 0px"});
   document.querySelectorAll("main > section, body > section, section.sec, footer, .marq").forEach(function(el){ io.observe(el); });
 })();
+</script>
+<script>
+/* S4: troca as telas do celular a cada 2,8 s enquanto o case está na tela; tocar num botão escolhe a tela */
+(function(){var f=document.getElementById("sisFone");if(!f)return;var im=f.querySelectorAll("img"),bt=document.querySelectorAll(".sis-caixa-chips button"),i=0,t=null,visivel=false;
+function vai(n){i=(n+im.length)%im.length;for(var k=0;k<im.length;k++){im[k].classList.toggle("on",k===i);bt[k].classList.toggle("on",k===i)}}
+function liga(){parar();if(visivel)t=setInterval(function(){vai(i+1)},2800)}function parar(){if(t){clearInterval(t);t=null}}
+for(var k=0;k<bt.length;k++)(function(n){bt[n].addEventListener("click",function(){vai(n);liga()})})(k);
+if("IntersectionObserver" in window)new IntersectionObserver(function(e){visivel=e[0].isIntersecting;visivel?liga():parar()},{threshold:.3}).observe(f);else{visivel=true;liga()}})();
 </script>
 </body>
 </html>
