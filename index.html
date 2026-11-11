@@ -695,13 +695,6 @@ html.pre-on{overflow:hidden}
 .hud-scroll i{display:inline-block; width:34px; height:1px; background:currentColor; transform-origin:left; animation:scrollLine 1.6s ease-in-out infinite}
 @keyframes scrollLine{0%{transform:scaleX(0); opacity:0}30%{opacity:1}100%{transform:scaleX(1); opacity:0}}
 @media (max-width:760px){ .hero2{padding:112px 0 30px} .h2-row{grid-template-columns:1fr; gap:22px; margin-top:28px} .h2-hud{margin-top:34px} .hud-xy{display:none} .h2-top .hud-r{display:none} }
-/* marquee */
-.marq{overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:14px 0; background:var(--bg-2)}
-.marq-track{display:flex; gap:0; width:max-content; animation:marq 38s linear infinite}
-.marq span{font-family:"Space Grotesk",var(--f-body); font-weight:600; text-transform:uppercase; font-size:clamp(1.05rem,1.9vw,1.5rem); letter-spacing:.07em; padding:0 26px; white-space:nowrap; color:var(--ink)}
-.marq span:nth-child(even){color:var(--ink-soft)}
-.marq span i{font-style:normal; color:var(--cyan); margin-left:28px}
-@keyframes marq{to{transform:translateX(-50%)}}
 /* grão */
 .grain{position:fixed; inset:-10%; width:120%; height:120%; pointer-events:none; z-index:9998; opacity:.04; background-repeat:repeat; background-size:160px 160px; animation:grain 1.2s steps(6) infinite; will-change:transform}
 @keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,2%)}33%{transform:translate(2%,-4%)}50%{transform:translate(-4%,-2%)}67%{transform:translate(3%,3%)}83%{transform:translate(-1%,4%)}100%{transform:translate(0,0)}}
@@ -709,7 +702,7 @@ html.pre-on{overflow:hidden}
 .cur{position:fixed; left:0; top:0; width:12px; height:12px; border-radius:50%; background:#fff; mix-blend-mode:difference; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .25s,height .25s}
 .cur.big{width:56px; height:56px}
 @media (hover:none){ .cur{display:none} .grain{display:none} }
-@media (max-width:980px){ .grain{display:none} .orb{display:none} *{backdrop-filter:none!important; -webkit-backdrop-filter:none!important} .reveal{filter:none!important} .reveal.in{filter:none!important} .marq-track{animation-duration:26s} .sr2-pin::before{display:none} .cta-final .hero-bg .orb{display:none} }
+@media (max-width:980px){ .grain{display:none} .orb{display:none} *{backdrop-filter:none!important; -webkit-backdrop-filter:none!important} .reveal{filter:none!important} .reveal.in{filter:none!important} .sr2-pin::before{display:none} .cta-final .hero-bg .orb{display:none} }
 /* preloader */
 .pre{position:fixed; inset:0; z-index:10000; background:var(--bg); color:var(--ink); display:grid; place-items:center}
 .pre-in{width:min(420px,84vw); display:grid; gap:22px}
@@ -847,7 +840,7 @@ html.lite .orb{filter:blur(48px)}
 html.lite [class*="blur"],html.lite .glass{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 html.lite .nav,html.lite .nav-inner,html.lite .card,html.lite .feat,html.lite .plan,html.lite .tagbig{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 html.lite .reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
-html.lite .marq-track,html.lite .orbit,html.lite .sat,html.lite .pulse{animation:none!important}
+html.lite .orbit,html.lite .sat,html.lite .pulse{animation:none!important}
 html.lite .pf4-case,html.lite .feat,html.lite .case{transition:none!important}
 html.lite .pf4-case:hover,html.lite .feat:hover,html.lite .case:hover{transform:none!important}
 html.lite section{content-visibility:auto;contain-intrinsic-size:auto 900px}
@@ -1142,7 +1135,6 @@ svg.sb-viz{height:118px}
     </div>
   </div>
 </section>
-<div class="marq" aria-hidden="true"><div class="marq-track" id="marq"></div></div>
 
 <!-- ============ STATS ============ -->
 <section class="band">
@@ -1875,7 +1867,7 @@ svg.sb-viz{height:118px}
       .set(pre,{display:'none'})
       .to(chars,{yPercent:0, duration:1.1, ease:'expo.out', stagger:.022},'-=.45')
       .from(['#h2Sub','#h2Cta'],{y:26, opacity:0, filter:'blur(8px)', duration:.9, ease:'power3.out', stagger:.12},'-=.7')
-      .from(['.h2-top','#h2Hud','.marq'],{opacity:0, duration:.8, ease:'power2.out', stagger:.1},'-=.6');
+      .from(['.h2-top','#h2Hud'],{opacity:0, duration:.8, ease:'power2.out', stagger:.1},'-=.6');
   }
   if(hasGsap){
     var n={v:0}, log=$$('#preLog div'), dur=quick?.7:1.9;
@@ -1883,10 +1875,6 @@ svg.sb-viz{height:118px}
     gsap.to('.pre svg path',{strokeDashoffset:0, duration:dur*.7, ease:'power2.inOut', stagger:.15});
     gsap.to(n,{v:100, duration:dur, ease:'power2.inOut', onUpdate:function(){ var v=Math.round(n.v); $('#preN').textContent=String(v).padStart(3,'0'); $('#preBar').style.width=v+'%'; log.forEach(function(l,i){ if(v>=[8,48,90][i]) l.classList.add('on'); }); }, onComplete:function(){ setTimeout(heroIn, quick?80:260); }});
   } else heroIn();
-
-  /* ---- marquee ---- */
-  var segs=['Salões de beleza','Revendas de carros','Restaurantes','Indústrias','Imobiliárias','Contabilidade','Academias','Lojas de moda','Clínicas','Escritórios'];
-  var mk=segs.map(function(s){return '<span>'+s+'<i>✦</i></span>';}).join(''); $('#marq').innerHTML=mk+mk;
 
   /* ---- HUD coordenadas ---- */
   var xy=$('#hudXY'); if(fine) window.addEventListener('pointermove',function(e){ xy.textContent='X '+String(e.clientX).padStart(4,'0')+' · Y '+String(e.clientY).padStart(4,'0'); },{passive:true});
@@ -2298,7 +2286,7 @@ window.mjFatia=(function(){ var fila=[], rodando=false;
 /* desempenho: cada seção só anima enquanto aparece na tela */
 (function(){ if(!("IntersectionObserver" in window)) return;
   var io=new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle("fora-tela",!e.isIntersecting); }); },{rootMargin:"250px 0px"});
-  document.querySelectorAll("main > section, body > section, section.sec, footer, .marq").forEach(function(el){ io.observe(el); });
+  document.querySelectorAll("main > section, body > section, section.sec, footer").forEach(function(el){ io.observe(el); });
 })();
 </script>
 <script>
