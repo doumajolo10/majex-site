@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAJEX · Websites, web apps and business systems</title>
+<meta name="description" content="Custom websites, admin panels and business software for small and mid-size companies. Built and tested by Douglas, a full-stack developer from Brazil.">
+<link rel="canonical" href="https://www.majexsites.com.br/en/">
+<link rel="alternate" hreflang="pt-BR" href="https://www.majexsites.com.br/">
+<link rel="alternate" hreflang="en" href="https://www.majexsites.com.br/en/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="MAJEX · Websites, web apps and business systems">
+<meta property="og:description" content="Custom websites, admin panels and business software. Six live projects.">
+<meta property="og:image" content="https://www.majexsites.com.br/og.jpg">
+<meta property="og:url" content="https://www.majexsites.com.br/en/">
+<style>
+@font-face{font-family:"Chakra Petch";font-weight:500;font-display:swap;src:url(/fonts/chakra-petch-500-latin.woff2) format("woff2")}
+@font-face{font-family:"Chakra Petch";font-weight:600;font-display:swap;src:url(/fonts/chakra-petch-600-latin.woff2) format("woff2")}
+@font-face{font-family:"Chakra Petch";font-weight:700;font-display:swap;src:url(/fonts/chakra-petch-700-latin.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-weight:400;font-display:swap;src:url(/fonts/manrope-400-latin.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-500-latin.woff2) format("woff2")}
+:root{
+  --bg:#0B0D10; --sf:#12151A; --sf2:#181C22; --line:#242A33;
+  --ink:#ECEFF2; --ink2:#A3ACB7; --ink3:#8A939E;
+  --ac:#22E7CE; --acInk:#04201C;
+  --r:14px; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.mono{font:500 12px/1.4 "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+h1,h2,h3{font-family:"Chakra Petch",sans-serif;font-weight:600;letter-spacing:-.01em;line-height:1.05}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-p{background:var(--ac);color:var(--acInk)}
+.btn-p:hover{background:#4BF0DB}
+.btn-g{border:1px solid var(--line);color:var(--ink)}
+.btn-g:hover{background:var(--sf2)}
+
+/* topo */
+header{position:sticky;top:0;z-index:20;background:rgba(11,13,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font:700 18px "Chakra Petch";letter-spacing:.06em;text-decoration:none}
+.logo b{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--ac);color:var(--acInk);font-size:17px}
+nav{display:flex;gap:28px;font-size:15px;color:var(--ink2)}
+nav a{text-decoration:none}
+nav a:hover{color:var(--ink)}
+header .btn{padding:10px 16px;font-size:14px}
+
+/* abertura */
+.hero{padding:96px 0 72px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5.4rem);max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--ac)}
+.hero p.lead{margin-top:26px;max-width:58ch;font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--ink2)}
+.hero .acts{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
+.facts{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.facts div{padding:22px 20px 0 0}
+.facts strong{display:block;font:600 1.6rem "Chakra Petch"}
+.facts span{font-size:14px;color:var(--ink3)}
+
+/* trabalhos */
+section{padding:96px 0}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:56px}
+.sec-h h2{font-size:clamp(2rem,4vw,3.2rem)}
+.sec-h p{max-width:44ch;color:var(--ink2)}
+.case{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center;padding:56px 0;border-top:1px solid var(--line)}
+.case:nth-child(even) .shots{order:2}
+.shots{position:relative;padding-right:56px;padding-bottom:40px}
+.frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--sf)}
+.frame .bar{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.frame .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.phone{position:absolute;right:0;bottom:0;width:23%;border:5px solid #1E232A;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.phone img{aspect-ratio:390/844;object-fit:cover;object-position:top}
+.info .mono{color:var(--ac)}
+.info h3{font-size:clamp(1.6rem,2.6vw,2.2rem);margin:10px 0 14px}
+.info p{color:var(--ink2)}
+.info ul{list-style:none;margin:20px 0 24px;display:grid;gap:8px}
+.info li{padding-left:22px;position:relative;font-size:15.5px}
+.info li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--ac)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.tags span{font:500 12px "JetBrains Mono";padding:6px 10px;border:1px solid var(--line);border-radius:6px;color:var(--ink2)}
+.live{font-weight:700;font-size:15px;text-decoration:none;border-bottom:2px solid var(--ac);padding-bottom:2px}
+.live:hover{color:var(--ac)}
+
+/* serviços */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px}
+.card .n{font:500 12px "JetBrains Mono";color:var(--ac)}
+.card h3{font-size:1.35rem;margin:14px 0 10px}
+.card p{font-size:15.5px;color:var(--ink2)}
+.alt{background:var(--sf);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.alt .card{background:var(--bg)}
+
+/* processo */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.steps div{padding:28px 24px 0 0}
+.steps b{font:600 2.4rem "Chakra Petch";color:#5A6470}
+.steps h3{font-size:1.25rem;margin:8px 0}
+.steps p{font-size:15.5px;color:var(--ink2)}
+.stack{margin-top:56px;display:flex;flex-wrap:wrap;gap:10px}
+.stack span{padding:9px 14px;border-radius:8px;background:var(--sf2);font-size:14px;color:var(--ink2)}
+
+/* contato */
+.cta{text-align:left;padding:110px 0}
+.cta h2{font-size:clamp(2.2rem,5vw,4.2rem);max-width:16ch}
+.cta p{margin:22px 0 34px;max-width:52ch;color:var(--ink2);font-size:1.1rem}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(--ink3)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:980px){
+  nav{display:none}
+  .case{grid-template-columns:1fr;gap:28px}
+  .case:nth-child(even) .shots{order:0}
+  .grid4,.steps{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .sec-h{flex-direction:column;align-items:start}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .hero{padding:64px 0 56px}
+  section{padding:72px 0}
+  .grid4,.steps{grid-template-columns:1fr}
+  .shots{padding-right:36px;padding-bottom:28px}
+  .phone{width:27%;border-width:4px;border-radius:16px}
+  header .btn span{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top"><b>X</b>MAJEX</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-p" href="https://wa.me/5555996241177?text=Hi%20Douglas%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener">Start a project <span>→</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <p class="mono">MAJEX · Full-stack development · Brazil (UTC−3)</p>
+      <h1 style="margin-top:18px">Websites and business software that <em>actually ship.</em></h1>
+      <p class="lead">I'm Douglas, a developer from Brazil. I design and build custom websites, admin panels and internal systems for small and mid-size companies. Everything below is live and built by me.</p>
+      <div class="acts">
+        <a class="btn btn-p" href="#work">See the work ↓</a>
+        <a class="btn btn-g" href="https://wa.me/5555996241177?text=Hi%20Douglas%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener">Talk on WhatsApp</a>
+      </div>
+      <div class="facts">
+        <div><strong>6</strong><span>live projects below</span></div>
+        <div><strong>2–7 days</strong><span>to launch a landing page</span></div>
+        <div><strong>Tested</strong><span>automated browser tests before launch</span></div>
+        <div><strong>UTC−3</strong><span>overlaps the US workday</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>Selected work</h2>
+        <p>Real projects, live online. Click through and use them. The sites are in Portuguese, the code quality speaks any language.</p>
+      </div>
+
+      <div class="cases">
+        <article class="case">
+          <div class="shots">
+            <div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="img/kiesel-pc.webp" alt="Kiesel real estate website, home page" loading="lazy" width="1440" height="900"></div>
+            <div class="phone"><img src="img/kiesel-cel.webp" alt="Kiesel website on a phone" loading="lazy"></div>
+          </div>
+          <div class="info">
+            <p class="mono">Real estate · Website + admin panel</p>
+            <h3>Imobiliária Kiesel</h3>
+            <p>Full property portal for the oldest real estate agency in its city, replacing a generic platform.</p>
+            <ul>
+              <li>49 pages generated from data, with search by type, city and bedrooms</li>
+              <li>Custom admin panel to add, edit and remove listings with photos</li>
+              <li>Aerial drone film on the home page, privacy-law compliant</li>
+            </ul>
+            <div class="tags"><span>Static site generator</span><span>Supabase</span><span>GSAP</span><span>Vercel</span></div>
+            <a class="live" href="https://www.imobiliariakiesel.com.br/" target="_blank" rel="noopener">Open live site ↗</a>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="shots">
+            <div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="img/larssen-pc.webp" alt="Grupo Larssen website, home page" loading="lazy" width="1440" height="900"></div>
+            <div class="phone"><img src="img/larssen-cel.webp" alt="Grupo Larssen website on a phone" loading="lazy"></div>
+          </div>
+          <div class="info">
+            <p class="mono">Industry · Corporate site + catalog</p>
+            <h3>Grupo Larssen</h3>
+            <p>One site for a group of five lumber companies, from forest to delivery, told as a road you scroll through.</p>
+            <ul>
+              <li>Interactive 3D scene built with Three.js</li>
+              <li>37-product catalog with a quote builder that sends the order to WhatsApp</li>
+              <li>Admin panel so the client updates products on their own</li>
+            </ul>
+            <div class="tags"><span>Three.js</span><span>Supabase</span><span>50 pages</span><span>Vercel</span></div>
+            <a class="live" href="https://grupo-larssen.vercel.app/" target="_blank" rel="noopener">Open live site ↗</a>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="shots">
+            <div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="img/schlosser-pc.webp" alt="Schlosser online store, home page" loading="lazy" width="1440" height="900"></div>
+            <div class="phone"><img src="img/schlosser-cel.webp" alt="Schlosser store on a phone" loading="lazy"></div>
+          </div>
+          <div class="info">
+            <p class="mono">Print shop · Online store + ERP</p>
+            <h3>Schlosser Personalizados</h3>
+            <p>Online store and the production system behind it, replacing spreadsheets and Trello boards.</p>
+            <ul>
+              <li>Pricing by square meter with quantity tiers and reseller prices</li>
+              <li>Production kanban, team permissions and a live shop-floor TV screen</li>
+              <li>26 screens covered by hundreds of automated checks</li>
+            </ul>
+            <div class="tags"><span>Supabase</span><span>Realtime</span><span>Role permissions</span><span>Vercel</span></div>
+            <a class="live" href="https://schlosser-personalizados.vercel.app/" target="_blank" rel="noopener">Open live site ↗</a>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="shots">
+            <div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="img/metalforte-pc.webp" alt="Metal Forte project configurator with a 3D model" loading="lazy" width="1440" height="900"></div>
+            <div class="phone"><img src="img/metalforte-cel.webp" alt="Metal Forte configurator on a phone" loading="lazy"></div>
+          </div>
+          <div class="info">
+            <p class="mono">Metal fabrication · Engineering software</p>
+            <h3>Metal Forte</h3>
+            <p>The fabricator types the job measurements and gets a complete project in seconds.</p>
+            <ul>
+              <li>Live 3D model plus 2D drawings with dimensions</li>
+              <li>Structural pre-sizing, cut list for the workshop and quote</li>
+              <li>Multi-page PDF for the end customer</li>
+            </ul>
+            <div class="tags"><span>Three.js</span><span>PDF generation</span><span>16 products</span></div>
+            <a class="live" href="https://metalforte-sistema.vercel.app/" target="_blank" rel="noopener">Open live app ↗</a>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="shots">
+            <div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="img/cofre-pc.webp" alt="Cofre finance app sales page" loading="lazy" width="1440" height="900"></div>
+            <div class="phone"><img src="img/cofre-cel.webp" alt="Cofre app on a phone" loading="lazy"></div>
+          </div>
+          <div class="info">
+            <p class="mono">SaaS · My own product</p>
+            <h3>Cofre</h3>
+            <p>Personal and business finance app, designed, built and sold by me.</p>
+            <ul>
+              <li>Installable app that works offline, on phone and desktop</li>
+              <li>Checkout integration with webhooks, lifetime and monthly plans</li>
+              <li>Budgets, alerts and reports, with end-to-end tests on the live site</li>
+            </ul>
+            <div class="tags"><span>PWA</span><span>Supabase Edge Functions</span><span>Payments</span></div>
+            <a class="live" href="https://cofre.majexsites.com.br/" target="_blank" rel="noopener">Open live site ↗</a>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="shots">
+            <div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="img/khaus-pc.webp" alt="Khaus promotional products store" loading="lazy" width="1440" height="900"></div>
+            <div class="phone"><img src="img/khaus-cel.webp" alt="Khaus store on a phone" loading="lazy"></div>
+          </div>
+          <div class="info">
+            <p class="mono">Promotional products · Catalog store</p>
+            <h3>Khaus Brindes</h3>
+            <p>Sales site for a laser-engraving company, built so customers can quote on their own.</p>
+            <ul>
+              <li>3,000+ products with stock kept up to date from the supplier</li>
+              <li>Logo preview on products and a quote cart sent to WhatsApp</li>
+              <li>Search Console and instant indexing set up for SEO</li>
+            </ul>
+            <div class="tags"><span>Product sync</span><span>SEO</span><span>Light/dark theme</span></div>
+            <a class="live" href="https://khausbrindes.com.br/" target="_blank" rel="noopener">Open live site ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="alt">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>What I build</h2>
+        <p>From a one-page site to the system that runs the business. One developer, start to finish, no hand-offs.</p>
+      </div>
+      <div class="grid4">
+        <div class="card"><span class="n">01</span><h3>Websites</h3><p>Landing pages and multi-page sites that load fast, rank on Google and turn visitors into leads.</p></div>
+        <div class="card"><span class="n">02</span><h3>Admin panels</h3><p>Let your team update products, listings or prices without calling a developer.</p></div>
+        <div class="card"><span class="n">03</span><h3>Business systems</h3><p>Quotes, production boards, finance and dashboards built around how your company actually works.</p></div>
+        <div class="card"><span class="n">04</span><h3>Integrations</h3><p>Payments, webhooks, WhatsApp, email and AI features connected to your existing tools.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>How we work</h2>
+        <p>You see a working draft early and approve before anything goes live.</p>
+      </div>
+      <div class="steps">
+        <div><b>01</b><h3>Brief</h3><p>A short call or chat about your business, goals and references.</p></div>
+        <div><b>02</b><h3>Draft</h3><p>A clickable draft for you to review. Changes are cheap at this stage.</p></div>
+        <div><b>03</b><h3>Build and test</h3><p>Full build with automated tests on desktop and mobile.</p></div>
+        <div><b>04</b><h3>Launch</h3><p>Deploy, domain and handover, with support after launch.</p></div>
+      </div>
+      <div class="stack">
+        <span>HTML · CSS · JavaScript</span><span>Node.js</span><span>Supabase / Postgres</span><span>Vercel</span><span>Three.js</span><span>GSAP</span><span>Puppeteer tests</span><span>REST APIs and webhooks</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta alt">
+    <div class="wrap">
+      <p class="mono">Available for new projects</p>
+      <h2 style="margin-top:16px">Have a project in mind? Let's talk.</h2>
+      <p>Tell me what you need and I'll reply with a plan, a timeline and a fixed price.</p>
+      <a class="btn btn-p" href="https://wa.me/5555996241177?text=Hi%20Douglas%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener">Message me on WhatsApp →</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 MAJEX · Douglas, developer</span>
+    <span>Brazil · Working in English and Portuguese</span>
+  </div>
+</footer>
+
+</body>
+</html>
